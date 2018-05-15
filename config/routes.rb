@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :answers, except: [:new,:create]
+  resources :questions do
+    resources :answers, only: [:new,:create]
+  end
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
 
