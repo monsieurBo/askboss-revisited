@@ -697,3 +697,1202 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 65ms (Views: 64.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:02:48 +0800
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/nextacademy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (16.4ms)
+  Rendered sessions/new.html.erb within layouts/application (40.3ms)
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:02:59 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.6ms)
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 29604ms (Views: 29587.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 19677ms (Views: 19676.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:03:23 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 87ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:03:29 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (2.2ms)
+  Rendered sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 169ms (Views: 162.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2018-05-15 18:03:32 +0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.5ms)
+  Rendered users/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 218ms (Views: 152.3ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:05:11 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1125.2ms)
+  Rendered sessions/new.html.erb within layouts/application (1131.7ms)
+Completed 500 Internal Server Error in 1146ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x27d70d8>:0xb0bbc348>
+Did you mean?  session_path):
+    21: 
+    22:     <hr>
+    23: 
+    24:     <%= form_for :session, url: sessions_path do |form| %>
+    25: 
+    26:       <div class="text-field form-group">
+    27:         <%= form.label :email %>
+  
+app/views/sessions/_form.html.erb:24:in `_app_views_sessions__form_html_erb___910015111__664768348'
+app/views/sessions/new.html.erb:8:in `_app_views_sessions_new_html_erb___210339768__664838438'
+app/controllers/sessions_controller.rb:40:in `new'
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:06:04 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.0ms)
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 106ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:08:18 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (1.9ms)
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navbar.html.erb (6.7ms)
+Completed 200 OK in 91ms (Views: 90.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-05-15 18:08:34 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"john@doe.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@doe.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:22
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:08:35 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (32.4ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `customer?' for #<User:0xafbe2670>):
+    1: <% if signed_in? %>
+    2: 	<% if current_user.customer? %>
+    3: 		<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    4: 		  <!-- Brand and toggle get grouped for better mobile display -->
+    5: 		  <!-- <div class="navbar-header"> -->
+  
+app/views/layouts/_navbar.html.erb:2:in `_app_views_layouts__navbar_html_erb__694081171__650213228'
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__672596438'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:09:18 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (28.5ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar?' for #<User:0xb1fc0d08>):
+    30: 		      <li class="nav-item dropdown">
+    31: 
+    32: 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    33: 		          <%= image_tag(current_user.avatar.thumb.url, class: 'profile-thumb rounded-circle') if current_user.avatar? %> 
+    34: 		          <%= current_user.first_name %> <%= current_user.last_name %>
+    35: 		        </a>
+    36: 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+  
+app/views/layouts/_navbar.html.erb:33:in `_app_views_layouts__navbar_html_erb__694081171__653795608'
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__665266158'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:09:51 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navbar.html.erb (7.2ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<', expecting ')'
+		        </a>
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:37: unknown regexp options - ltg
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <a class="dropdown-item" href="/listings/new">Host!</a>
+		                                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( link_to "Booking History", reservations_path,...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rvations_path, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ns_path, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Edit Account", edit_user_path(cur...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rent_user.id), class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ser.id), class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+		          <div class="dropdown-divider"></div>
+		                              ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <div class="dropdown-divider"></div>
+		                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Sign Out", sign_out_path, method:...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting ')'
+...thod: :delete, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...:delete, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fe_append='		<nav class="navbar navbar-expand-lg sticky-top ...
+...           		                  ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..."navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...bar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...nd-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+		  <!-- <div class="navbar-header"> -->
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		  <!-- <div class="navbar-header"> -->
+		                                 ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <a class="navbar-brand text-danger font-weigh...
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...    <a class="navbar-brand text-danger font-weight-bold" hre...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="navbar-brand text-danger font-weight-bold" href="/">AirBnB...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...d text-danger font-weight-bold" href="/">AirBnB.</a>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <button class="navbar-toggler" type="button" data-...
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... <button class="navbar-toggler" type="button" data-toggle="c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+...s="navbar-toggler" type="button" data-toggle="collapse" data...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+...="button" data-toggle="collapse" data-target="#navbarToggler...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<', expecting ')'
+		      <span class="navbar-toggler-icon"></span>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<'
+		      <span class="navbar-toggler-icon"></span>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:55: unknown regexp options - btt
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+		  <!-- </div> -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+		  <!-- </div> -->
+		        ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:62: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+		      <li class="nav-item"><a class=...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+		      <li class="nav-item"><a class="nav-link" href="/lis...
+		                            ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+...-item"><a class="nav-link" href="/listings">Listing</a></li>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '<'
+		      <!-- search bar -->
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+		      <!-- search bar -->
+		                     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...fer.append=  form_tag('/search', method: :get, class: 'form-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ch', method: :get, class: 'form-inline' ) do @output_buffer....
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...hod: :get, class: 'form-inline' ) do @output_buffer.safe_app...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tCONSTANT, expecting ')'
+...ult-list", placeholder: 'Search', class: 'form-control mr-sm...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+...eholder: 'Search', class: 'form-control mr-sm-2', id: "city-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...earch', class: 'form-control mr-sm-2', id: "city-search" );@...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tSTRING_BEG, expecting ')'
+..., class: 'form-control mr-sm-2', id: "city-search" );@output...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<', expecting ')'
+		      <datalist id="search-result-list"></datalist>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<'
+		      <datalist id="search-result-list"></datalist>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:72: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:74: syntax error, unexpected '<'
+		    <ul class="nav navbar-nav navbar-right">
+		     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+		      <li class="nav-item"><a class=...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+		      <li class="nav-item"><a class="nav-link btn-danger"...
+		                            ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...lass="nav-link btn-danger" href="#" class="btn btn-danger ad...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected keyword_class, expecting ')'
+...link btn-danger" href="#" class="btn btn-danger add_question...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r add_question text-white" data-toggle="modal" data-target="...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...white" data-toggle="modal" data-target="#exampleModalCenter"...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+...xampleModalCenter">Add Question</a></li>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:76: syntax error, unexpected '<'
+		      <li class="nav-item dropdown">
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected '<'
+		        <a class="nav-link dropdown-to...
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+..."nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLi...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk dropdown-toggle" href="#" id="navbarDropdownMenuLink" dat...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspo...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk" data-toggle="dropdown" aria-haspopup="true" aria-expande...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...down" aria-haspopup="true" aria-expanded="false">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+...atar.thumb.url, class: 'profile-thumb rounded-circle') if cu...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..., class: 'profile-thumb rounded-circle') if current_user.ava...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... 'profile-thumb rounded-circle') if current_user.avatar? );@...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:81: syntax error, unexpected '<', expecting ')'
+		        </a>
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:83: unknown regexp options - ltg
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:83: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <a class="dropdown-item" href="/listings/new">Host!</a>
+		                                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( link_to "Booking History", reservations_path,...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rvations_path, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ns_path, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Edit Account", edit_user_path(cur...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rent_user.id), class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ser.id), class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tIDENTIFIER, expecting ')'
+		          <div class="dropdown-divider"></div>
+		                              ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <div class="dropdown-divider"></div>
+		                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Sign Out", sign_out_path, method:...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tIDENTIFIER, expecting ')'
+...thod: :delete, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...:delete, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting ')'
+...afe_append='	<nav class="navbar navbar-expand-lg sticky-top ...
+...            	                  ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..."navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...bar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...nd-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tIDENTIFIER, expecting ')'
+		  <!-- <div class="navbar-header"> -->
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		  <!-- <div class="navbar-header"> -->
+		                                 ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <a class="navbar-brand text-danger font-weigh...
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...    <a class="navbar-brand text-danger font-weight-bold" hre...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="navbar-brand text-danger font-weight-bold" href="/">AirBnB...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...d text-danger font-weight-bold" href="/">AirBnB.</a>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <button class="navbar-toggler" type="button" data-...
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... <button class="navbar-toggler" type="button" data-toggle="c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+...s="navbar-toggler" type="button" data-toggle="collapse" data...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+...="button" data-toggle="collapse" data-target="#navbarToggler...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<', expecting ')'
+		      <span class="navbar-toggler-icon"></span>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<'
+		      <span class="navbar-toggler-icon"></span>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:103: unknown regexp options - btt
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+		  <!-- </div> -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+		  <!-- </div> -->
+		        ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:110: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...fer.append=  form_tag('/search', local: true, method: :get, ...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rue, method: :get, class: 'form-inline' ) do @output_buffer....
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...hod: :get, class: 'form-inline' ) do @output_buffer.safe_app...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+...data: { behavior: 'autocomplete' }, placeholder: 'Search', c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tCONSTANT, expecting ')'
+...mplete' }, placeholder: 'Search', class: 'form-co
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+...eholder: 'Search', class: 'form-co
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+		      ntrol mr-sm-2') );@output_buffer.safe_append='
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append=( button_tag('Search', class: 'btn btn-outline-su...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utton_tag('Search', class: 'btn btn-outline-success my-2 my-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...ss: 'btn btn-outline-success my-2 my-sm-0', type: 'submit') ...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...btn btn-outline-success my-2 my-sm-0', type: 'submit') );@ou...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tSTRING_BEG, expecting ')'
+...n-outline-success my-2 my-sm-0', type: 'submit') );@output_b...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ss my-2 my-sm-0', type: 'submit') );@output_buffer.safe_appe...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:117: syntax error, unexpected '<', expecting ')'
+		    </ul>
+		     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:120: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:121: syntax error, unexpected '<'
+		      <li class="nav-item">'.freeze;...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:122: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:123: syntax error, unexpected '<'
+		  </div><!-- /.navbar-collapse -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:123: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+		  </div><!-- /.navbar-collapse -->
+		                                ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:124: unterminated regexp meets end of file):
+  
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:37: unknown regexp options - ltg
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:55: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:62: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:63: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:72: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:74: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected keyword_class, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:75: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:76: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:81: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:83: unknown regexp options - ltg
+app/views/layouts/_navbar.html.erb:83: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:103: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:110: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:117: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:120: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:121: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:122: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:123: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:123: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:124: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__633769248'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:10:21 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navbar.html.erb (23.3ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<', expecting ')'
+		        </a>
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:37: unknown regexp options - ltg
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <a class="dropdown-item" href="/listings/new">Host!</a>
+		                                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( link_to "Booking History", reservations_path,...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rvations_path, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ns_path, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Edit Account", edit_user_path(cur...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rent_user.id), class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ser.id), class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+		          <div class="dropdown-divider"></div>
+		                              ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <div class="dropdown-divider"></div>
+		                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Sign Out", sign_out_path, method:...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting ')'
+...thod: :delete, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...:delete, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fe_append='		<nav class="navbar navbar-expand-lg sticky-top ...
+...           		                  ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..."navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...bar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...nd-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+		  <!-- <div class="navbar-header"> -->
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		  <!-- <div class="navbar-header"> -->
+		                                 ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <a class="navbar-brand text-danger font-weigh...
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...    <a class="navbar-brand text-danger font-weight-bold" hre...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="navbar-brand text-danger font-weight-bold" href="/">AirBnB...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...d text-danger font-weight-bold" href="/">AirBnB.</a>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <button class="navbar-toggler" type="button" data-...
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... <button class="navbar-toggler" type="button" data-toggle="c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+...s="navbar-toggler" type="button" data-toggle="collapse" data...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+...="button" data-toggle="collapse" data-target="#navbarToggler...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<', expecting ')'
+		      <span class="navbar-toggler-icon"></span>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<'
+		      <span class="navbar-toggler-icon"></span>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:55: unknown regexp options - btt
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+		  <!-- </div> -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+		  <!-- </div> -->
+		        ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:62: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+		      <li class="nav-item"><a class=...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+		      <li class="nav-item"><a class="nav-link" href="/lis...
+		                            ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+...-item"><a class="nav-link" href="/listings">Listing</a></li>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:63: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '<'
+		      <!-- search bar -->
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+		      <!-- search bar -->
+		                     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...fer.append=  form_tag('/search', method: :get, class: 'form-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ch', method: :get, class: 'form-inline' ) do @output_buffer....
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...hod: :get, class: 'form-inline' ) do @output_buffer.safe_app...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tCONSTANT, expecting ')'
+...ult-list", placeholder: 'Search', class: 'form-control mr-sm...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+...eholder: 'Search', class: 'form-control mr-sm-2', id: "city-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...earch', class: 'form-control mr-sm-2', id: "city-search" );@...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tSTRING_BEG, expecting ')'
+..., class: 'form-control mr-sm-2', id: "city-search" );@output...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<', expecting ')'
+		      <datalist id="search-result-list"></datalist>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<'
+		      <datalist id="search-result-list"></datalist>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:72: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:74: syntax error, unexpected '<'
+		    <ul class="nav navbar-nav navbar-right">
+		     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+		      <li class="nav-item"><a class=...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+		      <li class="nav-item"><a class="nav-link btn-danger"...
+		                            ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...lass="nav-link btn-danger" href="#" class="btn btn-danger ad...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected keyword_class, expecting ')'
+...link btn-danger" href="#" class="btn btn-danger add_question...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r add_question text-white" data-toggle="modal" data-target="...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+...white" data-toggle="modal" data-target="#exampleModalCenter"...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+...xampleModalCenter">Add Question</a></li>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:75: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:76: syntax error, unexpected '<'
+		      <li class="nav-item dropdown">
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected '<'
+		        <a class="nav-link dropdown-to...
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+..."nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLi...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk dropdown-toggle" href="#" id="navbarDropdownMenuLink" dat...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspo...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nk" data-toggle="dropdown" aria-haspopup="true" aria-expande...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+...down" aria-haspopup="true" aria-expanded="false">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+...atar.thumb.url, class: 'profile-thumb rounded-circle') if cu...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..., class: 'profile-thumb rounded-circle') if current_user.ava...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... 'profile-thumb rounded-circle') if current_user.avatar? );@...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:81: syntax error, unexpected '<', expecting ')'
+		        </a>
+		         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:83: unknown regexp options - ltg
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:83: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <a class="dropdown-item" href="/listings/new">Host!</a>
+		                                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tCONSTANT, expecting ')'
+...uffer.append=( link_to "Booking History", reservations_path,...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rvations_path, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ns_path, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Edit Account", edit_user_path(cur...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rent_user.id), class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...ser.id), class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tIDENTIFIER, expecting ')'
+		          <div class="dropdown-divider"></div>
+		                              ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		          <div class="dropdown-divider"></div>
+		                                       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tCONSTANT, expecting ')'
+...t_buffer.append=( link_to "Sign Out", sign_out_path, method:...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tIDENTIFIER, expecting ')'
+...thod: :delete, class: "dropdown-item" );@output_buffer.safe_...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...:delete, class: "dropdown-item" );@output_buffer.safe_append...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting ')'
+...afe_append='	<nav class="navbar navbar-expand-lg sticky-top ...
+...            	                  ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+..."navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...bar-expand-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...nd-lg sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...sticky-top navbar-dark bg-dark">
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tIDENTIFIER, expecting ')'
+		  <!-- <div class="navbar-header"> -->
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		  <!-- <div class="navbar-header"> -->
+		                                 ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <a class="navbar-brand text-danger font-weigh...
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...    <a class="navbar-brand text-danger font-weight-bold" hre...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...="navbar-brand text-danger font-weight-bold" href="/">AirBnB...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...d text-danger font-weight-bold" href="/">AirBnB.</a>
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+		    <button class="navbar-toggler" type="button" data-...
+		                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+... <button class="navbar-toggler" type="button" data-toggle="c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+...s="navbar-toggler" type="button" data-toggle="collapse" data...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+...="button" data-toggle="collapse" data-target="#navbarToggler...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<', expecting ')'
+		      <span class="navbar-toggler-icon"></span>
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<'
+		      <span class="navbar-toggler-icon"></span>
+		                                         ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:103: unknown regexp options - btt
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+		  <!-- </div> -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+		  <!-- </div> -->
+		        ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:110: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...fer.append=  form_tag('/search', local: true, method: :get, ...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+...rue, method: :get, class: 'form-inline' ) do @output_buffer....
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...hod: :get, class: 'form-inline' ) do @output_buffer.safe_app...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+...data: { behavior: 'autocomplete' }, placeholder: 'Search', c...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tCONSTANT, expecting ')'
+...mplete' }, placeholder: 'Search', class: 'form-co
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+...eholder: 'Search', class: 'form-co
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+		      ntrol mr-sm-2') );@output_buffer.safe_append='
+		                    ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tCONSTANT, expecting ')'
+...fer.append=( button_tag('Search', class: 'btn btn-outline-su...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...utton_tag('Search', class: 'btn btn-outline-success my-2 my-...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...ss: 'btn btn-outline-success my-2 my-sm-0', type: 'submit') ...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...btn btn-outline-success my-2 my-sm-0', type: 'submit') );@ou...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tSTRING_BEG, expecting ')'
+...n-outline-success my-2 my-sm-0', type: 'submit') );@output_b...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ss my-2 my-sm-0', type: 'submit') );@output_buffer.safe_appe...
+...                               ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:117: syntax error, unexpected '<', expecting ')'
+		    </ul>
+		     ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:120: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:121: syntax error, unexpected '<'
+		      <li class="nav-item">'.freeze;...
+		       ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:122: unknown regexp option - l
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:123: syntax error, unexpected '<'
+		  </div><!-- /.navbar-collapse -->
+		   ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:123: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+		  </div><!-- /.navbar-collapse -->
+		                                ^
+/home/nextacademy/Desktop/askboss/app/views/layouts/_navbar.html.erb:124: unterminated regexp meets end of file):
+  
+app/views/layouts/_navbar.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:37: unknown regexp options - ltg
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:39: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:41: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:54: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:55: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:56: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:62: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:63: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:63: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:65: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:66: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:67: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:68: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:72: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:74: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected keyword_class, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:75: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:75: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:76: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:78: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:79: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:81: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:83: unknown regexp options - ltg
+app/views/layouts/_navbar.html.erb:83: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:84: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:85: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:86: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:87: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:96: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:98: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:100: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:102: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:103: unknown regexp options - btt
+app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:104: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:110: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:112: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/_navbar.html.erb:114: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_navbar.html.erb:117: syntax error, unexpected '<', expecting ')'
+app/views/layouts/_navbar.html.erb:120: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:121: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:122: unknown regexp option - l
+app/views/layouts/_navbar.html.erb:123: syntax error, unexpected '<'
+app/views/layouts/_navbar.html.erb:123: syntax error, unexpected unary-, expecting keyword_do or '{' or '('
+app/views/layouts/_navbar.html.erb:124: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__672800988'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:10:32 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (790.3ms)
+Completed 500 Internal Server Error in 881ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservations_path' for #<#<Class:0xb3b5aca8>:0xafeabb2c>
+Did you mean?  resolve_asset_path):
+    34: 		        </a>
+    35: 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+    36: 		          <a class="dropdown-item" href="/listings/new">Host!</a>
+    37: 		          <%= link_to "Booking History", reservations_path, class: "dropdown-item" %>
+    38: 		          <%= link_to "Edit Account", edit_user_path(current_user.id), class: "dropdown-item" %>
+    39: 		          <div class="dropdown-divider"></div>
+    40: 		          <%= link_to "Sign Out", sign_out_path, method: :delete, class: "dropdown-item" %>
+  
+app/views/layouts/_navbar.html.erb:37:in `_app_views_layouts__navbar_html_erb__694081171__664233148'
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__671789908'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:10:52 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (617.0ms)
+Completed 500 Internal Server Error in 744ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0xb3b5aca8>:0xb2f3b38c>
+Did you mean?  edit_user_password_path):
+    35: 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+    36: 		          <a class="dropdown-item" href="/listings/new">Host!</a>
+    37: 		          <%= link_to "Booking History", root_path, class: "dropdown-item" %>
+    38: 		          <%= link_to "Edit Account", edit_user_path(current_user.id), class: "dropdown-item" %>
+    39: 		          <div class="dropdown-divider"></div>
+    40: 		          <%= link_to "Sign Out", sign_out_path, method: :delete, class: "dropdown-item" %>
+    41: 		        </div>
+  
+app/views/layouts/_navbar.html.erb:38:in `_app_views_layouts__navbar_html_erb__694081171__646876128'
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___685124583__646330118'
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:11:30 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (96.6ms)
+Completed 200 OK in 347ms (Views: 324.3ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-15 18:11:37 +0800
+Processing by HomeController#home as HTML
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:1
+  Rendered layouts/_navbar.html.erb (26.5ms)
+Completed 200 OK in 216ms (Views: 209.1ms | ActiveRecord: 2.8ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2018-05-15 18:11:49 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "46c94121fb47d5322357a670e97bda6a70d9d4f9"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:35
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:35
+  [1m[36mUser Update (30.5ms)[0m  [1m[33mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "3f7e2a151c6f3444afc08291f8e544f21ce81f9d"], ["updated_at", "2018-05-15 10:11:49.893458"], ["id", 3]]
+  ↳ app/controllers/sessions_controller.rb:35
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:35
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 105ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-05-15 18:11:50 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (4.2ms)
+  Rendered sessions/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_navbar.html.erb (2.4ms)
+Completed 200 OK in 77ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+

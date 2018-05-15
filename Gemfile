@@ -35,6 +35,9 @@ gem 'bootstrap', '~> 4.1.0'
 #include fontawesome
 gem 'font-awesome-rails'
 
+#include jquery & jquery ujs
+gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
