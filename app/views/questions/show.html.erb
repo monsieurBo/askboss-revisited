@@ -1,0 +1,106 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %> |
+<%= link_to 'Answer', new_question_answer_path(@question) %>
+
+
+
+<div class="container">
+<h3><%=@question.title%></h3>
+
+
+<p><%=@question.description%></p><br><br/>
+<p>posted by <%=User.find(@question.user_id).first_name%> <%=User.find(@question.user_id).last_name%> at <%=@question.created_at%><br/>
+
+<!-- UPVOTE/DOWNVOTES -->
+<% vote = Vote.find_by(question_id: @question.id, user_id: current_user.id) %>
+<% if !vote.nil? %>
+	<% if vote.vote? %>
+		<%= link_to "UPVOTE | #{Vote.where(question_id: @question.id, vote: true).count}", vote_question_votes_path(@question), class: "btn btn-default btn-sm diabled" %>
+		<%= link_to "DOWNVOTE", vote_question_votes_path(@question), class: "btn btn-default btn-sm" %>
+	<% else %>
+		<%= link_to "UPVOTE | #{Vote.where(question_id: @question.id, vote: true).count}", vote_question_votes_path(@question), class: "btn btn-outline-default btn-sm" %>
+		<%= link_to "DOWNVOTE", vote_question_votes_path(@question), class: "btn btn-default btn-sm disabled" %>
+	<% end %>
+<% else %>
+	<%= link_to "UPVOTE | #{Vote.where(question_id: @question.id, vote: true).count}", vote_question_votes_path(@question), class: "btn btn-outline-secondary btn-sm" %>
+	<%= link_to "DOWNVOTE", vote_question_votes_path(@question), class: "btn btn-default btn-sm" %>
+<% end %>
+
+<!-- EDIT & DELETE buttons -->
+<% if current_user.id == @question.user_id %>
+<%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-default' %>
+	<a href="/questions/<%=@question.id%>/edit" class="btn btn-default">Edit</a>	
+	<a href="/questions/<%=@question.id%>/delete" class="btn btn-default">Delete</a>	
+<% else %>
+<%= link_to 'Answer', new_question_answer_path(@question), class: 'btn btn-success' %>
+	<a class="btn btn-danger" data-toggle="collapse" href="#answer" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Answer
+  </a>
+<% end %>
+
+<!-- ANSWER drop down box -->
+<div id="answer" class="collapse">
+
+	<form action="/answers/<%=@question.id%>" method="POST">
+		<input name="username" value="<%=current_user.first_name%> <%=current_user.last_name%>" style="display: none">
+    <div class="form-group form-check">
+	    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="anonymous" value="Anonymous">
+	    <label class="form-check-label" for="exampleCheck1">Post as Anonymous</label>
+	  </div>
+    <div class="form-group">
+      <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="your answer here"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+  </form>
+</div>
+
+<%if @answers %>
+	<h5><%= @answers.length %> Answers</h5>
+	<hr>
+	<% @answers.left_joins(:votes).group(:id).order('COUNT(vote) DESC').each do | a | %>
+		
+		<div class="card shadow-sm">
+			<div class="card-header">
+			  <%= a.user.first_name %> Answered <%= a.created_at %>
+		  </div>
+		  <div class="card-body">
+			  <p class="card-text"><%=a.answer%></p>
+
+			<% votes = Vote.where(vote: true) %>
+			<% if current_user.id != @question.user_id %>
+					<a href="/answers/<%=a.id%>/votes/vote" class="btn btn-outline-secondary btn-sm">UP | <%=votes.where(answer_id: a.id).count%></a>
+					<a href="/answers/<%=a.id%>/down" class="btn btn-default btn-sm">DOWN</a>
+					<% if current_user.id == a.user_id %>
+						<a href="/answers/<%=a.id%>/edit" class="btn btn-default btn-sm">Edit</a>
+						<a href="/answers/<%=a.id%>/delete" class="btn btn-default btn-sm">Delete</a>
+					<% end %>
+	 			</div>
+			<% else %>
+					<a href="/answers/<%=a.id%>/votes/vote" class="btn btn-default btn-sm">UP | <%=votes.where(answer_id: a.id).count%></a>
+	 			</div>
+			<% end %>
+		</div><br/>
+	<% end %>
+
+<% end %>
+
+</div>

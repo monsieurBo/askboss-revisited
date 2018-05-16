@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+
+  resources :answers, except: [:new,:create] do
+    resource :votes, only: [:vote] do
+      member do
+        get 'vote'
+      end
+    end
+  end
+
+  resources :questions do
+    resources :answers, only: [:new,:create]
+    resource :votes, only: [:vote] do
+      member do
+        get 'vote'
+      end
+    end
+  end
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
 

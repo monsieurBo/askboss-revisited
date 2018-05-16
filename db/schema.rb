@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_15_073058) do
+ActiveRecord::Schema.define(version: 2018_05_15_152021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "question_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,11 +43,27 @@ ActiveRecord::Schema.define(version: 2018_05_15_073058) do
     t.string "remember_token", limit: 128, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "role"
+    t.string "role", default: "0"
     t.string "qualification"
-    t.boolean "verified"
+    t.boolean "verified", default: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.boolean "vote"
+    t.bigint "user_id"
+    t.bigint "question_id"
+    t.bigint "answer_id"
+    t.index ["answer_id"], name: "index_votes_on_answer_id"
+    t.index ["question_id"], name: "index_votes_on_question_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
+  add_foreign_key "questions", "users"
+  add_foreign_key "votes", "answers"
+  add_foreign_key "votes", "questions"
+  add_foreign_key "votes", "users"
 end
