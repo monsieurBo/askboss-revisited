@@ -1,31 +1,38 @@
-<%= form_with(model: question, local: true) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div class="container">
+  <%= form_with(model: question, local: true) do |form| %>
+    <% if question.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-      <ul>
-      <% question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <label for="formGroupExampleInput">Question</label>
+      <%= form.text_field :title, class: "form-control", id: "formGroupExampleInput", type: "text", placeholder: "Enter question here" %>
+    </div>
+
+  <br>
+
+    <div class="field">  
+      <label for="exampleInputEmail1">Description</label>
+      <%= form.text_area :description, class: "form-control", id: "formGroupExampleInput", type: "text", placeholder: "Enter description here", rows: 5 %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+  <br>
+
+    <div class="actions" style="margin-top: 5px;">
+      <%= form.submit "Submit",class: "btn btn-primary" %>
+      <%= link_to 'Back', questions_path, class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
