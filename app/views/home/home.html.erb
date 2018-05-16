@@ -1,35 +1,11 @@
-<html>
+<div class="container">
 
-  <head>
+<% @questions.each do |q| %>
+  <h3><%= q.title %></h3>
+  <p><%= q.description %></p>
+  <a href="/questions/<%=q.id%>">view</a>
+  <!-- <a href="/answers/<%=q.id%>">Answer</a> -->
+  <a href="/questions/<%=q.id%>/delete">delete</a>
+<% end %>
 
-    <title>AskBoss</title>
-
-  </head>
-
-  <body>
-    <h1><a href="/" style="text-decoration: none">AskBoss</a></h1>
-    <a href="/" style="text-decoration: none">home |</a>
-    <a href="/answer" style="text-decoration: none"> answer |</a>
-  <!--   <form action="/questions/search" method="POST">
-      <input name="search" placeholder="Search...">
-    </form> -->
-    <a href="/questions/new" style="text-decoration: none"> Add Question |</a>
-    <a href="/users/signin" style="text-decoration: none"> Sign In/Sign Up</a>
-
-    <!-- <div class="navigation">
-        <li id="header" style="list-style-type: none"><h1><a href="/" style="text-decoration: none">Quora.</a></h1></li>
-        <li id="navright" style="list-style-type: none"><a href="/" style="text-decoration: none">home</a></li>
-        <li style="list-style-type: none"><a href="/answer" style="text-decoration: none">answer</a></li>
-        <li style="list-style-type: none">
-          <form action="/questions/search" method="POST">
-            <input name="search" placeholder="Search...">
-          </form>
-        </li>
-        <li style="list-style-type: none"><a href="/questions/new" style="text-decoration: none">Add Question</a></li>
-        <li style="list-style-type: none"><a href="/users/signin" style="text-decoration: none">Sign In/Sign Up</a></li>
-    </div> -->
-    
-
-  </body>
-
-</html>
+</div>

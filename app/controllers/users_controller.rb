@@ -34,6 +34,7 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
+      redirect_back_or url_after_create
       # if profile_check
       #   redirect_back_or url_after_create
       # else
