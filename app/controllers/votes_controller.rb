@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 	before_action :set_vote
 
   def vote
-  	byebug
   	if @vote.nil?
   		if params[:question_id].nil?
   		 Vote.create(answer_id: params[:answer_id], user_id: current_user.id)
