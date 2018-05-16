@@ -38,6 +38,9 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
+#to protect authorizations
+gem 'figaro'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
