@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-<<<<<<< HEAD:Gemfile
+
 gem 'bcrypt', '~> 3.1.7'
 
 gem "clearance"
@@ -39,16 +39,12 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
-<<<<<<< HEAD
-=======
 # gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
->>>>>>> feature/Clearance:askboss/Gemfile
-=======
+
 #to protect authorizations
 gem 'figaro'
 
->>>>>>> feature/homepage
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -24793,3 +24793,96 @@ Completed 200 OK in 118ms (Views: 94.8ms | ActiveRecord: 9.4ms)
 
 
 >>>>>>> f219c370e1f670b7c4c5f883660a56d541a359c3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3281245036282315200)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateQuestions (20180515113320)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" bigserial primary key, "title" character varying, "description" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_047ab75908"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180515113320_create_questions.rb:3
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_questions_on_user_id" ON "questions"  ("user_id")[0m
+  ↳ db/migrate/20180515113320_create_questions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180515113320"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAnswers (20180515121519)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "answers" ("id" bigserial primary key, "answer" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_584be190c2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180515121519_create_answers.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_user_id" ON "answers"  ("user_id")[0m
+  ↳ db/migrate/20180515121519_create_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180515121519"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddColumnQuestionIdToAnswers (20180515141600)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "answers" ADD "question_id" bigint[0m
+  ↳ db/migrate/20180515141600_add_column_question_id_to_answers.rb:3
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_answers_on_question_id" ON "answers"  ("question_id")[0m
+  ↳ db/migrate/20180515141600_add_column_question_id_to_answers.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "answers" ADD CONSTRAINT "fk_rails_3d5ed4418f"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+[0m
+  ↳ db/migrate/20180515141600_add_column_question_id_to_answers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180515141600"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to ChangeColumnVerifiedRoleToUsers (20180515141752)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "verified" TYPE boolean, ALTER COLUMN "verified" SET DEFAULT FALSE[0m
+  ↳ db/migrate/20180515141752_change_column_verified_role_to_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "role" TYPE character varying, ALTER COLUMN "role" SET DEFAULT '0'[0m
+  ↳ db/migrate/20180515141752_change_column_verified_role_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180515141752"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20180515152021)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "vote" boolean DEFAULT NULL, "user_id" bigint, "question_id" bigint, "answer_id" bigint, CONSTRAINT "fk_rails_c9b3bef597"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b5bf600d58"
+FOREIGN KEY ("question_id")
+  REFERENCES "questions" ("id")
+, CONSTRAINT "fk_rails_3f8d383c32"
+FOREIGN KEY ("answer_id")
+  REFERENCES "answers" ("id")
+)[0m
+  ↳ db/migrate/20180515152021_create_votes.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_user_id" ON "votes"  ("user_id")[0m
+  ↳ db/migrate/20180515152021_create_votes.rb:3
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_question_id" ON "votes"  ("question_id")[0m
+  ↳ db/migrate/20180515152021_create_votes.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_answer_id" ON "votes"  ("answer_id")[0m
+  ↳ db/migrate/20180515152021_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180515152021"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3281245036282315200)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
