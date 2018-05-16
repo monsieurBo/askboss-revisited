@@ -13,6 +13,7 @@
     <!-- Custom styles for this template -->
     <link href="../../assets/stylesheets/half-slider.css" rel="stylesheet">
 
+
   </head>
 
   <body>
@@ -27,7 +28,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('../../assets/images/1.jpg')">
+          <div class="carousel-item active">
             <img src="http://www.etpaustralia.com.au/wp-content/uploads/2018/02/1-1900x900.jpg">
             <div class="carousel-caption d-none d-md-block">
               <h3>Learn online</h3>
@@ -35,7 +36,7 @@
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('../../assets/images/2.jpg')">
+          <div class="carousel-item">
           <img src="https://s3.amazonaws.com/cdn.fizara.com/wp-content/uploads/2014/12/18145636/fizara_diy_photo_album03.jpg">
             <div class="carousel-caption d-none d-md-block">
               <h3>Build your portfolio</h3>
@@ -43,7 +44,7 @@
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('../../assets/images/3.jpg')">
+          <div class="carousel-item">
           <img src="http://neelsonit.com/images/classromm-bg.jpg">
             <div class="carousel-caption d-none d-md-block">
               <h3>Get feedback</h3>
@@ -65,10 +66,19 @@
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-        <h1>Half Slider by Start Bootstrap</h1>
-        <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
-          <code>half-slider.css</code>
-          file.</p>
+          <% if signed_in? %>  
+          <div class="text-center">
+            <a href="/questions"><button class="btn btn-primary">Questions</button></a>
+            <button class="btn btn-primary">Notes</button>
+            <button class="btn btn-primary">Flash Cards</button>
+            <button class="btn btn-primary">Quizes</button>
+          </div>
+          <% else %>
+          <div class="text-center">
+            <a href="/sign_in"><button class="btn btn-primary">Sign In</button></a>
+            <a href="/sign_up"><button class="btn btn-primary">Sign Up</button></a>
+          </div>
+          <% end %>
       </div>
     </section>
 
@@ -82,7 +92,6 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 
@@ -116,5 +125,3 @@
     
 <!-- 
   </body>
-
-</html> -->
