@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "clearance"
 
 # include bootstrap
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.1.1'
 
 #include fontawesome
 gem 'font-awesome-rails'
