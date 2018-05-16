@@ -1,17 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-=======
-<div class="container">
-
-
-<% @questions.each do |q| %>
-  <h3><%= q.title %></h3>
-  <p><%= q.description %></p>
-  <a href="/questions/<%=q.id%>">view</a>
-  <!-- <a href="/answers/<%=q.id%>">Answer</a> -->
-  <a href="/questions/<%=q.id%>/delete">delete</a>
-<% end %>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +16,6 @@
   </head>
 
   <body>
-
 
  <header>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
