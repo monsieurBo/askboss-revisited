@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.check_box :anonymous %>
+    <%= form.label :post_anonymously %>
+  </div>
+
+  <div class="field">
     <%= form.label :answer %>
     <%= form.text_field :answer %>
   </div>
