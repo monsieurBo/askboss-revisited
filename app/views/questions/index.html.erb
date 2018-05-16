@@ -15,9 +15,9 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.title %></td>
+        <td style="white-space: nowrap;"><%= question.title %></td>
         <td><%= question.description %></td>
-        <td><%= question.user.first_name %></td>
+        <td style="white-space: nowrap;"><%= question.user.first_name %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,6 +27,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Question', new_question_path %>
-
+<div class="text-center">
+  <a href="/questions/new"><button class="btn btn-primary">New Question</button></a>
+</div>
