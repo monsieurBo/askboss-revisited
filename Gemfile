@@ -39,10 +39,16 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
+<<<<<<< HEAD
 =======
 # gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
 >>>>>>> feature/Clearance:askboss/Gemfile
+=======
+#to protect authorizations
+gem 'figaro'
+
+>>>>>>> feature/homepage
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
