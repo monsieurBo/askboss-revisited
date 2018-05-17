@@ -1,15 +1,15 @@
-<div class="container">
-    <br/>
+<%=form_for @user do |form| %>
 
-  <div id="clearance" class="sign-up jumbotron">
-    <div class="container">
-    <h2 class="display-4 text-center">Sign Up With AskBoss</h2>
-    <br/>
 
-    
-      <%= render partial: '/users/form' %>
+	<div class="field">
+	    <%= form.label :libraries %>
+	    <%= form.file_field :libraries, multiple: true %>
+  	</div>
 
-   
-    </div>
-  </div>
-</div>
+	<div class="submit-field">
+	  <%= form.submit %>
+	</div>
+
+
+ <% end %>
+>>>>>>> installed all necessary gems and required the necessary in order to upload files and images

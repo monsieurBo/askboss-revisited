@@ -70,7 +70,7 @@ class UsersController < Clearance::UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :qualification, :verified)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :qualification, :verified, {libraries:[]})
     end
 end
 
