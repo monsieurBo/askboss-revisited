@@ -29,6 +29,7 @@
       <%= form.hidden_field :user_id, value: current_user.id %>
     </div>
 
+
     <div class="actions" style="margin-top: 5px;">
       <%= form.submit "Submit",class: "btn btn-primary" %>
       <%= link_to 'Back', questions_path, class: "btn btn-primary" %>
@@ -36,3 +37,9 @@
 
   <% end %>
 </div>
+
+  <div class="field">
+    <%= form.hidden_field :question_id, value: params[:question_id] %>
+  </div>
+<% end %>
+

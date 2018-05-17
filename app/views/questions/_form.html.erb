@@ -24,9 +24,14 @@
       <%= form.text_area :description, class: "form-control", id: "formGroupExampleInput", type: "text", placeholder: "Enter description here", rows: 5 %>
     </div>
 
-    <div class="field">
-      <%= form.hidden_field :user_id, value: current_user.id %>
-    </div>
+  <div class='field'>
+    <%= form.label :tag_list, 'Tags (separated by commas)' %><br/>
+    <%= form.text_field :tag_list, value: form.object.tag_list.to_s %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
 
   <br>
 

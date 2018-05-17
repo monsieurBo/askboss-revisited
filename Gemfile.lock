@@ -1,3 +1,18 @@
+GIT
+  remote: https://github.com/mbleigh/acts-as-taggable-on
+  revision: 38fefffc8f104455f87fdccd77841a2f550b16c6
+  specs:
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
+
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 3e15302ce15e35b3845a2237e75e6f608f66d66d
+  branch: master
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.0)
@@ -222,7 +238,11 @@ DEPENDENCIES
   chromedriver-helper
   clearance
   coffee-rails (~> 4.2)
+<<<<<<< b323d4a2b9d880f6ea325db1f56de4a377348d0d
   figaro
+=======
+  faker!
+>>>>>>> completed answers and tags
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
