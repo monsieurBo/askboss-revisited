@@ -9,50 +9,50 @@
 user = {}
 user['password'] = '1234'
 
-# ActiveRecord::Base.transaction do
-#   10.times do 
-#     user['first_name'] = Faker::Name.first_name 
-#     user['last_name'] = Faker::Name.last_name
-#     user['email'] = Faker::Internet.email
-#     user['role'] = rand(1..2)
-#     user['qualification'] = Faker::Educator.course
+ActiveRecord::Base.transaction do
+  10.times do 
+    user['first_name'] = Faker::Name.first_name 
+    user['last_name'] = Faker::Name.last_name
+    user['email'] = Faker::Internet.email
+    user['role'] = rand(1..2)
+    user['qualification'] = Faker::Educator.course
 
-#     User.create(user)
-#   end
-# end 
+    User.create(user)
+  end
+end 
 
 # Seed Question
 question = {}
 uids = []
 User.all.each { |u| uids << u.id }
 
-# ActiveRecord::Base.transaction do
-#   40.times do 
-#     question['title'] = Faker::HowIMetYourMother.quote
-#     question['description'] = Faker::ChuckNorris.fact
+ActiveRecord::Base.transaction do
+  40.times do 
+    question['title'] = Faker::HowIMetYourMother.quote
+    question['description'] = Faker::ChuckNorris.fact
 
-#     question['user_id'] = uids.sample
+    question['user_id'] = uids.sample
 
-#     Question.create(question)
-#   end
-# end
+    Question.create(question)
+  end
+end
 
 # Seed Answer
 answer = {}
 qids = []
 Question.all.each { |q| qids << q.id }
 
-# ActiveRecord::Base.transaction do
-#   100.times do 
-#     answer['answer'] = Faker::FamilyGuy.quote
-#     answer['anonymous'] = rand(0..1)
+ActiveRecord::Base.transaction do
+  100.times do 
+    answer['answer'] = Faker::FamilyGuy.quote
+    answer['anonymous'] = rand(0..1)
 
-#     answer['user_id'] = uids.sample
-#     answer['question_id'] = qids.sample
+    answer['user_id'] = uids.sample
+    answer['question_id'] = qids.sample
 
-#     Answer.create(answer)
-#   end
-# end
+    Answer.create(answer)
+  end
+end
 
 # Seed Vote
 vote = {}

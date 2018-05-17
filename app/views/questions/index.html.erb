@@ -16,7 +16,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td style="white-space: nowrap;"><%= question.title %></td>
+        <td><%= question.title %></td>
         <td><%= question.description %></td>
         <td style="white-space: nowrap;"><%= question.user.first_name %></td>
         <td><%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 30), question%></td>
