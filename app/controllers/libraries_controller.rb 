@@ -1,0 +1,25 @@
+class LibrariesController < ApplicationController
+	before_action :set_user
+
+	def create
+		add_more_libraries(libraries_params[:libraries])
+		flash[:error] = "Failed uploading library" unless @user.save
+		redirect_to edit_user_path
+	end
+
+	private
+
+	def set_user
+      @user = current_user
+    end
+
+    def add_more_libraries(new_libraries)
+      libraries = @user.libraries
+      libraries += new_libraries
+      @user.libraries = libraries
+    end
+
+    def libraries_params
+       params.require(:user).permit({libraries:[]})
+    end
+end
