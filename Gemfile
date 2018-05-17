@@ -39,7 +39,6 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
-
 #include faker generator
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 

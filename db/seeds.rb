@@ -42,6 +42,7 @@ answer = {}
 qids = []
 Question.all.each { |q| qids << q.id }
 
+
 ActiveRecord::Base.transaction do
   100.times do 
     answer['answer'] = Faker::FamilyGuy.quote
