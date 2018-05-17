@@ -238,15 +238,7 @@ DEPENDENCIES
   chromedriver-helper
   clearance
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-<<<<<<< b323d4a2b9d880f6ea325db1f56de4a377348d0d
-  figaro
-=======
   faker!
->>>>>>> completed answers and tags
-=======
-  faker!
->>>>>>> 2c7c199d964fe4f62f98c0325165ee73f8a668ed
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
