@@ -4,17 +4,18 @@ class LibrariesController < ApplicationController
 	def create
 		add_more_libraries(libraries_params[:libraries])
 		flash[:error] = "Failed uploading library" unless @user.save
-		redirect_to edit_user_path
+		redirect_to :back
 	end
 
 	private
 
-	def set_user
-      @user = current_user
+	  def set_user
+      @user = User.find(params[:id])
     end
 
     def add_more_libraries(new_libraries)
       libraries = @user.libraries
+      byebug
       libraries += new_libraries
       @user.libraries = libraries
     end
