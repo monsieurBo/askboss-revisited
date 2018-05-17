@@ -1,33 +1,45 @@
-<%= form_with(model: answer, url: question_answers_path(params[:question_id]), method: :post) do |form| %>
-  <% if answer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+<div class="container">
+  <%= form_with(model: answer, url: question_answers_path(params[:question_id]), method: :post) do |form| %>
+    <% if answer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
 
-      <ul>
-      <% answer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% answer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+
+    <div class="field">
+     <label for="exampleInputEmail1">Answer</label>
+        <%= form.text_area :answer, class: "form-control", id: "formGroupExampleInput", type: "text", placeholder: "Enter answer here", rows: 5 %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.check_box :anonymous %>
-    <%= form.label :post_anonymously %>
-  </div>
+    <div class="field">
+      <%= form.check_box :anonymous %>
+      <%= form.label :post_anonymously %>
+    </div>
 
-  <div class="field">
-    <%= form.label :answer %>
-    <%= form.text_field :answer %>
-  </div>
 
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
+    <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+
+    <div class="actions" style="margin-top: 5px;">
+      <%= form.submit "Submit",class: "btn btn-primary" %>
+      <%= link_to 'Back', questions_path, class: "btn btn-primary" %>
+    </div>
 
   <div class="field">
     <%= form.hidden_field :question_id, value: params[:question_id] %>
   </div>
+  <% end %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
