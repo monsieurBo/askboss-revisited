@@ -4,7 +4,12 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
+    # @questions = Question.all
   end
 
   # GET /questions/1
@@ -26,6 +31,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.tag_list.add(params[:question][:tag_list], parse: true)
 
     respond_to do |format|
       if @question.save
@@ -70,6 +76,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:title, :description, :user_id)
+      params.require(:question).permit(:title, :description, :user_id, tag_list: [])
     end
 end

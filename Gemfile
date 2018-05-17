@@ -38,6 +38,12 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
+#include faker generator
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+#include tags
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

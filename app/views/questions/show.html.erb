@@ -27,7 +27,9 @@
 
 <p><%=@question.description%></p><br><br/>
 <p>posted by <%=User.find(@question.user_id).first_name%> <%=User.find(@question.user_id).last_name%> at <%=@question.created_at%><br/>
-
+<% if !@question.tag_list.empty? %>
+<p>Tags: <%= raw(@question.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
+<% end %>
 <!-- UPVOTE/DOWNVOTES -->
 <% vote = Vote.find_by(question_id: @question.id, user_id: current_user.id) %>
 <% if !vote.nil? %>
@@ -58,19 +60,6 @@
 <!-- ANSWER drop down box -->
 <div id="answer" class="collapse">
 
-	<form action="/answers/<%=@question.id%>" method="POST">
-		<input name="username" value="<%=current_user.first_name%> <%=current_user.last_name%>" style="display: none">
-    <div class="form-group form-check">
-	    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="anonymous" value="Anonymous">
-	    <label class="form-check-label" for="exampleCheck1">Post as Anonymous</label>
-	  </div>
-    <div class="form-group">
-      <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="your answer here"></textarea>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Save changes</button>
-    </div>
-  </form>
 </div>
 
 <%if @answers %>
@@ -80,7 +69,11 @@
 		
 		<div class="card shadow-sm">
 			<div class="card-header">
-			  <%= a.user.first_name %> Answered <%= a.created_at %>
+				<% if a.anonymous? %>
+			  	Anonymous answered <%= a.created_at %>
+			  <% else %>
+			  	<%= a.user.first_name %> answered <%= a.created_at %>
+		  	<% end %>
 		  </div>
 		  <div class="card-body">
 			  <p class="card-text"><%=a.answer%></p>
