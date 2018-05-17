@@ -39,19 +39,11 @@ gem 'font-awesome-rails'
 #include jquery & jquery ujs
 gem 'jquery-rails'
 
-<<<<<<< b323d4a2b9d880f6ea325db1f56de4a377348d0d
-# gem 'bcrypt', '~> 3.1.7'
-gem 'clearance'
-
-#to protect authorizations
-gem 'figaro'
-=======
 #include faker generator
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 #include tags
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
->>>>>>> completed answers and tags
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
