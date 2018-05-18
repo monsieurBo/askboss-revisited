@@ -1,7 +1,7 @@
 class UsersController < Clearance::UsersController
   # include Clearance::Controller
   protect_from_forgery with: :exception
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:dashboard, :show, :edit, :update, :destroy]
 
   def new
   	@user = User.new
@@ -9,6 +9,10 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def dashboard
+    @user = current_user
   end
 
   def edit
