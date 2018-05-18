@@ -10,11 +10,13 @@ class QuizzesController < ApplicationController
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
+    @problems = Problem.where(quiz_id: @quiz.id)
   end
 
   # GET /quizzes/new
   def new
     @quiz = Quiz.new
+    @quiz.problems.build.solutions.build
   end
 
   # GET /quizzes/1/edit
@@ -69,6 +71,6 @@ class QuizzesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
-      params.require(:quiz).permit(:name, :user_id)
+      params.require(:quiz).permit(:name, :user_id, problems_attributes: [ :question, :quiz_id, :solutions_attributes => [:answer, :problem_id] ])
     end
 end

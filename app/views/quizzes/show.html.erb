@@ -6,9 +6,15 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @quiz.user %>
+  <% @problems.each_with_index do |p,index| %>
+  	<strong>Questions:</strong>
+	  <%= index+1 %><%= p.question %>
+	  <strong>Answers:</strong>
+	  <%= index+1 %><%= p.solutions %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %>
+<%= link_to 'Back', quizzes_path %> |
+<%= link_to 'Add Questions', new_quiz_problem_path(@quiz) %>
+

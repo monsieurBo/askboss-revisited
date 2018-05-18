@@ -1,4 +1,4 @@
-<%= form_with(model: solution, local: true) do |form| %>
+<%= form_with(model: solution, url: problem_solutions_path(params[:problem_id]), method: :post) do |form| %>
   <% if solution.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(solution.errors.count, "error") %> prohibited this solution from being saved:</h2>
@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :problem_id %>
-    <%= form.text_field :problem_id %>
+    <%= form.hidden_field :problem_id, value: params[:problem_id] %>
   </div>
 
   <div class="actions">

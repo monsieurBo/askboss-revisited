@@ -15,6 +15,7 @@ class ProblemsController < ApplicationController
   # GET /problems/new
   def new
     @problem = Problem.new
+    @problem.solutions.build
   end
 
   # GET /problems/1/edit
@@ -28,7 +29,7 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.save
-        format.html { redirect_to @problem, notice: 'Problem was successfully created.' }
+        format.html { redirect_to quiz_path(@problem.quiz), notice: 'Problem was successfully created.' }
         format.json { render :show, status: :created, location: @problem }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class ProblemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:question, :quiz_id)
+      params.require(:problem).permit(:question, :quiz_id, :solutions_attributes => [:answer, :problem_id])
     end
 end
