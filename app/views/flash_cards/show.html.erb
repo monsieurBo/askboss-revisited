@@ -1,0 +1,13 @@
+<%= @flashcard.name%><br>
+<% count=0%>
+<% x = Card.where(flash_card_id: @flashcard.id) %>
+<% for i in x do %>
+<%= count +1 %>
+<%= i.question%><br>
+A: <%= i.answer %><br>
+<% count+=1%>
+<%end%>
+
+
+<%= link_to "New Card", "/flash_cards/#{params[:id]}/cards/new" %><br>
+<%= link_to "All flashcards", flash_cards_path %>

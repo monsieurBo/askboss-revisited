@@ -2,6 +2,7 @@ class LibrariesController < ApplicationController
 	before_action :set_user
 
 	def create
+    byebug
 		add_more_libraries(libraries_params[:libraries])
 		flash[:error] = "Failed uploading library" unless @user.save
 		redirect_to :back
@@ -15,7 +16,7 @@ class LibrariesController < ApplicationController
 
     def add_more_libraries(new_libraries)
       libraries = @user.libraries
-      byebug
+      
       libraries += new_libraries
       @user.libraries = libraries
     end

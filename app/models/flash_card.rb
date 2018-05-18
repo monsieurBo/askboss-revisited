@@ -1,5 +1,5 @@
-class Flash_card < ApplicationRecord
-	belongs_to :user, index:true
+class FlashCard < ApplicationRecord
+	belongs_to :user
 	has_many :cards
 end
 	

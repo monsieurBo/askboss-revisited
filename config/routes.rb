@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :flash_cards do
+    resources :cards, only:[:new, :create]
+  end
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
 
