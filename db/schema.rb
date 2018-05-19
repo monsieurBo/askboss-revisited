@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_16_123216) do
+ActiveRecord::Schema.define(version: 2018_05_18_041613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 2018_05_16_123216) do
     t.boolean "anonymous", default: false
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.bigint "flash_card_id"
+    t.index ["flash_card_id"], name: "index_cards_on_flash_card_id"
+  end
+
+  create_table "flash_cards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.index ["user_id"], name: "index_flash_cards_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -72,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_05_16_123216) do
     t.string "role", default: "0"
     t.string "qualification"
     t.boolean "verified", default: false
+    t.json "libraries"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
