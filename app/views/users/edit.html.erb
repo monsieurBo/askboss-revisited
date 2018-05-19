@@ -1,15 +1,19 @@
-<div class="container">
-    <br/>
+<%= @library = Library.new %>
+<%=form_for user_libraries_path(@user, @library) do |form| %>
 
-  <div id="clearance" class="sign-up jumbotron">
-    <div class="container">
-    <h2 class="display-4 text-center">Sign Up With AskBoss</h2>
-    <br/>
 
-    
-      <%= render partial: '/users/form' %>
+	<div class="field">
+	    <%= form.label :libraries %>
+	    <%= form.file_field :libraries, multiple: true %>
+  	</div>
 
-   
-    </div>
-  </div>
-</div>
+	<div class="submit-field">
+	  <%= form.submit %>
+	</div>
+
+	<% @user.libraries.each do |x| %>
+	<%= x%><br>
+	<%end %>
+
+
+ <% end %>
