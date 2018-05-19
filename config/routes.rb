@@ -31,13 +31,16 @@ Rails.application.routes.draw do
     resources :cards, only:[:new, :create]
   end
 
+  resources :notes do
+    resources :libraries, :only =>[:create, :destroy]
+  end
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
 
 
   resources :users, controller: "users" do
-    resources :libraries, :only =>[:create, :destroy]
-    resource :password,
+      resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
   end

@@ -1,0 +1,20 @@
+<%=form_for @note do |form| %>
+	
+	<div class ="field">
+		<%= form.label :name %>
+		<%= form.text_field :name %>
+	</div>
+
+	<div class="field">
+	    <%= form.label :libraries %>
+	    <%= form.file_field :libraries, multiple: true %>
+  	</div>
+
+	<div class="submit-field">
+	  <%= form.submit "Create" %>
+	</div>
+
+
+
+
+ <% end %>
