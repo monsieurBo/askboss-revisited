@@ -70,6 +70,6 @@ class ProblemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:question, :quiz_id, :solutions_attributes => [:answer, :problem_id])
+      params.require(:problem).permit(:question, :quiz_id, :solutions_attributes => [:answer,  :correct, :problem_id])
     end
 end

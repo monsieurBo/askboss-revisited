@@ -1,0 +1,6 @@
+console.log("show.js")
+
+var value = $("form input[type='radio']:checked").val();
+if (value == "true") {
+	$('#answer-<%= a.id %>').addClass('is-valid')
+}
