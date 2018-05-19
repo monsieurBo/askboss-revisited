@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2018_05_18_041613) do
     t.index ["user_id"], name: "index_flash_cards_on_user_id"
   end
 
+  create_table "problems", force: :cascade do |t|
+    t.string "question"
+    t.bigint "quiz_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_problems_on_quiz_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -46,6 +54,23 @@ ActiveRecord::Schema.define(version: 2018_05_18_041613) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string "answer"
+    t.boolean "correct", default: false
+    t.bigint "problem_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem_id"], name: "index_solutions_on_problem_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -85,7 +110,6 @@ ActiveRecord::Schema.define(version: 2018_05_18_041613) do
     t.string "role", default: "0"
     t.string "qualification"
     t.boolean "verified", default: false
-    t.json "libraries"
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
@@ -102,7 +126,10 @@ ActiveRecord::Schema.define(version: 2018_05_18_041613) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "problems", "quizzes"
   add_foreign_key "questions", "users"
+  add_foreign_key "quizzes", "users"
+  add_foreign_key "solutions", "problems"
   add_foreign_key "votes", "answers"
   add_foreign_key "votes", "questions"
   add_foreign_key "votes", "users"
