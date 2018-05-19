@@ -1,0 +1,22 @@
+<tr>
+  <td><%= f.text_field :question, label: false %></td>
+  <td><%= f.hidden_field :quiz_id, value: params[:quiz_id], label: false %></td>
+  <td>
+    <%= f.label :_destroy, as: :hidden %>
+    <%= link_to 'Delete', '#', class: 'remove_record' %>
+  </td>
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Correct?</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= f.fields_for :solutions do |builder| %>
+      <%= render 'solution', f: builder %>
+    <% end %>
+  </tbody>
+</tr>
+
+

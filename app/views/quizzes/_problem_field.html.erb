@@ -1,0 +1,15 @@
+<hr/>
+<div class="fields">
+  <%= f.label :question %>
+  <%= f.text_field :question %>
+  <%= f.hidden_field :quiz_id, value: params[:quiz_id], label: false %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "[Remove Question]", '#',
+        onClick: "removeField(this); return false;" %>
+
+        <hr/>
+  
+  <div class="answers">
+  </div>
+    <%= link_to_add_fields("Add Answer", f, :solutions) %>
+</div>

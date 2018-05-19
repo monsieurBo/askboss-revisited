@@ -1,0 +1,43 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quiz.name %>
+</p>
+
+
+  <% @problems.each_with_index do |p,index| %>
+  	<form>
+	  <div class="card">
+		  <h5 class="card-header"><%= p.question %></h5>
+		  <% if p.solutions %>
+			  <div class="card-body">
+			  	<% p.solutions.each do |s| %>
+			  		<div class="form-check">
+			  		  <input class="form-check-input" type="radio" name="questions-<%= p.id %>" id="answer-<%= s.id %>" value="<%= s.correct %>" checked>
+			  		  <label class="form-check-label" for="answer-<%= s.id %>">
+			  		    <%= s.answer %>
+			  		  </label>
+			  		</div>
+			  	<% end %>
+			  </div>
+		  <% end %>
+		</div>
+		</form>
+  <% end %>
+	<%= link_to 'Submit', {}, class: "btn btn-success btn-sm", remote: true %><br/>
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %> |
+<%= link_to 'Add Questions', new_quiz_problem_path(@quiz) %>
+
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Default radio
+  </label>
+</div>

@@ -1,0 +1,15 @@
+console.log("show.js")
+
+var value = $("form input[type='radio']:checked").val();
+var id = $("form input[type='radio']:checked");
+
+for(i=0;i<id.length; i++) {
+	console.log(id[i]);
+	console.log(id[i].id);
+	if (id[i].value == "true") {
+		$("#" + id[i].id).addClass("is-valid")
+	}
+	else if (id[i].value == "false") {
+		$("#" + id[i].id).addClass("is-invalid")
+	}
+}

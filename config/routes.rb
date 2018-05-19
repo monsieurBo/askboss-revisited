@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  resources :problems, except: [:new, :create] do
+    resources :solutions, only: [:new,:create]
+  end
+
+  resources :quizzes do
+    resources :problems, only: [:new,:create] do
+      resources :solutions, only: [:new,:create]
+    end
+  end
+
   resources :answers, except: [:new,:create] do
     resource :votes, only: [:vote] do
       member do
