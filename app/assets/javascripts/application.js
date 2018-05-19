@@ -17,3 +17,41 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+// $(document).on('turbolinks:load', function() {
+// 	console.log("formclock")
+
+//   $('form').on('click', '.remove_record', function(event) {
+//     $(this).prev('input[type=hidden]').val('1');
+//     $(this).closest('tr').hide();
+//     return event.preventDefault();
+//   });
+
+//   $('form').on('click', '.add_fields', function(event) {
+//     var regexp, time;
+//     time = new Date().getTime();
+//     regexp = new RegExp($(this).data('id'), 'g');
+//     $('.fields').append($(this).data('fields').replace(regexp, time));
+//     return event.preventDefault();
+//   });
+  
+// });
+
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+
+  // find the new_ + "association" that was defined in Rails helper
+  var regexp = new RegExp("new_" + association, "g");
+
+  // find the container and append in the sub field content
+  $(link).prev().append(content.replace(regexp, new_id));
+  return false;
+}
+
+
+function removeField(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").fadeOut();
+}

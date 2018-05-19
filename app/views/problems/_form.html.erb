@@ -1,0 +1,36 @@
+<%= form_with(model: problem, url: quiz_problems_path(params[:quiz_id]), method: :post) do |form| %>
+  <% if problem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
+
+      <ul>
+      <% problem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :question %>
+    <%= form.text_field :question %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :quiz_id, value: params[:quiz_id] %>
+  </div>
+
+  <%= form.fields_for :solution do |builder| %>
+    <%= render 'solutions/form', form: builder %>
+  <% end %>
+
+  <%= form.fields_for :solution do |s| %>
+    <%= s.label :answer %>
+    <%= s.text_field :answer %>
+    <%= s.hidden_field :problem_id, value: params[:problem_id] %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
