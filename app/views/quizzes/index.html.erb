@@ -2,7 +2,7 @@
 
 <h1>Quizzes</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,11 +14,11 @@
   <tbody>
     <% @quizzes.each do |quiz| %>
       <tr>
-        <td><%= quiz.name %></td>
-        <td><%= quiz.user %></td>
-        <td><%= link_to 'Show', quiz %></td>
-        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="white-space: nowrap;"><%= quiz.name %></td>
+        <td style="white-space: nowrap;"><%= quiz.user.first_name %></td>
+          <td colspan="3"><%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 30), quiz%>
+          <%= link_to image_tag("https://image.flaticon.com/icons/svg/53/53694.svg", width: 30,), edit_quiz_path(quiz) %>
+          <%= link_to image_tag("https://image.flaticon.com/icons/png/128/121/121113.png", width: 30), quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

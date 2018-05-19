@@ -9,8 +9,13 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+<<<<<<< b53a86358b7217b772f7a095779422ab6eebda9b
 
 ActiveRecord::Schema.define(version: 2018_05_20_090510) do
+=======
+ActiveRecord::Schema.define(version: 2018_05_19_095819) do
+>>>>>>> designed quiz index
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +52,6 @@ ActiveRecord::Schema.define(version: 2018_05_20_090510) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
     t.index ["following_id"], name: "index_follows_on_following_id"
-  end
 
   create_table "notes", force: :cascade do |t|
     t.bigint "user_id"
@@ -63,6 +67,23 @@ ActiveRecord::Schema.define(version: 2018_05_20_090510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.string "answer"
+    t.boolean "correct", default: false
+    t.bigint "problem_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem_id"], name: "index_solutions_on_problem_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -118,7 +139,10 @@ ActiveRecord::Schema.define(version: 2018_05_20_090510) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "problems", "quizzes"
   add_foreign_key "questions", "users"
+  add_foreign_key "quizzes", "users"
+  add_foreign_key "solutions", "problems"
   add_foreign_key "votes", "answers"
   add_foreign_key "votes", "questions"
   add_foreign_key "votes", "users"

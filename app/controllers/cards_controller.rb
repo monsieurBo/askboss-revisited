@@ -17,7 +17,6 @@ class CardsController < ApplicationController
 
 		respond_to do |format|
 	      if @card.save
-<<<<<<< 630b64a4310955848cc28e6dae9efb2d55d5a85c
 	        format.html { redirect_to "/flash_cards/#{params[:flash_card_id]}", notice: 'Card was successfully created.' }
 	      else
 	        format.html { render :new }	        
