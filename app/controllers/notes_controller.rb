@@ -14,7 +14,7 @@ class NotesController < ApplicationController
 		@note.user_id = current_user.id
 		@note.libraries=params[:note][:libraries]
 		@note.save
-		# redirect_to :back
+		redirect_to note_path(@note)
 	end
 
 	def edit
