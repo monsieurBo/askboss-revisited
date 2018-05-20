@@ -2,6 +2,9 @@
 <% count=0%>
 <% x = Card.where(flash_card_id: @flashcard.id) %>
 <% for i in x do %>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><%= count +1 %>. <%= i.question%></div>
+  </div>
 <%= count +1 %>
 <%= i.question%><br>
 A: <%= i.answer %><br>
@@ -12,3 +15,11 @@ A: <%= i.answer %><br>
 <%= link_to "Delete FlashCard", flash_card_path, :method => :delete %><br>
 <%= link_to "New Card", "/flash_cards/#{params[:id]}/cards/new" %><br>
 <%= link_to "All flashcards", flash_cards_path %>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
