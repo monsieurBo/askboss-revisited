@@ -1,3 +1,3 @@
 class Solution < ApplicationRecord
-  belongs_to :problem, dependent: :destroy, optional: true
+  belongs_to :problem, optional: true
 end
