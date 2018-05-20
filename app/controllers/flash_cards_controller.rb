@@ -28,6 +28,12 @@ class FlashCardsController < ApplicationController
  	def show
  		@flashcard = FlashCard.find(params[:id])
  	end
+
+ 	def destroy
+ 		@flashcard = FlashCard.find(params[:id])
+ 		@flashcard.destroy
+ 		redirect_to flash_cards_path
+ 	end
 	
 
 end

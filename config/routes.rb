@@ -28,7 +28,11 @@ Rails.application.routes.draw do
   end
 
   resources :flash_cards do
-    resources :cards, only:[:new, :create]
+    resources :cards, only:[:new, :create, :destroy]
+  end
+
+  resources :notes do
+    resources :libraries, :only =>[:create]
   end
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -36,8 +40,7 @@ Rails.application.routes.draw do
 
 
   resources :users, controller: "users" do
-    resources :libraries, :only =>[:create, :destroy]
-    resource :password,
+      resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
   end
@@ -50,5 +53,6 @@ Rails.application.routes.draw do
   root "home#home"
 
   get 'tags/:tag', to: 'questions#index', as: :tag
+  delete "/notes/:id/libraries/:count" => "notes#remove", as: :libdel
 
 end
