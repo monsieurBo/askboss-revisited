@@ -48,11 +48,13 @@ Rails.application.routes.draw do
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "home#home"
 
   get 'tags/:tag', to: 'questions#index', as: :tag
   delete "/notes/:id/libraries/:count" => "notes#remove", as: :libdel
+
+  post ':id/follow_user', to: 'relationships#follow_user', as: :follow_user
+  post ':id/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
 
 end
