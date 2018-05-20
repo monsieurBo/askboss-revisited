@@ -91,9 +91,9 @@
           <% if signed_in? %>  
           <div class="text-center">
             <a href="/questions"><button class="btn btn-primary">Questions</button></a>
-            <button class="btn btn-primary">Notes</button>
-            <button class="btn btn-primary">Flash Cards</button>
-            <button class="btn btn-primary">Quizes</button>
+            <a href ="/notes"><button class="btn btn-primary">Notes</button>
+            <%= link_to 'Flash Cards',flash_cards_path, class: "btn btn-primary" %>
+            <button class="btn btn-primary">Quizzes</button>
           </div>
           <% else %>
           <div class="text-center">
