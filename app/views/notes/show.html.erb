@@ -1,0 +1,7 @@
+<%= @note.name %><br>
+<% @note.libraries.each do|f|%>
+<%= f %><br>
+<% end%>
+<br>
+
+<%=link_to "Edit", edit_note_path%>

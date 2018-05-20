@@ -1,27 +1,27 @@
 class LibrariesController < ApplicationController
-	before_action :set_user
+	before_action :set_note
 
 	def create
     byebug
 		add_more_libraries(libraries_params[:libraries])
-		flash[:error] = "Failed uploading library" unless @user.save
+		flash[:error] = "Failed uploading library" unless @note.save
 		redirect_to :back
 	end
 
 	private
 
-	  def set_user
-      @user = User.find(params[:id])
+	  def set_note
+      @note = Note.find(params[:id])
     end
 
     def add_more_libraries(new_libraries)
-      libraries = @user.libraries
+      libraries = @note.libraries
       
       libraries += new_libraries
-      @user.libraries = libraries
+      @note.libraries = libraries
     end
 
     def libraries_params
-       params.require(:user).permit({libraries:[]})
+       params.require(:note).permit({libraries:[]})
     end
 end
