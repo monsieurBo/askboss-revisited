@@ -1,3 +1,7 @@
 <% for i in @notes do%>
-<%= i.name%><br>
+<%= link_to "#{i.name}", note_path(i.id)%><==<%=link_to "Delete Note", note_path(i.id), method: :delete%><br>
 <%end%>
+<br>
+<%= link_to "New Note", new_note_path%>
+<br>
+<%= link_to "Home", root_path%>

@@ -5,9 +5,10 @@
 <%= count +1 %>
 <%= i.question%><br>
 A: <%= i.answer %><br>
+<%=link_to "delete card above", flash_card_card_path(@flashcard.id,i.id)%><br>
 <% count+=1%>
 <%end%>
 
-
+<%= link_to "Delete FlashCard", flash_card_path, :method => :delete %><br>
 <%= link_to "New Card", "/flash_cards/#{params[:id]}/cards/new" %><br>
 <%= link_to "All flashcards", flash_cards_path %>
