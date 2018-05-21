@@ -20,6 +20,7 @@
 //= require sb-admin-charts.min
 //= require sb-admin-datatables.min
 //= require sb-admin.min
+//= require conversations
 //= require activestorage
 //= require turbolinks
 //= require_tree .

@@ -13,6 +13,11 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+
+  has_many :personal_messages, dependent: :destroy
+
   def follow(user_id)
     following_relationships.create(following_id: user_id)
   end
@@ -20,6 +25,6 @@ class User < ApplicationRecord
   def unfollow(user_id)
     following_relationships.find_by(following_id: user_id).destroy
   end
-  
+
 end
 
