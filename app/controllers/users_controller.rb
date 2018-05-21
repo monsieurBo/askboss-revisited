@@ -8,11 +8,11 @@ class UsersController < Clearance::UsersController
   end
 
   def show
-    
+    @user = User.find(params[:id])
   end
 
   def edit
-  	@user = current_user
+  	@user = User.find(params[:id])
   end
 
   # PATCH/PUT /listings/1
@@ -71,7 +71,7 @@ class UsersController < Clearance::UsersController
  
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :qualification, :verified})
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :qualification, :verified)
     end
 end
 
