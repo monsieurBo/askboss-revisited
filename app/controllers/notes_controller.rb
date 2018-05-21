@@ -30,9 +30,12 @@ class NotesController < ApplicationController
 		# byebug
 		@note = Note.find(params[:id])
 		@note.name = params[:note][:name]
-		@note.libraries += params[:note][:libraries]				
+		if params[:note][:libraries]!=nil
+			@note.libraries += params[:note][:libraries]
+		end				
 		@note.save
-		redirect_to note_path#, notice :"Note was successfully updated"
+		flash[:notice]= "Note was successfully updated"
+		redirect_to note_path
 	end
 
 	def remove
