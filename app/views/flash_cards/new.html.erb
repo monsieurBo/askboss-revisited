@@ -1,11 +1,15 @@
+<br>
 <%= form_for @flashcard do |f|%>
-
-	<div class="field">
-	    <%= f.label :name %>
-	    <%= f.text_field :name %>
-    </div>
-
-     <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="container">
+		<div class="field">
+		    <label for="exampleInputEmail1">Flashcard name</label>
+		    <%= f.text_field :name,  placeholder: "Enter Name of Flashcard", class: 'form-control' , type: 'text' %>
+	    </div>
+	</div>
+	<br>
+		<div class="text-center">
+		    <div class="actions">
+		    <%= f.submit "Submit",class: "btn btn-primary" %>
+	  	</div>
+	 </div>
 <% end %>

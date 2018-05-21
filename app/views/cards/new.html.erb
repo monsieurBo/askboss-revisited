@@ -1,17 +1,20 @@
-<%= form_for(@card, url: {action: "create"}) do |form|%>
-
-	<div class = "field">
-		<%= form.label :question%>
-		<%= form.text_field :question %>
-	</div>
-
-	<div class = "field">
-		<%= form.label :answer %>
-		<%= form.text_field :answer%>
-	</div>
-
-	<div class = "actions">
-		<%= form.submit "Create" %>
-	</div>
-
-<%end%>
+<div class="container">
+	<br>
+	<%= form_for(@card, url: {action: "create"}) do |form|%>
+		<div class = "field">
+			<label for="formGroupExampleInput">Question</label>
+			<%= form.text_field :question, placeholder: "Enter question", class: 'form-control' , type: 'text'  %>
+		</div>
+		<hr>
+		<div class = "field">
+			<label for="formGroupExampleInput">Answer</label>
+			<%= form.text_area :answer, placeholder: "Enter answer", class: 'form-control' , type: 'text', rows: 5 %>
+		</div>
+		<br>
+		<div class="text-center">
+			<div class = "actions">
+				<%= form.submit "Create" , class: 'btn btn-primary' %>
+			</div>
+		</div>
+	<%end%>
+</div>

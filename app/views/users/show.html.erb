@@ -1,15 +1,74 @@
-<div class="container bg-info">
-	<div class="row">
-  <div class="col-sm-4">
-  <% if current_user_is_following(current_user.id, @user.id) %>
-    <%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
-  <% else %>
-    <%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
-                        <% end %>
-  </div>
-  <div class="col-sm-8">
-  <h2> Hey, I'm <%= @user.first_name %>! </h2>
-  <h5> Joined in <%=@user.created_at%></h5>
-  </div>
-</div>
-</div>
+<% if signed_in? %>
+	<html>
+		<head>
+			<title>Profile - <%= @user.first_name %> <%= @user.last_name %></title>
+			<style type="text/css">
+				#avatar {
+					border-radius: 50%;
+					width: 350px;
+					height: 350px;
+					background-image: url("https://www.presstelegram.com/wp-content/uploads/2017/11/1118_spo_idb-l-fb-rancho-bosco-6-jv_24895875.jpg?w=620");
+					background-size: cover; 
+				}
+			</style>
+		</head>
+	<br>
+		<body>
+
+		<br>
+			
+		<div class="container">
+			<div class="row">
+			  			<div class="col-sm-4">
+		  					<div id="avatar"></div> 
+			  				<hr>
+			  				<h4>Name: </h4>
+			  				<p><%= @user.first_name %> <%= @user.last_name %></p>
+			  				<h4>Email: </h4> 
+			  				<p><%= @user.email %></p>
+			  				<h4>Job: </h4>
+			  				<p><%= @user.role %></p>
+			  				<% if current_user_is_following(current_user.id, @user.id) %>
+								<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+							<% else %>
+								<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
+							<% end %>
+			  			</div>
+	  			<div class="col-sm-8">
+	  				<h2> Hey, <%= @user.first_name %>!</h2>
+	  				<h5>Joined in <%=@user.created_at%></h5>
+	  				<br>
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+					  <li class="nav-item">
+					    <a class="nav-link active" id="qualifications-tab" data-toggle="tab" href="#qualifications" role="tab" aria-controls="qualifications" aria-selected="true">Qualifications</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" id="quizzes-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="quizzes" aria-selected="false">Quizzes</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">Notes</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="contact" aria-selected="false">Flash Cards</a>
+					  </li>					  
+					</ul>
+					<div class="tab-content" id="myTabContent">
+					  <div class="tab-pane fade show active" id="qualifications" role="tabpanel" aria-labelledby="qualifications-tab"><%= @user.qualification %></div>
+					  <div class="tab-pane fade" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab"></div>
+					  <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">This is where the content will go.
+					  </div>
+					  <div class="tab-pane fade" id="flash_cards" role="tabpanel" aria-labelledby="flash_card-tab">Flash
+					  </div>					  
+						</div>
+					  </div>
+					</div>
+	  			</div>
+			</div>
+		</div>
+		</body>
+	</html>
+<% else %>
+    <script language="javascript">
+          window.location.href = "/"
+      </script>
+<% end %>

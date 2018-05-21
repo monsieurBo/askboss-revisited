@@ -14,22 +14,21 @@
 
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "Enter name of quiz", class: 'form-control' , type: 'text' %>
     </div>
 
     <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
 
-    <div class='question-field'>
+    <div class='question-field', style="display: inline;">
       <%= f.fields_for :problems do |builder| %>
         <%= render 'problem_field', f: builder %>
       <% end %>
-    </div>
     <%= link_to_add_fields("Add Question", f, :problems) %>
-
-    <div>
-      <%= f.submit %>
+    </div>
+    <div class="text-center">
+      <%= f.submit class: 'btn btn-light' %>
     </div>
   <% end %>
 </div>

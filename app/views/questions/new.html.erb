@@ -1,3 +1,9 @@
+<% if signed_in? %>
 <h1 style="text-align: center;">New Question</h1>
 
 <%= render 'form', question: @question %>
+<% else %>
+    <script language="javascript">
+          window.location.href = "/"
+      </script>
+<% end -%>

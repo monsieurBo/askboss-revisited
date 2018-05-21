@@ -5,7 +5,11 @@ class FlashCardsController < ApplicationController
 	end
 
 	def index
-		@flashcards = FlashCard.all
+		if params[:action] == "dashboard"
+			@flashcards == FlashCard.where(user_id: current_user.id)
+		else
+			@flashcards = FlashCard.all
+		end
 	end
 
 	def create

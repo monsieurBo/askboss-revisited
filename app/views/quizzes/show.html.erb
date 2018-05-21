@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Quiz:</strong>
   <%= @quiz.name %>
 </p>
 
@@ -28,9 +28,10 @@
   <% end %>
 	<%= link_to 'Submit', {}, class: "btn btn-success btn-sm", remote: true %><br/>
 
+	<hr>
 
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %> |
-<%= link_to 'Add Questions', new_quiz_problem_path(@quiz) %>
+<%= link_to 'Edit', edit_quiz_path(@quiz), class: 'btn btn-primary btn-sm' %> 
+<%= link_to 'Back', quizzes_path, class: 'btn btn-primary btn-sm' %> 
+<%= link_to 'Add Questions', new_quiz_problem_path(@quiz), class: 'btn btn-primary btn-sm' %>
 
 </div>

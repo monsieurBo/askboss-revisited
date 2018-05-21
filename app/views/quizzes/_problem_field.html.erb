@@ -1,11 +1,13 @@
 <hr/>
 <div class="fields">
   <%= f.label :question %>
-  <%= f.text_field :question %>
+  <%= f.text_field :question, placeholder: "Enter question", class: 'form-control' , type: 'text' %>
+    </div>
   <%= f.hidden_field :quiz_id, value: params[:quiz_id], label: false %>
     <%= f.hidden_field :_destroy %>
-    <%= link_to "[Remove Question]", '#',
-        onClick: "removeField(this); return false;" %>
+    <br>
+    <%= link_to "Remove Question", '#',
+        onClick: "removeField(this); return false;" , class: 'btn btn-success'%>
 
         <hr/>
   

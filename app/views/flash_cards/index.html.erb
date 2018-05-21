@@ -1,10 +1,20 @@
-<%count = 0%>
-<%for i in @flashcards do%>
-<%=count+1%>
-<%= link_to"#{i.name}", "/flash_cards/#{i.id}" %><br>
-<%count +=1%>
-<%end%>
+
 <br>
-<br>
-<br>
-<%= link_to "Home", root_path%>
+<div>
+	<div class="card-columns">
+		<%for i in @flashcards do%>
+			<div class="card", style="width: 250px;">
+				<div class="card-body">
+					<h5 class="card-title"><%= i.name %></h5>
+						<h6 class="card-subtitle mb-2 text-muted">By <%= i.user.first_name %> <%= i.user.last_name %></h6>
+					    <%= link_to "show", "/flash_cards/#{i.id}", class: 'card-link' %>
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>
+<hr>
+<div class="text-center">
+		<a href="/flash_cards/new"><div class="btn btn-primary">Create New Flash Card</div></a>
+</div>
+

@@ -51,6 +51,12 @@ gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#For function group_by. Mainly used for charts
+gem 'groupdate'
+
+#To create Charts
+gem 'chartkick'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

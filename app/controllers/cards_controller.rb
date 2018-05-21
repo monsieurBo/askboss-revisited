@@ -9,7 +9,6 @@ class CardsController < ApplicationController
 	end
 
 	def create
-		# byebug
 		@card = Card.new
 		@card.question = params[:card][:question]
 		@card.answer = params[:card][:answer]
@@ -18,19 +17,16 @@ class CardsController < ApplicationController
 
 		respond_to do |format|
 	      if @card.save
-	        format.html { redirect_to "/flash_cards/#{params[:flash_card_id]}", notice: 'Card was successfully created.' }	        
+	        format.html { redirect_to "/flash_cards/#{params[:flash_card_id]}", notice: 'Card was successfully created.' }
 	      else
 	        format.html { render :new }	        
 	      end
     	end
 	end
 
-	def destroy
-		# byebug
+		def destroy
 		@card = Card.find(params[:id])
 		@card.destroy
 		redirect_to flash_card_path(params[:flash_card_id])
 	end
-
-
 end
