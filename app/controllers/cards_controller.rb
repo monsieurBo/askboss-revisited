@@ -24,12 +24,9 @@ class CardsController < ApplicationController
     	end
 	end
 
-	def destroy
-		# byebug
+		def destroy
 		@card = Card.find(params[:id])
 		@card.destroy
 		redirect_to flash_card_path(params[:flash_card_id])
 	end
-
-
 end

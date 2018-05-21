@@ -40,24 +40,24 @@
 	  				<br>
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 					  <li class="nav-item">
-					    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#qualifications" role="tab" aria-controls="home" aria-selected="true">Qualifications</a>
+					    <a class="nav-link active" id="qualifications-tab" data-toggle="tab" href="#qualifications" role="tab" aria-controls="qualifications" aria-selected="true">Qualifications</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="profile" aria-selected="false">Quizzes/</a>
+					    <a class="nav-link" id="quizzes-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="quizzes" aria-selected="false">Quizzes</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="contact" aria-selected="false">Notes</a>
+					    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">Notes</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="contact" aria-selected="false">Flash Cards</a>
+					    <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="contact" aria-selected="false">Flash Cards</a>
 					  </li>					  
 					</ul>
 					<div class="tab-content" id="myTabContent">
-					  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">This is where the content will go.</div>
-					  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">This is where the content will go.</div>
-					  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">This is where the content will go.
+					  <div class="tab-pane fade show active" id="qualifications" role="tabpanel" aria-labelledby="qualifications-tab"><%= @user.qualification %></div>
+					  <div class="tab-pane fade" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab"></div>
+					  <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">This is where the content will go.
 					  </div>
-					  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">This is where the content will go.
+					  <div class="tab-pane fade" id="flash_cards" role="tabpanel" aria-labelledby="flash_card-tab">Flash
 					  </div>					  
 						</div>
 					  </div>

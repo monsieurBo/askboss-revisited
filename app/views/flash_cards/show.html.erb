@@ -1,25 +1,122 @@
-<%= @flashcard.name%><br>
-<% count=0%>
-<% x = Card.where(flash_card_id: @flashcard.id) %>
-<% for i in x do %>
-<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header"><%= count +1 %>. <%= i.question%></div>
-  </div>
-<%= count +1 %>
-<%= i.question%><br>
-A: <%= i.answer %><br>
-<%=link_to "delete card above", flash_card_card_path(@flashcard.id,i.id), method: :delete%><br>
-<% count+=1%>
-<%end%>
-
-<%= link_to "Delete FlashCard", flash_card_path, :method => :delete %><br>
-<%= link_to "New Card", "/flash_cards/#{params[:id]}/cards/new" %><br>
-<%= link_to "All flashcards", flash_cards_path %>
-
-<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Dark card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+<html>
+	<head>
+		<style type="text/css">
+			.image-flip:hover .backside, .image-flip.hover .backside {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	}
+	 
+	.image-flip:hover .frontside, .image-flip.hover .frontside {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	}
+	 
+	.image-flip {
+	margin-bottom:200px;
+	width: 300px;
+	height: 250px;
+	}
+	 
+	.mainflip {
+	-webkit-transition: 1s;
+	-webkit-transform-style: preserve-3d;
+	-ms-transition: 1s;
+	-moz-transition: 1s;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transition: 1s;
+	transform-style: preserve-3d;
+	position: relative;
+	}
+	 
+	.frontside, .backside {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: 1s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 1s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: 1s;
+	-o-transform-style: preserve-3d;
+	-ms-transition: 1s;
+	-ms-transform-style: preserve-3d;
+	transition: 1s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+	 
+	.frontside {
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	z-index: 2;
+	}
+	 
+	.backside {
+	background: white;
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+	}
+	 
+	.card, .card-img-top {
+	border-radius: 0;
+	}
+		</style>
+	</head>
+	<body>
+		<br>
+		<% x = Card.where(flash_card_id: @flashcard.id) %>
+		<% for i in x do %>
+		<div class="container" style="text-align: center; display: inline-block;">
+			<div class="card-deck">
+				<div class="image-flip" >
+					<div class="mainflip" ontouchstart="this.classList.toggle('hover');">
+						<div class="frontside">
+							<div class="card" style="width:20rem;">
+								<div class="card-header"><%= @flashcard.name%></div>
+									<div class="card-body">
+										<h4 class="card-title"><%= i.question%></h4>
+									<p class="card-text">Place your mouse over the card to see the answer</p>
+								</div>
+							</div>
+						</div>
+									<div class="backside">
+										<div class="card" style="width:20rem;">
+											<div class="card-header">
+												<%= @flashcard.name%>
+											</div>
+											<div class="card-body">
+												<h4 class="card-title">Answer:</h4>
+												<p class="card-text"><%= i.answer %></p>
+												<% if @flashcard.user_id == current_user.id %>
+													<%=link_to "Delete", flash_card_card_path(@flashcard.id,i.id), method: :delete, class: 'btn btn-primary' %>
+												<% else %>
+												<% end %>
+											</div>
+										</div>
+									</div>
+					</div>
+			</div>
+			<%end%>
+		</div>
+		<div class="container" style="display: inline-block;">
+			<%= link_to "Delete FlashCard", flash_card_path, :method => :delete, class: 'btn btn-primary' %>
+			<%= link_to "New Card", "/flash_cards/#{params[:id]}/cards/new", class: 'btn btn-primary' %>
+			<%= link_to "All flashcards", flash_cards_path, class: 'btn btn-primary' %>
+		</div>
+	</div>
+	</body>
+</html>
+>>>>>>> push ready

@@ -1,20 +1,27 @@
-<%=form_for @note do |form| %>
-	
-	<div class ="field">
-		<%= form.label :name %>
-		<%= form.text_field :name %>
+<head>
+	<title>New note - <%= current_user.first_name %></title>
+</head>
+<br>
+<div class="container">
+	<%=form_for @note do |form| %>
+		
+		<div class ="field">
+			<label for="formGroupExampleInput">Note</label>
+			<%=form.text_field :name, class: "form-control", id: "formGroupExampleInput", type: "text", placeholder: "Enter Note name here" %>
+		</div>
+		<br>
+		<div class="field">
+		    <label for="formGroupExampleInput">File</label>
+		    <%= form.file_field :libraries, multiple: true, type: "file", class: "form-control-file", id: "exampleFormControlFile1" %>
+	  	</div>
+	  	<br>
+	<div class="text-center">
+		<div class="submit-field">
+		  <%= form.submit "Create", class: 'btn btn-primary' %>
+		</div>
 	</div>
 
-	<div class="field">
-	    <%= form.label :libraries %>
-	    <%= form.file_field :libraries, multiple: true %>
-  	</div>
-
-	<div class="submit-field">
-	  <%= form.submit "Create" %>
-	</div>
 
 
-
-
- <% end %>
+	 <% end %>
+ </div>
