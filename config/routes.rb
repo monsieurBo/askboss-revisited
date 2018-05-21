@@ -53,8 +53,8 @@ Rails.application.routes.draw do
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "users#new", as: "sign_up"
 
-  # root "home#home"
-  root "conversations#index"
+  root "home#home"
+  # root "conversations#index"
 
   get 'tags/:tag', to: 'questions#index', as: :tag
   delete "/notes/:id/libraries/:count" => "notes#remove", as: :libdel
