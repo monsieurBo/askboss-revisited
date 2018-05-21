@@ -9,17 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-<<<<<<< 3157770a022b1ab7448eeb1d759b49c048453b7a
-<<<<<<< b53a86358b7217b772f7a095779422ab6eebda9b
 
 ActiveRecord::Schema.define(version: 2018_05_20_090510) do
-=======
-ActiveRecord::Schema.define(version: 2018_05_19_095819) do
->>>>>>> designed quiz index
-=======
->>>>>>> push ready
-
-ActiveRecord::Schema.define(version: 2018_05_19_095819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_05_19_095819) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
     t.index ["following_id"], name: "index_follows_on_following_id"
+  end
 
   create_table "notes", force: :cascade do |t|
     t.bigint "user_id"
