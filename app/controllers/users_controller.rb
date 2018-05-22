@@ -9,6 +9,11 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = User.find(params[:id])
+    @questions = Question.where(user_id: current_user.id)
+    @answers = Answer.where(user_id: current_user.id)
+    @notes = Note.where(user_id: current_user.id)
+    @flashcards = FlashCard.where(user_id: current_user.id)
+    @quizzes = Quiz.where(user_id: current_user.id)
   end
 
   def dashboard

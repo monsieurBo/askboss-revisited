@@ -167,9 +167,9 @@
                     <% @conversations.each do |c| %>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/conversations/<%= c.id %>">
-                      <strong><%= c.receiver.first_name %> <%= c.receiver.last_name %></strong>
-                      <span class="small float-right text-muted">11:21 AM</span>
-                      <div class="dropdown-message small"><%= c.personal_messages.first.body %></div>
+                        <strong><%= c.receiver.first_name %> <%= c.receiver.last_name %></strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small"><%= c.personal_messages.first.body %></div>
                     </a>
                   <% end %>
                     <div class="dropdown-divider"></div>

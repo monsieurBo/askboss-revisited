@@ -113,3 +113,11 @@ a.custom-card,
 a.custom-card:hover {
   color: inherit;
 }
+
+#avatar {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  background-image: url("https://www.presstelegram.com/wp-content/uploads/2017/11/1118_spo_idb-l-fb-rancho-bosco-6-jv_24895875.jpg?w=620");
+  background-size: cover; 
+}
