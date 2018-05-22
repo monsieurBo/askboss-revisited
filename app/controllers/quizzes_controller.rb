@@ -5,6 +5,11 @@ class QuizzesController < ApplicationController
   # GET /quizzes.json
   def index
     @quizzes = Quiz.all
+    
+    respond_to do |format|
+      format.js
+      format.html { render :index }
+    end
   end
 
   # GET /quizzes/1

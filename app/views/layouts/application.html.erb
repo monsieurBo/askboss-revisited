@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tag %>
@@ -17,5 +19,11 @@
   </div>
 
   <%= yield %>
+
+  <footer>
+    <div class="container align-middle">
+      <p class="m-0 text-center text-white align-middle">Copyright &copy; Your Website 2018</p>
+    </div>
+  </footer>
 </body>
 </html>

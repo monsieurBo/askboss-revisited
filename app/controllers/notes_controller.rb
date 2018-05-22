@@ -1,6 +1,11 @@
 class NotesController < ApplicationController
  	def index
  		@notes = Note.all
+ 		
+    respond_to do |format|
+      format.js
+      format.html { render :index }
+    end
 	end
 
 	def new

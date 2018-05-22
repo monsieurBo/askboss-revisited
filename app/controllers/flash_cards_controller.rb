@@ -10,6 +10,10 @@ class FlashCardsController < ApplicationController
 		else
 			@flashcards = FlashCard.all
 		end
+		respond_to do |format|
+		  format.js
+		  format.html { render :index }
+		end
 	end
 
 	def create

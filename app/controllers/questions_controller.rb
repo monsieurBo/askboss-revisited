@@ -9,6 +9,10 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
+    respond_to do |format|
+      format.js
+      format.html { render :index }
+    end
     # @questions = Question.all
   end
 

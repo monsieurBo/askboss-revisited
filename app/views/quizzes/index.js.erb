@@ -1,0 +1,6 @@
+console.log("quizzes idndex")
+
+$('.active').removeClass('active');
+$('#quizzes').addClass('active');
+$('#content').html("");
+$('#content').append("<%= j(render(:partial => 'quizzes/index')) %>");
