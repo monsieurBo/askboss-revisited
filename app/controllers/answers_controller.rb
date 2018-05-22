@@ -4,7 +4,11 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    if params[:action] == "dashboard"
+      @answers = Answer.where(user_id: current_user.id)
+    else
+      @answers = Answer.all
+    end
   end
 
   # GET /answers/1

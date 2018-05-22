@@ -6,9 +6,17 @@ class QuestionsController < ApplicationController
   def index
     if params[:tag]
       @questions = Question.tagged_with(params[:tag])
+    elsif params[:action] == "dashboard"
+      @user = User.find(params[:id])
+      @questions = Question.where(user_id: current_user.id)
+      @answers = Answer.where(user_id: current_user.id)
+      @notes = Note.where(user_id: current_user.id)
+      @flashcards = FlashCard.where(user_id: current_user.id)
+      @quizzes = Quiz.where(user_id: current_user.id)
     else
       @questions = Question.all
     end
+
     respond_to do |format|
       format.js
       format.html { render :index }

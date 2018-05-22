@@ -12,6 +12,7 @@
       <% if @user.id != current_user.id %>
       <%= link_to "Message #{@user.first_name}", new_personal_message_path(receiver_id: @user), class: 'btn btn-sm follow-button' %>
       <% end %>
+      <div id="message-box"></div>
       <hr> 
       <div class="container">
         <h5>Name: </h5>

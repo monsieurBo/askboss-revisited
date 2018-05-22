@@ -80,7 +80,11 @@ class SessionsController < Clearance::UsersController
   end
 
   def url_after_create
-    Clearance.configuration.redirect_url
+    if current_user.teacher?
+      redirect_to dashboard_path
+    else
+      Clearance.configuration.redirect_url
+    end
   end
 
   def url_after_destroy

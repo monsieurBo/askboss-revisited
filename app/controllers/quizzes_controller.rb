@@ -4,7 +4,11 @@ class QuizzesController < ApplicationController
   # GET /quizzes
   # GET /quizzes.json
   def index
-    @quizzes = Quiz.all
+    if params[:action] == "dashboard"
+      @quizzes = Quiz.where(user_id: current_user.id)
+    else
+      @quizzes = Quiz.all
+    end
     
     respond_to do |format|
       format.js

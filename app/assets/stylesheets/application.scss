@@ -17,8 +17,11 @@
 @import "dataTables.bootstrap4.css";
 @import "sb-admin.min";
 @import "half-slider";
+@import "flashcards";
 
 body {
+  margin: 0;
+  padding: 0;
   background-image: url(retro_bg.jpg);
   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)),url(retro_bg.jpg);
   /*background-position: absolute;*/

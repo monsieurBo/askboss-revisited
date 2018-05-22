@@ -15,6 +15,8 @@
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		      <li class="nav-item active">
 		      <%= link_to "Home", root_path, class: "nav-link" %></li>
+		      <li class="nav-item">
+		      <a class="nav-link btn-danger add_question text-white" href="/questions/new"  data-target="#exampleModalCenter">Ask Question</a></li>
 		      <!-- search bar -->
 		      <%= form_tag('/search', method: :get, class: 'form-inline' ) do %>
 		      <%= text_field_tag :search, params[:search], list: "search-result-list", placeholder: 'Search', class: 'form-control mr-sm-2', id: "city-search" %>
@@ -116,6 +118,8 @@
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		      <li class="nav-item active">
 		      <%= link_to "Home", root_path, class: "nav-link" %></li>
+		      <li class="nav-item">
+		      <a class="nav-link btn-danger add_question text-white" href="/questions/new"  data-target="#exampleModalCenter"></a></li>
 		      <%= form_tag('/search', local: true, method: :get, class: 'form-inline' ) do %>
 		      <%= text_field_tag(:q, nil, data: { behavior: 'autocomplete' }, placeholder: 'Search', class: 'form-co
 		      ntrol mr-sm-2') %>
@@ -131,3 +135,33 @@
 		  </div><!-- /.navbar-collapse -->
 		</nav>
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Ask A Question</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/questions" method="POST">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Title</label>
+            <input name="title" class="form-control" id="exampleFormControlInput1" placeholder="your title here">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="your description here"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Ask Away!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
