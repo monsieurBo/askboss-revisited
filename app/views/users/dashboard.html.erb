@@ -25,7 +25,15 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
+              <!-- MAIN SIDEBAR -->
               <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <!-- SIDEBAR USER -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="user">
+                  <a class="nav-link" href="/users/<%= current_user.id %>">
+                    <span class="nav-link-text"><%= @user.first_name %> <%= @user.last_name %></span>
+                  </a>
+                </li>
+                <!-- SIDEBAR HOME -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                   <a class="nav-link" href="/user/<%= current_user.id %>/dashboard">
                     <i class="fa fa-fw fa-dashboard"></i>
@@ -40,32 +48,64 @@
                   </a>
                 </li>
                 <!-- SIDEBAR QUESTIONS -->
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Questions">
-                  <a class="nav-link" href="/questions" data-remote="true">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#questions" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Questions</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="questions">
+                    <li>
+                      <%= link_to "Questions", questions_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Answer", new_flash_card_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
                 <!-- SIDEBAR QUIZZES -->
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quizzes">
-                  <a class="nav-link" href="/quizzes" data-remote="true">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#quizzes" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Quizzes</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="quizzes">
+                    <li>
+                      <%= link_to "Quizzes", quizzes_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Quiz", new_quiz_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
                 <!-- SIDEBAR NOTES -->
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notes">
-                  <a class="nav-link" href="/notes" data-remote="true">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#notes" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Notes</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="notes">
+                    <li>
+                      <%= link_to "Notes", notes_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Notes", new_flash_card_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
                 <!-- SIDEBAR FLASHCARDS -->
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flash Cards">
-                  <a class="nav-link" href="/flash_cards" data-remote="true">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#flashcards" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Flash Cards</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="flashcards">
+                    <li>
+                      <%= link_to "Flash Cards", flash_cards_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Flash Cards", new_flash_card_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
                 <!-- SIDEBAR ACCOUNT -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
@@ -101,6 +141,7 @@
                   </ul>
                 </li>
               </ul>
+              <!-- TOGGLER-NOT WORKING -->
               <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
                   <a class="nav-link text-center" id="sidenavToggler">
@@ -108,7 +149,9 @@
                   </a>
                 </li>
               </ul>
+              <!-- TOP NAVBAR -->
               <ul class="navbar-nav ml-auto">
+                <!-- NOTIFY MESSAGES -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-envelope"></i>
@@ -133,6 +176,7 @@
                     <a class="dropdown-item small" href="#">View all messages</a>
                   </div>
                 </li>
+                <!-- NOTIFY NOTIFY? -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-bell"></i>
@@ -176,6 +220,7 @@
                     <a class="dropdown-item small" href="#">View all alerts</a>
                   </div>
                 </li>
+                <!-- SEARCH BAR -->
                 <li class="nav-item">
                   <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
@@ -188,6 +233,7 @@
                     </div>
                   </form>
                 </li>
+                <!-- LOGOUT -->
                 <li class="nav-item">
                   <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>

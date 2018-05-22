@@ -17,31 +17,36 @@
 
 		<br>
 			
-		<div class="container">
+		<div class="container bg-light">
 			<div class="row">
 			  			<div class="col-sm-4">
 		  					<div id="avatar"></div> 
-			  				<hr>
-			  				<h4>Name: </h4>
-			  				<p><%= @user.first_name %> <%= @user.last_name %></p>
-			  				<h4>Email: </h4> 
-			  				<p><%= @user.email %></p>
-			  				<h4>Job: </h4>
-			  				<p><%= @user.role %></p>
+                <br/>
 			  				<% if current_user_is_following(current_user.id, @user.id) %>
-								<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
-							<% else %>
-								<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
-							<% end %>
+  								<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+  							<% else %>
+  								<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
+  							<% end %>
+                <%= link_to "Message #{@user.first_name}", new_personal_message_path(receiver_id: @user), class: 'btn follow-button' %>
+                <hr> 
+                <h4>Name: </h4>
+                <p><%= @user.first_name %> <%= @user.last_name %></p>
+                <h4>Email: </h4> 
+                <p><%= @user.email %></p>
+                <h4>Job: </h4>
+                <p><%= @user.role %></p>
 			  			</div>
 	  			<div class="col-sm-8">
 	  				<h2> Hey, <%= @user.first_name %>!</h2>
 	  				<h5>Joined in <%=@user.created_at%></h5>
 	  				<br>
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
-					  <li class="nav-item">
-					    <a class="nav-link active" id="qualifications-tab" data-toggle="tab" href="#qualifications" role="tab" aria-controls="qualifications" aria-selected="true">Qualifications</a>
-					  </li>
+            <li class="nav-item">
+              <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="contact" aria-selected="false">Questions</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="contact" aria-selected="false">Answers</a>
+            </li>   
 					  <li class="nav-item">
 					    <a class="nav-link" id="quizzes-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="quizzes" aria-selected="false">Quizzes</a>
 					  </li>
