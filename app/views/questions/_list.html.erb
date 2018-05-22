@@ -1,5 +1,5 @@
 <% if signed_in? %>
-<% if current_user.superadmin? %>
+<% if current_user.superadmin? || current_user.teacher? %>
 
   <h1>Questions</h1>
 
@@ -32,7 +32,7 @@
     <a href="/questions/new"><button class="btn btn-primary">New Question</button></a>
   </div>
 
-  <% elsif current_user.student? || current_user.teacher? %>
+  <% elsif current_user.student? %>
     <div class="container">
       <br/>
 

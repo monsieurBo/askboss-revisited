@@ -24,6 +24,14 @@ class QuestionsController < ApplicationController
     # @questions = Question.all
   end
 
+  def list
+    @questions = Question.where(user_id: current_user.id)
+    @answers = Answer.where(user_id: current_user.id)
+    @notes = Note.where(user_id: current_user.id)
+    @flashcards = FlashCard.where(user_id: current_user.id)
+    @quizzes = Quiz.where(user_id: current_user.id)
+  end
+
   # GET /questions/1
   # GET /questions/1.json
   def show

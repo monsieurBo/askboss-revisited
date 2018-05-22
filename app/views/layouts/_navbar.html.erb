@@ -1,6 +1,6 @@
 <% if signed_in? && params[:action] != "dashboard" %>
 	<% if current_user.first_name? %>
-		<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg sticky-top navbar-trans">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <!-- <div class="navbar-header"> -->
 		    
@@ -103,7 +103,7 @@
 	<% end %>
 
 <% elsif params[:action] != "dashboard" %>
-	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg sticky-top navbar-trans">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <!-- <div class="navbar-header"> -->
 		    

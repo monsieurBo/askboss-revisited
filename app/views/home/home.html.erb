@@ -2,7 +2,7 @@
 <% if signed_in? %>
   <div class="container bg-light">
     <div class="row">
-        <%= link_to "Questions", questions_path, id: "questions", class: "col text-center btn btn-light active shadow-sm", remote: true %>
+        <%= link_to "Questions", questions_path, id: "questions", class: "col text-center btn btn-light active", remote: true %>
         <%= link_to "Notes", notes_path, id: "notes", class: "col text-center btn btn-light", remote: true %>
         <%= link_to "Flash Cards", flash_cards_path, id: "flashcards", class: "col text-center btn btn-light", remote: true %>
         <%= link_to "Quizzes", quizzes_path, id: "quizzes", class: "col text-center btn btn-light", remote: true %>

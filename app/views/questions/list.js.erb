@@ -1,0 +1,6 @@
+console.log("question list")
+
+$('.active').removeClass('active');
+$('#questions').addClass('active');
+$('#content').html("");
+$('#content').append("<%= j(render(:partial => 'questions/list')) %>");

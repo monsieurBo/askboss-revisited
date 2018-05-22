@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container fill">
 <br/>
 <div class="row">
   <h1 class="col">Notes</h1>
@@ -7,36 +7,26 @@
   <% end %>
   <div class="col col-lg-1"></div>
 </div>
-
+<div class="row mh-100">
 <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Created by</th>
       <th scope="col">Tags</th>
-      <th></th>
     </tr>
   </thead>
   	<tbody>
 			<% for i in @notes do%>
 		    <tr>
 		    	<td><%= i.name %></td>
-		    	<td><%= i.user.first_name %> <%= i.user.last_name %></td>
-       	 <td></td>
-          <td class="text-right">
-          <% if !current_user.student? %>
-		    	<%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25),note_path(i.id) %> | 
-		    	<%= link_to image_tag("https://image.flaticon.com/icons/svg/53/53694.svg", width: 25,), edit_note_path(i.id) %> | 
-		    	<%= link_to image_tag("https://image.flaticon.com/icons/png/128/121/121113.png", width: 25), note_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-		    		<% else %>
-		    		<%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25),note_path(i.id) %>
-		    		<% end %>
-		    	</td>
+		    	<td><%= i.user.first_name %> <%= i.user.last_name %></td>  
+          
 		    </tr>
 			<%end%>
   	</tbody>
 </table>
-
+</div>
 <!-- 		<br>
 <br>
 <div class="text-center">

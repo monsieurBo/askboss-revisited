@@ -1,0 +1,6 @@
+console.log("notes idndex")
+
+$('.active').removeClass('active');
+$('#notes').addClass('active');
+$('#content').html("");
+$('#content').append("<%= j(render(:partial => 'notes/list')) %>");

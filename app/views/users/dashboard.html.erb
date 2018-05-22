@@ -55,7 +55,7 @@
                   </a>
                   <ul class="sidenav-second-level collapse" id="questions">
                     <li>
-                      <%= link_to "Questions", questions_path, remote: true %>
+                      <%= link_to "Questions", list_questions_path , remote: true %>
                     </li>
                     <li>
                       <%= link_to "Answer", new_flash_card_path, remote:true %>
@@ -70,7 +70,7 @@
                   </a>
                   <ul class="sidenav-second-level collapse" id="quizzes">
                     <li>
-                      <%= link_to "Quizzes", quizzes_path, remote: true %>
+                      <%= link_to "Quizzes", list_quizzes_path, remote: true %>
                     </li>
                     <li>
                       <%= link_to "Create New Quiz", new_quiz_path, remote:true %>
@@ -85,7 +85,7 @@
                   </a>
                   <ul class="sidenav-second-level collapse" id="notes">
                     <li>
-                      <%= link_to "Notes", notes_path, remote: true %>
+                      <%= link_to "Notes", list_notes_path, remote: true %>
                     </li>
                     <li>
                       <%= link_to "Create New Notes", new_flash_card_path, remote:true %>
@@ -100,7 +100,7 @@
                   </a>
                   <ul class="sidenav-second-level collapse" id="flashcards">
                     <li>
-                      <%= link_to "Flash Cards", flash_cards_path, remote: true %>
+                      <%= link_to "Flash Cards", list_flash_cards_path, remote: true %>
                     </li>
                     <li>
                       <%= link_to "Create New Flash Cards", new_flash_card_path, remote:true %>
