@@ -27,47 +27,53 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/">
+                  <a class="nav-link" href="/user/<%= current_user.id %>/dashboard">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <!-- SIDEBAR MESSAGES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
                   <a class="nav-link" href="/conversations">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Messages</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
+                <!-- SIDEBAR QUESTIONS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Questions">
+                  <a class="nav-link" href="/questions" data-remote="true">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Questions</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
+                <!-- SIDEBAR QUIZZES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quizzes">
+                  <a class="nav-link" href="/quizzes" data-remote="true">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Quizzes</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
+                <!-- SIDEBAR NOTES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Notes">
+                  <a class="nav-link" href="/notes" data-remote="true">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Notes</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
+                <!-- SIDEBAR FLASHCARDS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Flash Cards">
+                  <a class="nav-link" href="/flash_cards" data-remote="true">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Flash Cards</span>
                   </a>
                 </li>
+                <!-- SIDEBAR ACCOUNT -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#account" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Account Details</span>
                   </a>
-                  <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                  <ul class="sidenav-second-level collapse" id="account">
                     <li>
                       <%= link_to "Profile", user_path(current_user) %>
                     </li>
@@ -76,11 +82,23 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                  <a class="nav-link" href="#">
+                <!-- SIDEBAR LINKS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#links" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Link</span>
+                    <span class="nav-link-text">Links</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="links">
+                    <li>
+                      <%= link_to "Quizzes", user_path(current_user) %>
+                    </li>
+                    <li>
+                      <%= link_to "Notes", user_path(current_user) %>
+                    </li>
+                    <li>
+                      <%= link_to "Flash Cards", user_path(current_user) %>
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <ul class="navbar-nav sidenav-toggler">
@@ -178,7 +196,7 @@
             </div>
           </nav>
           <!-- BODY -->
-          <div class="content-wrapper">
+          <div id="content" class="content-wrapper">
            <%= render 'dashboard' %>
           </div>
             <!-- /.container-fluid-->
