@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :personal_messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show]
+
   resources :problems, except: [:new, :create] do
     resources :solutions, only: [:new,:create]
   end
@@ -40,9 +43,10 @@ Rails.application.routes.draw do
 
 
   resources :users, controller: "users" do
-      resource :password,
-      controller: "clearance/passwords",
-      only: [:create, :edit, :update]
+    # resources :personal_messages, only: [:new, :create]
+    resource :password,
+    controller: "clearance/passwords",
+    only: [:create, :edit, :update]
   end
   get "/user/:id/dashboard" => "users#dashboard", as: "dashboard"
   get "/sign_in" => "sessions#new", as: "sign_in"
@@ -50,6 +54,7 @@ Rails.application.routes.draw do
   get "/sign_up" => "users#new", as: "sign_up"
 
   root "home#home"
+  # root "conversations#index"
 
   get 'tags/:tag', to: 'questions#index', as: :tag
   delete "/notes/:id/libraries/:count" => "notes#remove", as: :libdel

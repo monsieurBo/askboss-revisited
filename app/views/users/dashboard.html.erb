@@ -23,6 +23,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -30,6 +31,37 @@
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                   </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="/conversations">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Messages</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="/conversations">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Questions</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="/conversations">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Quizzes</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="/conversations">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Notes</span>
+                  </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                  <a class="nav-link" href="/conversations">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Flash Cards</span>
+                  </a>
+                </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                   <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
@@ -71,24 +103,14 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="messagesDropdown">
                     <h6 class="dropdown-header">New Messages:</h6>
+                    <% @conversations.each do |c| %>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      <strong>David Miller</strong>
+                    <a class="dropdown-item" href="/conversations/<%= c.id %>">
+                      <strong><%= c.receiver.first_name %> <%= c.receiver.last_name %></strong>
                       <span class="small float-right text-muted">11:21 AM</span>
-                      <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+                      <div class="dropdown-message small"><%= c.personal_messages.first.body %></div>
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      <strong>Jane Smith</strong>
-                      <span class="small float-right text-muted">11:21 AM</span>
-                      <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      <strong>John Doe</strong>
-                      <span class="small float-right text-muted">11:21 AM</span>
-                      <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                    </a>
+                  <% end %>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item small" href="#">View all messages</a>
                   </div>
@@ -155,176 +177,10 @@
               </ul>
             </div>
           </nav>
+          <!-- BODY -->
           <div class="content-wrapper">
-            <div class="container-fluid">
-              <!-- Breadcrumbs-->
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="#">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">My Dashboard</li>
-              </ol>
-              <!-- Icon Cards-->
-              <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-3">
-                  <div class="card text-white bg-primary o-hidden h-100">
-                    <div class="card-body">
-                      <div class="card-body-icon">
-                        <i class="fa fa-fw"></i>
-                      </div>
-                      <div class="mr-5">Quizzes</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="/quizzes">
-                      <span class="float-left">View Details</span>
-                      <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-3">
-                  <div class="card text-white bg-warning o-hidden h-100">
-                    <div class="card-body">
-                      <div class="card-body-icon">
-                        <i class="fa fa-fw"></i>
-                      </div>
-                      <div class="mr-5">Notes</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="/notes">
-                      <span class="float-left">View Details</span>
-                      <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-3">
-                  <div class="card text-white bg-success o-hidden h-100">
-                    <div class="card-body">
-                      <div class="card-body-icon">
-                        <i class="fa fa-fw"></i>
-                      </div>
-                      <div class="mr-5">Flash Cards</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="/flash_cards">
-                      <span class="float-left">View Details</span>
-                      <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-3">
-                  <div class="card text-white bg-danger o-hidden h-100">
-                    <div class="card-body">
-                      <div class="card-body-icon">
-                        <i class="fa fa-fw"></i>
-                      </div>
-                      <div class="mr-5">Followers</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                      <span class="float-left">View Details</span>
-                      <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Area Chart Example-->
-              <div class="card mb-3">
-                <div class="card-header">
-                <!-- For area charts -->
-                  <i class="fa fa-area-chart"></i>Statistics</div>
-                <div class="card-body">
-                  <canvas id="myAreaChart" width="100%" height="30"></canvas><img src="https://megalytic.com/blog/wp-content/uploads/2015/02/channel-area.jpg">
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-              </div>
-              <div class="row">
-                <div class="col-lg-8">
-                  <!-- Example Bar Chart Card-->
-                  <div class="card mb-3">
-                    <div class="card-header">
-                    <!-- For bar charts -->
-                      <i class="fa fa-bar-chart"></i>Statistics</div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-sm-8 my-auto">
-                          <canvas id="myBarChart" width="100" height="50"></canvas>
-                        </div>
-                        <!-- components fo the bar chart -->
-                        <div class="col-sm-4 text-center my-auto">
-                          <div class="h4 mb-0 text-primary">Value</div>
-                          <div class="small text-muted">Header</div>
-                          <hr>
-                          <div class="h4 mb-0 text-warning">Value</div>
-                          <div class="small text-muted">Header</div>
-                          <hr>
-                          <div class="h4 mb-0 text-success">Value</div>
-                          <div class="small text-muted">Header</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                  </div>
-                <div class="col-lg-4">
-                  <!-- Example Pie Chart Card-->
-                  <div class="card mb-3">
-                    <div class="card-header">
-                      <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-                    <div class="card-body">
-                      <canvas id="myPieChart" width="100%" height="100"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                  </div>
-                  <!-- Example Notifications Card-->
-                  <div class="card mb-3">
-                    <div class="card-header">
-                      <i class="fa fa-bell-o"></i> Feed Example</div>
-                    <div class="list-group list-group-flush small">
-                      <a class="list-group-item list-group-item-action" href="#">
-                        <div class="media">
-                          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                          <div class="media-body">
-                            <strong>David Miller</strong> posted a new quiz.
-                            <div class="text-muted smaller">Today at 5:43 PM - 5m ago</div>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="list-group-item list-group-item-action" href="#">
-                        <div class="media">
-                          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                          <div class="media-body">
-                            <strong>Samantha King</strong> upvoted your answer!
-                            <div class="text-muted smaller">Today at 4:37 PM - 1hr ago</div>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="list-group-item list-group-item-action" href="#">
-                        <div class="media">
-                          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                          <div class="media-body">
-                            <strong>Jeffery Wellings</strong> added a new photo to <strong>Notes</strong>
-                            <div class="text-muted smaller">Today at 4:31 PM - 1hr ago</div>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="list-group-item list-group-item-action" href="#">
-                        <div class="media">
-                          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
-                          <div class="media-body">
-                            <strong>Monica Dennis</strong>  answered your question in <strong>Physics Exam 2018</strong>
-                            <div class="text-muted smaller">Today at 3:54 PM - 2hrs ago</div>
-                          </div>
-                        </div>
-                      </a>
-                      <a class="list-group-item list-group-item-action" href="#">View all activity...</a>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                  </div>
-                </div>
-              </div>
+           <%= render 'dashboard' %>
+          </div>
             <!-- /.container-fluid-->
             <!-- /.content-wrapper-->
             <footer class="sticky-footer">
@@ -367,10 +223,8 @@
             <script src="../../assets/javascripts/sb-admin.min.js"></script>
             <!-- Custom scripts for this page-->
             <script src="../../assets/javascripts/sb-admin-datatables.min.js"></script>
-            <script src="../../assets/javascripts/sb-admin-charts.min.js"></script>
             <!-- Custom graphs for this page -->
             <script src="https://code.highcharts.com/highcharts.src.js"></script>
-          </div>
         </body>
 
     </html>

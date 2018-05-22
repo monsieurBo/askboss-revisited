@@ -13,6 +13,7 @@ class UsersController < Clearance::UsersController
 
   def dashboard
     @user = current_user
+    @conversations = Conversation.participating(current_user).order('updated_at DESC')
   end
 
   def edit

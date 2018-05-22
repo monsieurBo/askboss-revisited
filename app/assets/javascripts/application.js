@@ -17,9 +17,10 @@
 //= require dataTables.bootstrap4
 //= require jquery.dataTables
 //= require jquery.easing.min
-//= require sb-admin-charts.min
+//= require sb-admin-charts.min.js
 //= require sb-admin-datatables.min
 //= require sb-admin.min
+//= require conversations
 //= require activestorage
 //= require turbolinks
 //= require_tree .

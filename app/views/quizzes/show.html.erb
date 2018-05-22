@@ -15,7 +15,7 @@
 			  <div class="card-body">
 			  	<% p.solutions.each do |s| %>
 			  		<div class="form-check">
-			  		  <input class="form-check-input" type="radio" name="questions-<%= p.id %>" id="answer-<%= s.id %>" value="<%= s.correct %>" checked>
+			  		  <input class="form-check-input" type="radio" name="questions-<%= p.id %>" id="answer-<%= s.id %>" value="<%= s.correct %>">
 			  		  <label class="form-check-label" for="answer-<%= s.id %>">
 			  		    <%= s.answer %>
 			  		  </label>
