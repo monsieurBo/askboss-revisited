@@ -6,6 +6,7 @@
   <%= f.hidden_field :quiz_id, value: params[:quiz_id], label: false %>
     <%= f.hidden_field :_destroy %>
     <br>
+    <!-- This is not working -->
     <%= link_to "Remove Question", '#',
         onClick: "removeField(this); return false;" , class: 'btn btn-success btn-sm'%>
 
