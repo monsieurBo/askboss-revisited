@@ -9,7 +9,8 @@
 	<br>
 		<div class="text-center">
 		    <div class="actions">
-		    <%= f.submit "Submit",class: "btn btn-primary" %>
+		    <%= link_to 'Back', dashboard_path(current_user), class: 'btn btn-light shadow-sm' %>
+		    <%= f.submit "Submit",class: "btn btn-light shadow-sm" %>
 	  	</div>
 	 </div>
 <% end %>

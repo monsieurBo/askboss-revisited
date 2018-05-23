@@ -1,5 +1,5 @@
 console.log("follow-button")
-$('#follow-button').attr('class', 'btn unfollow-button')
+$('#follow-button').attr('class', 'btn btn-sm unfollow-button')
                    .text('Following')
                    .attr('href', "/<%= @user.id %>/unfollow_user")
                    .attr('id', 'unfollow-button');

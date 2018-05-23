@@ -66,5 +66,6 @@ Rails.application.routes.draw do
   get '/list_quizzes', to: 'quizzes#list', as: :list_quizzes
   get '/list_notes', to: 'notes#list', as: :list_notes
   get '/list_flash_cards', to: 'flash_cards#list', as: :list_flash_cards
+  get '/questions_answer', to: 'questions#answer', as: :questions_answer
 
 end

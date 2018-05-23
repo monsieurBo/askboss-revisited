@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526538839 +0800	branch: Created from HEAD
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 8eea754e5645fb9605d6e7c64675a37123cf5bb5 monsieurBo <boscoho.hy@gmail.com> 1526553567 +0800	commit: gotta rebase first
+8eea754e5645fb9605d6e7c64675a37123cf5bb5 6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 monsieurBo <boscoho.hy@gmail.com> 1526553601 +0800	rebase finished: refs/heads/feature/quiz onto fd6aabdb7b3351588cac55025d7e17bccbd0e6fd
+6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 b997b7c0c88df54bf0c844e7fd5ad4d5cd846432 monsieurBo <boscoho.hy@gmail.com> 1526659191 +0800	commit: completed quizzes setup
+b997b7c0c88df54bf0c844e7fd5ad4d5cd846432 157f42a189c36c07c20c1d4ccbd9bbc18e10b759 monsieurBo <boscoho.hy@gmail.com> 1526712732 +0800	commit (merge): quiz WIP
+157f42a189c36c07c20c1d4ccbd9bbc18e10b759 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713339 +0800	rebase finished: refs/heads/feature/quiz onto 3787eae79041d7de0fed1cf79899d87f9c0a82da
+35ef8b4685372976e7ca0f4dedf484b084744d09 03299939c2464d033d4e7723ed37970c3b342f3d monsieurBo <boscoho.hy@gmail.com> 1526714016 +0800	commit: quiz WIP
+03299939c2464d033d4e7723ed37970c3b342f3d 82ecd9cb937c1c77211e2e68919eeee55a84b9db monsieurBo <boscoho.hy@gmail.com> 1526714451 +0800	rebase finished: refs/heads/feature/quiz onto 7809ae57b97f9cd613e1e43a4e55a3222eb5dba2
+82ecd9cb937c1c77211e2e68919eeee55a84b9db cf6101a512a5399bb9124a104c7a09f434640b7a monsieurBo <boscoho.hy@gmail.com> 1526721491 +0800	commit: completed basic feature quiz
+cf6101a512a5399bb9124a104c7a09f434640b7a aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526721736 +0800	rebase finished: refs/heads/feature/quiz onto aa379139db5c232de6f9c1c4ca38fb4415caaade
+aa379139db5c232de6f9c1c4ca38fb4415caaade a26f0194757645d989d14e7bd7295d11eb4ac182 monsieurBo <boscoho.hy@gmail.com> 1526729986 +0800	commit: fixed delete function, edit not yet"
+a26f0194757645d989d14e7bd7295d11eb4ac182 3dca14d5adcb0b5b76d84586b88f7dcd57ad76db monsieurBo <boscoho.hy@gmail.com> 1526827096 +0800	rebase finished: refs/heads/feature/quiz onto 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7

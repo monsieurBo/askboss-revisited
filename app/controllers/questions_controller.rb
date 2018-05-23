@@ -32,6 +32,9 @@ class QuestionsController < ApplicationController
     @quizzes = Quiz.where(user_id: current_user.id)
   end
 
+  def answer
+  end
+
   # GET /questions/1
   # GET /questions/1.json
   def show

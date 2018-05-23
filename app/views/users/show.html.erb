@@ -2,15 +2,21 @@
 	<div class="row">
 		<div class="col-sm-3">
       <br/>
-			<div id="avatar"></div> 
+			<div>
+      <% if @user.student? %>
+        <%= image_tag('boy (1).png', id: 'avatar') %>
+        <% else %>
+        <%= image_tag('superhero.png', id: 'avatar') %>
+        <% end %>
+      </div> 
       <br/>
-			<% if current_user_is_following(current_user.id, @user.id) %>
-				<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn btn-sm unfollow-button', id: 'unfollow-button', method: :post %>
-			<% else %>
-				<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn btn-sm follow-button', id: 'follow-button', method: :post %>
-			<% end %>
       <% if @user.id != current_user.id %>
-      <%= link_to "Message #{@user.first_name}", new_personal_message_path(receiver_id: @user), class: 'btn btn-sm follow-button' %>
+  			<% if current_user_is_following(current_user.id, @user.id) %>
+  				<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn btn-sm unfollow-button', id: 'unfollow-button', method: :post %>
+  			<% else %>
+  				<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn btn-sm follow-button', id: 'follow-button', method: :post %>
+  			<% end %>
+        <%= link_to "Message #{@user.first_name}", new_personal_message_path(receiver_id: @user), class: 'btn btn-sm follow-button' %>
       <% end %>
       <div id="message-box"></div>
       <hr> 
@@ -27,19 +33,49 @@
       <hr/>
       <div class="container">
         <h5>Following</h5>
+        <div class="mini-thumbnails">
+          <%= image_tag('man.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man (1).png') %>
+          <br/>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (1).png') %>
+          <%= image_tag('man.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man.png') %>
+        </div>
       </div>
       <hr/>
       <div class="container">
         <h5>Follower</h5>
+        <div class="mini-thumbnails">
+          <%= image_tag('man.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man (1).png') %>
+          <br/>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (1).png') %>
+          <%= image_tag('man.png') %>
+          <%= image_tag('man.png') %>
+        </div>
       </div>
       <br/><br/>
 		</div>
 
 		<div class="col-sm-9">
       <br/>
-  			<h2> Hey, <%= @user.first_name %>!</h2>
-  			<h5>Joined in <%=@user.created_at%></h5>
-  			<br>
+  			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  			<h5>Joined in <%= @user.created_at.strftime("%b %d, %Y") %></h5>
+  			<hr>
   		<ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions" aria-selected="false">Questions</a>
@@ -60,6 +96,7 @@
   		<div class="tab-content" id="myTabContent">
         <!-- QUESTIONS -->
   		  <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
+        <br>
           <% if @questions.empty? %>
             <p><%= @user.first_name %> has not posted any question.</p>
           <% else %>
@@ -72,7 +109,7 @@
                   </div>
                 </div>
                 <div class="col-10">
-                  <h4><%= link_to "#{q.title}", question_path(q) %></h4>
+                  <h5><%= link_to "#{q.title}", question_path(q) %></h5>
                   <p><%= q.description %></p>
                   <p>tags</p>
                 </div>
@@ -96,7 +133,7 @@
                     </div>
                   </div>
                   <div class="col-10">
-                    <h4><%= link_to "#{q.title}", question_path(q) %></h4>
+                    <h5><%= link_to "#{q.title}", question_path(q) %></h5>
                     <p><%= q.description %></p>
                     <p>tags</p>
                   </div>

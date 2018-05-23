@@ -1,7 +1,7 @@
 <!-- Page Content -->
 <% if signed_in? %>
-  <div class="container bg-light">
-    <div class="row">
+  <div class="container light">
+    <div class="row opaque-4">
         <%= link_to "Questions", questions_path, id: "questions", class: "col text-center btn btn-light active", remote: true %>
         <%= link_to "Notes", notes_path, id: "notes", class: "col text-center btn btn-light", remote: true %>
         <%= link_to "Flash Cards", flash_cards_path, id: "flashcards", class: "col text-center btn btn-light", remote: true %>
@@ -59,10 +59,127 @@
 
   <section class="py-5">
     <div class="container">
-        <div class="text-center">
-          <a href="/sign_in"><button class="btn btn-primary">Sign In</button></a>
-          <a href="/sign_up"><button class="btn btn-primary">Sign Up</button></a>
-        </div>
+        <div class="about-3">
+            <h3 class="w3l-titles">Welcome</h3>
+            <div class="container">
+              <div class="d-flex">
+                <div class="about1"> 
+                  <h4>Etiam vitae augue odio</h4>
+                  <p class="details">Nullam pulvinar vulputate aliquam. Pellentesque venenatis ut mi ac porta. Praesent interdum nibh libero, id malesuada libero aliquet quis. Donec at odio nibh.</p>
+                  <ul class="about-list">
+                    <li>
+                      <span class="fa fa-newspaper-o" aria-hidden="true"></span>
+                      <div class="in-block">
+                        <h5>Creating Future</h5>
+                        <p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+                      </div>
+                    </li>
+                    <li>
+                    <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                      <div class="in-block">
+                        <h5>Knowledge</h5>
+                        <p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+                      </div>
+                    </li>
+                    <li>
+                    <span class="fa fa-area-chart" aria-hidden="true"></span>
+                      <div class="in-block">
+                        <h5>Inspiration</h5>
+                        <p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- stats -->
+          <div class="stats">
+            <div class="wthree_stat">
+              <div class="container">
+                <div class="wthree_stat_right">
+                  <ul>
+                    <li>
+                      <div class="wthree_stat_right1">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <h4>Teachers</h4>
+                        <p class="counter">60</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="wthree_stat_right1">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        <h4>Members</h4>
+                        <p class="counter">130</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="wthree_stat_right1">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        <h4>Courses</h4>
+                        <p class="counter">40</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+          </div>
+          <!-- //stats -->
+          <!-- Services -->
+            <div class="service-w3ls">
+              <div class="container">
+                <h3 class="w3l-titles">Services</h3>
+                <div class="row">
+                  <div class="col-md-3 service-box">
+                    <div class="hi-icon-effect-6">
+                      <a href="#set-6" class="hi-icon fa fa-briefcase"></a>
+                    </div>
+                    <div class="hi-text">
+                      <h5>Etiam vitae</h5>
+                      <p>Sed ut perspiciis iste natus error sit voluptatem accusantium.do consectetur adipisicing</p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="col-md-3 service-box">
+                    <div class=" hi-icon-effect-6">
+                      <a href="#set-6" class="hi-icon fa fa-map"></a>
+                    </div>
+                    <div class="hi-text">
+                      <h5>Sit voluptatem</h5>
+                      <p>Sed ut perspiciis iste natus error sit voluptatem accusantium.do consectetur adipisicing</p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="col-md-3 service-box">
+                    <div class=" hi-icon-effect-6">
+                      <a href="#set-6" class="hi-icon fa fa-glass"></a>
+                    </div>
+                    <div class="hi-text">
+                      <h5>Natus error</h5>
+                      <p>Sed ut perspiciis iste natus error sit voluptatem accusantium.do consectetur adipisicing</p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="col-md-3 service-box">
+                    <div class=" hi-icon-effect-6">
+                      <a href="#set-6" class="hi-icon fa fa-music"></a>
+                    </div>
+                    <div class="hi-text">
+                      <h5>Perspiciis iste</h5>
+                      <p>Sed ut perspiciis iste natus error sit voluptatem accusantium.do consectetur adipisicing</p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="clearfix"> </div>
+                </div>
+              </div>
+            </div>
+              <!-- //Services -->
     </div>
   </section>
+
 <% end %>

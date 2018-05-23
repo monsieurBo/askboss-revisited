@@ -1,0 +1,217 @@
+0000000000000000000000000000000000000000 e51862f592cadeb184c61d3ff68ed8c9534dbdf4 monsieurBo <boscoho.hy@gmail.com> 1526364506 +0800	commit (initial): first commit
+e51862f592cadeb184c61d3ff68ed8c9534dbdf4 e51862f592cadeb184c61d3ff68ed8c9534dbdf4 monsieurBo <boscoho.hy@gmail.com> 1526367581 +0800	checkout: moving from master to feature/clearance
+e51862f592cadeb184c61d3ff68ed8c9534dbdf4 e5743151106ea88995028ce8253de06477980f08 monsieurBo <boscoho.hy@gmail.com> 1526375383 +0800	commit: feature/clearance
+e5743151106ea88995028ce8253de06477980f08 e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526375916 +0800	commit: change file directory
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f e51862f592cadeb184c61d3ff68ed8c9534dbdf4 monsieurBo <boscoho.hy@gmail.com> 1526375971 +0800	checkout: moving from feature/clearance to master
+e51862f592cadeb184c61d3ff68ed8c9534dbdf4 e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526376048 +0800	merge feature/clearance: Fast-forward
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526376089 +0800	checkout: moving from master to feature/clearance
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526376337 +0800	checkout: moving from feature/clearance to master
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526376365 +0800	checkout: moving from master to feature/clearance
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526376478 +0800	checkout: moving from feature/clearance to master
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f 2e7ae65a5d99310db8f69dc6b2163b4bb1f3de23 monsieurBo <boscoho.hy@gmail.com> 1526376643 +0800	commit: commit to merge
+2e7ae65a5d99310db8f69dc6b2163b4bb1f3de23 a4b94f005b5a000ca5a5f83a28500e2794c8f20d monsieurBo <boscoho.hy@gmail.com> 1526379194 +0800	commit: navbar signin signup
+a4b94f005b5a000ca5a5f83a28500e2794c8f20d 93380f724d57ee1dbd02a8719d388f3ca3752dba monsieurBo <boscoho.hy@gmail.com> 1526381000 +0800	pull origin master: Fast-forward
+93380f724d57ee1dbd02a8719d388f3ca3752dba bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 monsieurBo <boscoho.hy@gmail.com> 1526381481 +0800	commit: updated files
+bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526381535 +0800	checkout: moving from master to feature/clearance
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 monsieurBo <boscoho.hy@gmail.com> 1526381544 +0800	checkout: moving from feature/clearance to master
+bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 monsieurBo <boscoho.hy@gmail.com> 1526383685 +0800	checkout: moving from master to feature/questionsAndAnswers
+bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 c01f4555b27870cde1bfd3b939a12d298274217e monsieurBo <boscoho.hy@gmail.com> 1526394486 +0800	commit: added question and answer features
+c01f4555b27870cde1bfd3b939a12d298274217e adeebbad82dad2e234d665aad957c24cee995e3f monsieurBo <boscoho.hy@gmail.com> 1526439384 +0800	commit: votes in progress
+adeebbad82dad2e234d665aad957c24cee995e3f e238d519c6a57af6775be0079018fffa06cd418f monsieurBo <boscoho.hy@gmail.com> 1526445110 +0800	commit: WIP
+e238d519c6a57af6775be0079018fffa06cd418f e5700b3e660a7c51d58a9f74e837a7d8054ef38f monsieurBo <boscoho.hy@gmail.com> 1526445147 +0800	checkout: moving from feature/questionsAndAnswers to feature/clearance
+e5700b3e660a7c51d58a9f74e837a7d8054ef38f bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 monsieurBo <boscoho.hy@gmail.com> 1526445402 +0800	checkout: moving from feature/clearance to master
+bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 monsieurBo <boscoho.hy@gmail.com> 1526445589 +0800	checkout: moving from master to master
+bfa8aa0cd9ffacb557f9fd4757dd26c3da5415e1 63acb3054a59eddff3c6dcaf836d8c04e52b5da0 monsieurBo <boscoho.hy@gmail.com> 1526446677 +0800	commit: asd
+63acb3054a59eddff3c6dcaf836d8c04e52b5da0 e238d519c6a57af6775be0079018fffa06cd418f monsieurBo <boscoho.hy@gmail.com> 1526446692 +0800	checkout: moving from master to feature/questionsAndAnswers
+e238d519c6a57af6775be0079018fffa06cd418f 73268f4ccba9d0005567414b777b2957f2aba629 monsieurBo <boscoho.hy@gmail.com> 1526457612 +0800	commit: finalising QnA
+73268f4ccba9d0005567414b777b2957f2aba629 63acb3054a59eddff3c6dcaf836d8c04e52b5da0 monsieurBo <boscoho.hy@gmail.com> 1526457699 +0800	checkout: moving from feature/questionsAndAnswers to master
+63acb3054a59eddff3c6dcaf836d8c04e52b5da0 f219c370e1f670b7c4c5f883660a56d541a359c3 monsieurBo <boscoho.hy@gmail.com> 1526457726 +0800	merge feature/questionsAndAnswers: Merge made by the 'recursive' strategy.
+f219c370e1f670b7c4c5f883660a56d541a359c3 f219c370e1f670b7c4c5f883660a56d541a359c3 monsieurBo <boscoho.hy@gmail.com> 1526460144 +0800	checkout: moving from master to fix/gitignore
+f219c370e1f670b7c4c5f883660a56d541a359c3 38b901e78f2671f22e8567d7929094867ad4a56c monsieurBo <boscoho.hy@gmail.com> 1526460166 +0800	commit: removed cache
+38b901e78f2671f22e8567d7929094867ad4a56c f219c370e1f670b7c4c5f883660a56d541a359c3 monsieurBo <boscoho.hy@gmail.com> 1526460536 +0800	checkout: moving from fix/gitignore to master
+f219c370e1f670b7c4c5f883660a56d541a359c3 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526460588 +0800	commit: remove cache
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526461387 +0800	checkout: moving from master to feature/edituser
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526461788 +0800	checkout: moving from feature/edituser to master
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 73268f4ccba9d0005567414b777b2957f2aba629 monsieurBo <boscoho.hy@gmail.com> 1526461835 +0800	checkout: moving from master to feature/questionsAndAnswers
+73268f4ccba9d0005567414b777b2957f2aba629 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526462060 +0800	checkout: moving from feature/questionsAndAnswers to master
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526462127 +0800	checkout: moving from master to feature/qna_ui
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f monsieurBo <boscoho.hy@gmail.com> 1526463652 +0800	checkout: moving from feature/qna_ui to master
+216d6c436620d7ab67ee9b68d91eaef3c1a5eb3f 9a223b324188f1d7a27ec63f9f8be29d69ff73e6 monsieurBo <boscoho.hy@gmail.com> 1526468125 +0800	commit: new master
+9a223b324188f1d7a27ec63f9f8be29d69ff73e6 9a223b324188f1d7a27ec63f9f8be29d69ff73e6 monsieurBo <boscoho.hy@gmail.com> 1526468172 +0800	rebase: checkout master
+9a223b324188f1d7a27ec63f9f8be29d69ff73e6 9a223b324188f1d7a27ec63f9f8be29d69ff73e6 monsieurBo <boscoho.hy@gmail.com> 1526468172 +0800	rebase finished: returning to refs/heads/feature/questionsAndAnswers
+9a223b324188f1d7a27ec63f9f8be29d69ff73e6 6b3cb55a07dcd642189e0574bc647cf32bd80e3c monsieurBo <boscoho.hy@gmail.com> 1526528589 +0800	commit: completed answers and tags
+6b3cb55a07dcd642189e0574bc647cf32bd80e3c 9a223b324188f1d7a27ec63f9f8be29d69ff73e6 monsieurBo <boscoho.hy@gmail.com> 1526528646 +0800	checkout: moving from feature/questionsAndAnswers to master
+9a223b324188f1d7a27ec63f9f8be29d69ff73e6 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526528809 +0800	pull origin master: Fast-forward
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526528860 +0800	rebase: checkout master
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526528860 +0800	rebase finished: returning to refs/heads/feature/questionsAndAnswers
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526537739 +0800	checkout: moving from feature/questionsAndAnswers to master
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526537795 +0800	rebase: checkout feature/questionsAndAnswers
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526538839 +0800	checkout: moving from feature/questionsAndAnswers to feature/quiz
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526540621 +0800	checkout: moving from feature/quiz to master
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 6ea525c44a94397392f8b89bfc2855490f321d76 monsieurBo <boscoho.hy@gmail.com> 1526540679 +0800	checkout: moving from master to feature/homepage
+6ea525c44a94397392f8b89bfc2855490f321d76 48c5ede36647e7d121deb6a59d0adfa4faf4df41 monsieurBo <boscoho.hy@gmail.com> 1526541031 +0800	commit: remove cache
+48c5ede36647e7d121deb6a59d0adfa4faf4df41 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526541054 +0800	rebase: checkout master
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 261c55aac3c06fb6901e113f43356f81092164d5 monsieurBo <boscoho.hy@gmail.com> 1526541661 +0800	commit: rebasing
+261c55aac3c06fb6901e113f43356f81092164d5 48c5ede36647e7d121deb6a59d0adfa4faf4df41 monsieurBo <boscoho.hy@gmail.com> 1526541790 +0800	rebase: aborting
+48c5ede36647e7d121deb6a59d0adfa4faf4df41 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526541827 +0800	checkout: moving from feature/homepage to master
+2c7c199d964fe4f62f98c0325165ee73f8a668ed ec99e9777b9b46f378fa519d14ecb843160688b2 monsieurBo <boscoho.hy@gmail.com> 1526546109 +0800	pull origin master: Fast-forward
+ec99e9777b9b46f378fa519d14ecb843160688b2 fd6aabdb7b3351588cac55025d7e17bccbd0e6fd monsieurBo <boscoho.hy@gmail.com> 1526546205 +0800	commit: removve cache
+fd6aabdb7b3351588cac55025d7e17bccbd0e6fd 2c7c199d964fe4f62f98c0325165ee73f8a668ed monsieurBo <boscoho.hy@gmail.com> 1526549171 +0800	checkout: moving from master to feature/quiz
+2c7c199d964fe4f62f98c0325165ee73f8a668ed 8eea754e5645fb9605d6e7c64675a37123cf5bb5 monsieurBo <boscoho.hy@gmail.com> 1526553567 +0800	commit: gotta rebase first
+8eea754e5645fb9605d6e7c64675a37123cf5bb5 fd6aabdb7b3351588cac55025d7e17bccbd0e6fd monsieurBo <boscoho.hy@gmail.com> 1526553589 +0800	rebase: checkout master
+fd6aabdb7b3351588cac55025d7e17bccbd0e6fd 6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 monsieurBo <boscoho.hy@gmail.com> 1526553601 +0800	rebase: gotta rebase first
+6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 monsieurBo <boscoho.hy@gmail.com> 1526553601 +0800	rebase finished: returning to refs/heads/feature/quiz
+6dfbe6c3a6d504a8455a633fc9e70029df8bc3b9 b997b7c0c88df54bf0c844e7fd5ad4d5cd846432 monsieurBo <boscoho.hy@gmail.com> 1526659191 +0800	commit: completed quizzes setup
+b997b7c0c88df54bf0c844e7fd5ad4d5cd846432 157f42a189c36c07c20c1d4ccbd9bbc18e10b759 monsieurBo <boscoho.hy@gmail.com> 1526712732 +0800	commit (merge): quiz WIP
+157f42a189c36c07c20c1d4ccbd9bbc18e10b759 fd6aabdb7b3351588cac55025d7e17bccbd0e6fd monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: checkout master
+fd6aabdb7b3351588cac55025d7e17bccbd0e6fd d69b1c53300d267ef8fcc8c1a51754b8884ad921 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: test
+d69b1c53300d267ef8fcc8c1a51754b8884ad921 ac9525ff81c4b371c8530966a2c9dc41cbaa2b96 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: installing necessary files for Carrierwave
+ac9525ff81c4b371c8530966a2c9dc41cbaa2b96 04ab2949c237ae893c229bcb40e7aeb420ff46a0 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: added new column for libraries
+04ab2949c237ae893c229bcb40e7aeb420ff46a0 9b24875fdc5b2ce1d52d06f01795e9d1e5bcced8 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: installed all necessary gems and required the necessary in order to upload files and images
+9b24875fdc5b2ce1d52d06f01795e9d1e5bcced8 0128bd4c1d7a7836b3339d29782f824d22faf78e monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: commit
+0128bd4c1d7a7836b3339d29782f824d22faf78e dda55c0bd3b0401c1156e67ac100a1ded45ab7d4 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: resolved conflicts
+dda55c0bd3b0401c1156e67ac100a1ded45ab7d4 0485da102a8dfc98d4b5282c5fd7ad50e20afd72 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: push to rebase
+0485da102a8dfc98d4b5282c5fd7ad50e20afd72 4bf73139b248fc948ad8dcb764504d88f47d7915 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: ability to store files but will still override existing files
+4bf73139b248fc948ad8dcb764504d88f47d7915 a6bd2fe398aab740d61d8d90ab4d13c9c821e433 monsieurBo <boscoho.hy@gmail.com> 1526712745 +0800	rebase: flashcards
+a6bd2fe398aab740d61d8d90ab4d13c9c821e433 a8034e3ba9402ae529a6d055427d33b5f01f36fe monsieurBo <boscoho.hy@gmail.com> 1526712769 +0800	rebase: added flashcards and cards
+a8034e3ba9402ae529a6d055427d33b5f01f36fe 157f42a189c36c07c20c1d4ccbd9bbc18e10b759 monsieurBo <boscoho.hy@gmail.com> 1526712788 +0800	rebase: aborting
+157f42a189c36c07c20c1d4ccbd9bbc18e10b759 fd6aabdb7b3351588cac55025d7e17bccbd0e6fd monsieurBo <boscoho.hy@gmail.com> 1526712861 +0800	rebase: checkout master
+fd6aabdb7b3351588cac55025d7e17bccbd0e6fd 3bf25bf7b5004439a0d87cbba3f2d1bd949df620 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: test
+3bf25bf7b5004439a0d87cbba3f2d1bd949df620 810db8440e35b5141693af832a462d9ccb2785a4 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: installing necessary files for Carrierwave
+810db8440e35b5141693af832a462d9ccb2785a4 c9aa12342ad148d58615dec9d75f0b0f977beccd monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: added new column for libraries
+c9aa12342ad148d58615dec9d75f0b0f977beccd 404956773540d2009c7f5ab610e2660aa6fd2b26 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: installed all necessary gems and required the necessary in order to upload files and images
+404956773540d2009c7f5ab610e2660aa6fd2b26 75193e34cf996ea38842ddc4f769ecb007733b8b monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: commit
+75193e34cf996ea38842ddc4f769ecb007733b8b c41e7baef689700f517a243208921b9fad216397 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: resolved conflicts
+c41e7baef689700f517a243208921b9fad216397 7ab2a84fc82a81b850a8e5c9e19084d9ff05213f monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: push to rebase
+7ab2a84fc82a81b850a8e5c9e19084d9ff05213f fa43fca6176827801a24501292ba5a6b3e3856e2 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: ability to store files but will still override existing files
+fa43fca6176827801a24501292ba5a6b3e3856e2 54cbe599c118b3a856e299a76be540a07d62d402 monsieurBo <boscoho.hy@gmail.com> 1526712862 +0800	rebase: flashcards
+54cbe599c118b3a856e299a76be540a07d62d402 157f42a189c36c07c20c1d4ccbd9bbc18e10b759 monsieurBo <boscoho.hy@gmail.com> 1526713138 +0800	rebase: aborting
+157f42a189c36c07c20c1d4ccbd9bbc18e10b759 fd6aabdb7b3351588cac55025d7e17bccbd0e6fd monsieurBo <boscoho.hy@gmail.com> 1526713143 +0800	checkout: moving from feature/quiz to master
+fd6aabdb7b3351588cac55025d7e17bccbd0e6fd 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526713158 +0800	pull origin master: Fast-forward
+3787eae79041d7de0fed1cf79899d87f9c0a82da 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526713225 +0800	rebase: checkout master
+3787eae79041d7de0fed1cf79899d87f9c0a82da fe2a3192092c6ea51c557c16c352b9e6ad2b9f33 monsieurBo <boscoho.hy@gmail.com> 1526713339 +0800	rebase: gotta rebase first
+fe2a3192092c6ea51c557c16c352b9e6ad2b9f33 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713339 +0800	rebase: completed quizzes setup
+35ef8b4685372976e7ca0f4dedf484b084744d09 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713339 +0800	rebase finished: returning to refs/heads/feature/quiz
+35ef8b4685372976e7ca0f4dedf484b084744d09 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526713357 +0800	checkout: moving from feature/quiz to master
+3787eae79041d7de0fed1cf79899d87f9c0a82da 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713511 +0800	checkout: moving from master to feature/quiz
+35ef8b4685372976e7ca0f4dedf484b084744d09 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713519 +0800	rebase: checkout feature/quiz
+35ef8b4685372976e7ca0f4dedf484b084744d09 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713560 +0800	rebase: checkout feature/quiz
+35ef8b4685372976e7ca0f4dedf484b084744d09 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526713907 +0800	checkout: moving from feature/quiz to master
+3787eae79041d7de0fed1cf79899d87f9c0a82da 35ef8b4685372976e7ca0f4dedf484b084744d09 monsieurBo <boscoho.hy@gmail.com> 1526713918 +0800	checkout: moving from master to feature/quiz
+35ef8b4685372976e7ca0f4dedf484b084744d09 03299939c2464d033d4e7723ed37970c3b342f3d monsieurBo <boscoho.hy@gmail.com> 1526714016 +0800	commit: quiz WIP
+03299939c2464d033d4e7723ed37970c3b342f3d 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526714024 +0800	checkout: moving from feature/quiz to master
+3787eae79041d7de0fed1cf79899d87f9c0a82da 03299939c2464d033d4e7723ed37970c3b342f3d monsieurBo <boscoho.hy@gmail.com> 1526714091 +0800	checkout: moving from master to feature/quiz
+03299939c2464d033d4e7723ed37970c3b342f3d 03299939c2464d033d4e7723ed37970c3b342f3d monsieurBo <boscoho.hy@gmail.com> 1526714101 +0800	rebase: checkout feature/quiz
+03299939c2464d033d4e7723ed37970c3b342f3d 3787eae79041d7de0fed1cf79899d87f9c0a82da monsieurBo <boscoho.hy@gmail.com> 1526714126 +0800	checkout: moving from feature/quiz to master
+3787eae79041d7de0fed1cf79899d87f9c0a82da 7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 monsieurBo <boscoho.hy@gmail.com> 1526714267 +0800	commit: schema update to master
+7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 monsieurBo <boscoho.hy@gmail.com> 1526714450 +0800	rebase: checkout master
+7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 0c14555308f0db38741bf8c46b6a4da9120401c2 monsieurBo <boscoho.hy@gmail.com> 1526714450 +0800	rebase: gotta rebase first
+0c14555308f0db38741bf8c46b6a4da9120401c2 848d1774b3e46e9387cf3fd52dcad9871115af0b monsieurBo <boscoho.hy@gmail.com> 1526714450 +0800	rebase: completed quizzes setup
+848d1774b3e46e9387cf3fd52dcad9871115af0b 82ecd9cb937c1c77211e2e68919eeee55a84b9db monsieurBo <boscoho.hy@gmail.com> 1526714450 +0800	rebase: quiz WIP
+82ecd9cb937c1c77211e2e68919eeee55a84b9db 82ecd9cb937c1c77211e2e68919eeee55a84b9db monsieurBo <boscoho.hy@gmail.com> 1526714451 +0800	rebase finished: returning to refs/heads/feature/quiz
+82ecd9cb937c1c77211e2e68919eeee55a84b9db 82ecd9cb937c1c77211e2e68919eeee55a84b9db monsieurBo <boscoho.hy@gmail.com> 1526714469 +0800	checkout: moving from feature/quiz to feature/quiz
+82ecd9cb937c1c77211e2e68919eeee55a84b9db cf6101a512a5399bb9124a104c7a09f434640b7a monsieurBo <boscoho.hy@gmail.com> 1526721491 +0800	commit: completed basic feature quiz
+cf6101a512a5399bb9124a104c7a09f434640b7a 7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 monsieurBo <boscoho.hy@gmail.com> 1526721698 +0800	checkout: moving from feature/quiz to master
+7809ae57b97f9cd613e1e43a4e55a3222eb5dba2 aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526721711 +0800	pull origin master: Fast-forward
+aa379139db5c232de6f9c1c4ca38fb4415caaade aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526721736 +0800	rebase: checkout master
+aa379139db5c232de6f9c1c4ca38fb4415caaade aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526721736 +0800	rebase finished: returning to refs/heads/feature/quiz
+aa379139db5c232de6f9c1c4ca38fb4415caaade aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526725108 +0800	checkout: moving from feature/quiz to feature/follow
+aa379139db5c232de6f9c1c4ca38fb4415caaade aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526726273 +0800	checkout: moving from feature/follow to feature/quiz
+aa379139db5c232de6f9c1c4ca38fb4415caaade a26f0194757645d989d14e7bd7295d11eb4ac182 monsieurBo <boscoho.hy@gmail.com> 1526729986 +0800	commit: fixed delete function, edit not yet"
+a26f0194757645d989d14e7bd7295d11eb4ac182 aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526730029 +0800	checkout: moving from feature/quiz to master
+aa379139db5c232de6f9c1c4ca38fb4415caaade aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526730046 +0800	checkout: moving from master to feature/follow
+aa379139db5c232de6f9c1c4ca38fb4415caaade de8db9c7ed8a76946b1fee4736421df10259d042 monsieurBo <boscoho.hy@gmail.com> 1526807635 +0800	commit: commit to rebase
+de8db9c7ed8a76946b1fee4736421df10259d042 a26f0194757645d989d14e7bd7295d11eb4ac182 monsieurBo <boscoho.hy@gmail.com> 1526807650 +0800	rebase: checkout feature/quiz
+a26f0194757645d989d14e7bd7295d11eb4ac182 aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526807661 +0800	checkout: moving from feature/quiz to master
+aa379139db5c232de6f9c1c4ca38fb4415caaade a26f0194757645d989d14e7bd7295d11eb4ac182 monsieurBo <boscoho.hy@gmail.com> 1526807772 +0800	checkout: moving from master to feature/quiz
+a26f0194757645d989d14e7bd7295d11eb4ac182 de8db9c7ed8a76946b1fee4736421df10259d042 monsieurBo <boscoho.hy@gmail.com> 1526817979 +0800	checkout: moving from feature/quiz to feature/follow
+de8db9c7ed8a76946b1fee4736421df10259d042 e48654449f124573043cba9e142bd54458f39b61 monsieurBo <boscoho.hy@gmail.com> 1526826976 +0800	commit: commit to rebase
+e48654449f124573043cba9e142bd54458f39b61 aa379139db5c232de6f9c1c4ca38fb4415caaade monsieurBo <boscoho.hy@gmail.com> 1526827043 +0800	checkout: moving from feature/follow to master
+aa379139db5c232de6f9c1c4ca38fb4415caaade 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526827059 +0800	pull origin master: Fast-forward
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526827095 +0800	rebase: checkout master
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 3dca14d5adcb0b5b76d84586b88f7dcd57ad76db monsieurBo <boscoho.hy@gmail.com> 1526827096 +0800	rebase: fixed delete function, edit not yet"
+3dca14d5adcb0b5b76d84586b88f7dcd57ad76db 3dca14d5adcb0b5b76d84586b88f7dcd57ad76db monsieurBo <boscoho.hy@gmail.com> 1526827096 +0800	rebase finished: returning to refs/heads/feature/quiz
+3dca14d5adcb0b5b76d84586b88f7dcd57ad76db 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526827126 +0800	rebase: checkout master
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 9a3ecceb5e2823d161f3f16d2b7120c0ca01ee91 monsieurBo <boscoho.hy@gmail.com> 1526827349 +0800	rebase: commit to rebase
+9a3ecceb5e2823d161f3f16d2b7120c0ca01ee91 b11dff5e513f65bc30c284af1cad88bced4b0595 monsieurBo <boscoho.hy@gmail.com> 1526827443 +0800	rebase: commit to rebase
+b11dff5e513f65bc30c284af1cad88bced4b0595 b11dff5e513f65bc30c284af1cad88bced4b0595 monsieurBo <boscoho.hy@gmail.com> 1526827443 +0800	rebase finished: returning to refs/heads/feature/follow
+b11dff5e513f65bc30c284af1cad88bced4b0595 8bdd0f56d617a6379d563e013616ab55a1fe3af4 monsieurBo <boscoho.hy@gmail.com> 1526827676 +0800	commit: commit to rebase
+8bdd0f56d617a6379d563e013616ab55a1fe3af4 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526827680 +0800	checkout: moving from feature/follow to master
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 8bdd0f56d617a6379d563e013616ab55a1fe3af4 monsieurBo <boscoho.hy@gmail.com> 1526827840 +0800	rebase: checkout feature/follow
+8bdd0f56d617a6379d563e013616ab55a1fe3af4 8bdd0f56d617a6379d563e013616ab55a1fe3af4 monsieurBo <boscoho.hy@gmail.com> 1526827858 +0800	checkout: moving from feature/follow to feature/follow
+8bdd0f56d617a6379d563e013616ab55a1fe3af4 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526828879 +0800	checkout: moving from feature/follow to master
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 8bdd0f56d617a6379d563e013616ab55a1fe3af4 monsieurBo <boscoho.hy@gmail.com> 1526828915 +0800	checkout: moving from master to feature/follow
+8bdd0f56d617a6379d563e013616ab55a1fe3af4 56c5112cfa395383924b12c8b2bd6e9ba44c8387 monsieurBo <boscoho.hy@gmail.com> 1526830440 +0800	commit: commit to rebase
+56c5112cfa395383924b12c8b2bd6e9ba44c8387 09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 monsieurBo <boscoho.hy@gmail.com> 1526830470 +0800	checkout: moving from feature/follow to master
+09f8b0b1bc00c98b84a0014f092c54a64f3a2ae7 e315a675eb65f1b702bf2dd2a462dda053a98919 monsieurBo <boscoho.hy@gmail.com> 1526830479 +0800	pull origin master: Fast-forward
+e315a675eb65f1b702bf2dd2a462dda053a98919 e315a675eb65f1b702bf2dd2a462dda053a98919 monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase: checkout master
+e315a675eb65f1b702bf2dd2a462dda053a98919 e52c9daf1f9880d6ec646c4aa600c265415b482c monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase: commit to rebase
+e52c9daf1f9880d6ec646c4aa600c265415b482c 73b2b29c48123c18171078a3915c89b3883ae32e monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase: commit to rebase
+73b2b29c48123c18171078a3915c89b3883ae32e 27741de9e46d7112a58f3f43d155bbb8137ded52 monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase: commit to rebase
+27741de9e46d7112a58f3f43d155bbb8137ded52 3943d0efcecaba8aa44d98e465d957dae6f6206c monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase: commit to rebase
+3943d0efcecaba8aa44d98e465d957dae6f6206c 3943d0efcecaba8aa44d98e465d957dae6f6206c monsieurBo <boscoho.hy@gmail.com> 1526830504 +0800	rebase finished: returning to refs/heads/feature/follow
+3943d0efcecaba8aa44d98e465d957dae6f6206c e315a675eb65f1b702bf2dd2a462dda053a98919 monsieurBo <boscoho.hy@gmail.com> 1526830570 +0800	checkout: moving from feature/follow to master
+e315a675eb65f1b702bf2dd2a462dda053a98919 3943d0efcecaba8aa44d98e465d957dae6f6206c monsieurBo <boscoho.hy@gmail.com> 1526830600 +0800	rebase: checkout feature/follow
+3943d0efcecaba8aa44d98e465d957dae6f6206c 11e1bc675634b6796992caabb732537692c46fe2 monsieurBo <boscoho.hy@gmail.com> 1526830631 +0800	commit: commit to rebase
+11e1bc675634b6796992caabb732537692c46fe2 235402f871e23ac1fb70f10795cc0c1e627e6eb1 monsieurBo <boscoho.hy@gmail.com> 1526837362 +0800	commit: working follow and unfollow. updated seed.rb
+235402f871e23ac1fb70f10795cc0c1e627e6eb1 d7150bb95aa96205c0e84e24eb74cab3aedabb98 monsieurBo <boscoho.hy@gmail.com> 1526840551 +0800	commit: tweaks
+d7150bb95aa96205c0e84e24eb74cab3aedabb98 e315a675eb65f1b702bf2dd2a462dda053a98919 monsieurBo <boscoho.hy@gmail.com> 1526876214 +0800	checkout: moving from feature/follow to master
+e315a675eb65f1b702bf2dd2a462dda053a98919 433d2ec1722dd9f8b8139135c04dbe8764599202 monsieurBo <boscoho.hy@gmail.com> 1526876913 +0800	pull origin master: Fast-forward
+433d2ec1722dd9f8b8139135c04dbe8764599202 433d2ec1722dd9f8b8139135c04dbe8764599202 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: checkout master
+433d2ec1722dd9f8b8139135c04dbe8764599202 ddbb306bacb81d908b2dbe517e517a928a5c5ea7 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: commit to rebase
+ddbb306bacb81d908b2dbe517e517a928a5c5ea7 de93149d304f4e36bc0cf61779ecdee49131893d monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: commit to rebase
+de93149d304f4e36bc0cf61779ecdee49131893d 02614ea5927de8b3de2c0acb1cdc196fe7f150d6 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: commit to rebase
+02614ea5927de8b3de2c0acb1cdc196fe7f150d6 7cae6de65c92a411a1a0ed764173b42911d79733 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: commit to rebase
+7cae6de65c92a411a1a0ed764173b42911d79733 467cd44d4a9d033f0910881eacce856f7495dea7 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: commit to rebase
+467cd44d4a9d033f0910881eacce856f7495dea7 45d4b30813504119caa2dbb76e66694ae385dc25 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: working follow and unfollow. updated seed.rb
+45d4b30813504119caa2dbb76e66694ae385dc25 713a713349a9335e0f754971ff2e0d2a03df09b5 monsieurBo <boscoho.hy@gmail.com> 1526876935 +0800	rebase: tweaks
+713a713349a9335e0f754971ff2e0d2a03df09b5 713a713349a9335e0f754971ff2e0d2a03df09b5 monsieurBo <boscoho.hy@gmail.com> 1526876936 +0800	rebase finished: returning to refs/heads/feature/follow
+713a713349a9335e0f754971ff2e0d2a03df09b5 e5afaca7baec2273b6f807a0331f4d08a0eed326 monsieurBo <boscoho.hy@gmail.com> 1526877067 +0800	pull origin master: Merge made by the 'recursive' strategy.
+e5afaca7baec2273b6f807a0331f4d08a0eed326 433d2ec1722dd9f8b8139135c04dbe8764599202 monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: checkout master
+433d2ec1722dd9f8b8139135c04dbe8764599202 5c7294fc56d9b533f49599de2df3cd6fbf259d04 monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: commit to rebase
+5c7294fc56d9b533f49599de2df3cd6fbf259d04 bff1b21526e306e9068a5b22c5ce94b1cfc0338f monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: commit to rebase
+bff1b21526e306e9068a5b22c5ce94b1cfc0338f a514596fd9f0c83866b033659f0a89e38c0337a3 monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: commit to rebase
+a514596fd9f0c83866b033659f0a89e38c0337a3 b7ea2a006f02fa4cf19690186587c732fe902082 monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: commit to rebase
+b7ea2a006f02fa4cf19690186587c732fe902082 ea0ef3febaf4e76212537097a8fb7a7413c206cd monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: commit to rebase
+ea0ef3febaf4e76212537097a8fb7a7413c206cd 58b03706bc7755a9230ee3e0b98673e7f97d324e monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: working follow and unfollow. updated seed.rb
+58b03706bc7755a9230ee3e0b98673e7f97d324e 5d04966f1c95d01e4a64ed9dbb0331936b1f5213 monsieurBo <boscoho.hy@gmail.com> 1526877126 +0800	rebase: tweaks
+5d04966f1c95d01e4a64ed9dbb0331936b1f5213 8956f6a3e9566ee51514201555a69506267f34cd monsieurBo <boscoho.hy@gmail.com> 1526877172 +0800	rebase: commit to rebase
+8956f6a3e9566ee51514201555a69506267f34cd 2515b10635c26bd5fd1e87e0aac616c5a6b13edb monsieurBo <boscoho.hy@gmail.com> 1526877208 +0800	rebase: commit to rebase
+2515b10635c26bd5fd1e87e0aac616c5a6b13edb 2ef63ad9e5275548ca4256492446b1027cf81fd8 monsieurBo <boscoho.hy@gmail.com> 1526877301 +0800	rebase: commit to rebase
+2ef63ad9e5275548ca4256492446b1027cf81fd8 9af449b072fc9ac5dcf7bab727239bd6e1df7015 monsieurBo <boscoho.hy@gmail.com> 1526877301 +0800	rebase: commit to rebase
+9af449b072fc9ac5dcf7bab727239bd6e1df7015 8649844bba8f45db01fa39499e610e2064d9a02c monsieurBo <boscoho.hy@gmail.com> 1526877301 +0800	rebase: commit to rebase
+8649844bba8f45db01fa39499e610e2064d9a02c 8649844bba8f45db01fa39499e610e2064d9a02c monsieurBo <boscoho.hy@gmail.com> 1526877301 +0800	rebase finished: returning to refs/heads/feature/follow
+8649844bba8f45db01fa39499e610e2064d9a02c 8649844bba8f45db01fa39499e610e2064d9a02c monsieurBo <boscoho.hy@gmail.com> 1526877347 +0800	rebase: checkout feature/follow
+8649844bba8f45db01fa39499e610e2064d9a02c 8649844bba8f45db01fa39499e610e2064d9a02c monsieurBo <boscoho.hy@gmail.com> 1526878975 +0800	checkout: moving from feature/follow to feature/pm
+8649844bba8f45db01fa39499e610e2064d9a02c 7842033b46c5561b78b6ac316ab10849b08b01ee monsieurBo <boscoho.hy@gmail.com> 1526888441 +0800	commit: check messenger
+7842033b46c5561b78b6ac316ab10849b08b01ee 433d2ec1722dd9f8b8139135c04dbe8764599202 monsieurBo <boscoho.hy@gmail.com> 1526888447 +0800	checkout: moving from feature/pm to master
+433d2ec1722dd9f8b8139135c04dbe8764599202 db2e1e64cc8e7692baecb170655d21f7f25dddcd monsieurBo <boscoho.hy@gmail.com> 1526888463 +0800	pull origin master: Fast-forward
+db2e1e64cc8e7692baecb170655d21f7f25dddcd db2e1e64cc8e7692baecb170655d21f7f25dddcd monsieurBo <boscoho.hy@gmail.com> 1526888485 +0800	rebase: checkout master
+db2e1e64cc8e7692baecb170655d21f7f25dddcd d229767c1f3e1068120f42548302db27f17d666a monsieurBo <boscoho.hy@gmail.com> 1526888486 +0800	rebase: commit to rebase
+d229767c1f3e1068120f42548302db27f17d666a 50bd5d5de2063b5eedf6c458ca8781ee24443fed monsieurBo <boscoho.hy@gmail.com> 1526888582 +0800	rebase: commit to rebase
+50bd5d5de2063b5eedf6c458ca8781ee24443fed 74be867f29dcca4c95f9913e69504977f14bfcdf monsieurBo <boscoho.hy@gmail.com> 1526888611 +0800	rebase: commit to rebase
+74be867f29dcca4c95f9913e69504977f14bfcdf 604ca4591433def9df93e15c502f3266fa104c2b monsieurBo <boscoho.hy@gmail.com> 1526888807 +0800	rebase: check messenger
+604ca4591433def9df93e15c502f3266fa104c2b 604ca4591433def9df93e15c502f3266fa104c2b monsieurBo <boscoho.hy@gmail.com> 1526888807 +0800	rebase finished: returning to refs/heads/feature/pm
+604ca4591433def9df93e15c502f3266fa104c2b 604ca4591433def9df93e15c502f3266fa104c2b monsieurBo <boscoho.hy@gmail.com> 1526888832 +0800	rebase: checkout feature/pm
+604ca4591433def9df93e15c502f3266fa104c2b 36357f8243d9d0c0eaa8db436ab7c55f186e3399 monsieurBo <boscoho.hy@gmail.com> 1526889261 +0800	commit: updated routes
+36357f8243d9d0c0eaa8db436ab7c55f186e3399 db2e1e64cc8e7692baecb170655d21f7f25dddcd monsieurBo <boscoho.hy@gmail.com> 1526889270 +0800	checkout: moving from feature/pm to master
+db2e1e64cc8e7692baecb170655d21f7f25dddcd db2e1e64cc8e7692baecb170655d21f7f25dddcd monsieurBo <boscoho.hy@gmail.com> 1526889455 +0800	checkout: moving from master to feature/ux
+db2e1e64cc8e7692baecb170655d21f7f25dddcd c8140462178696bda583bb86583a68921317130a monsieurBo <boscoho.hy@gmail.com> 1526952031 +0800	commit: first change
+c8140462178696bda583bb86583a68921317130a 36357f8243d9d0c0eaa8db436ab7c55f186e3399 monsieurBo <boscoho.hy@gmail.com> 1526952044 +0800	checkout: moving from feature/ux to feature/pm
+36357f8243d9d0c0eaa8db436ab7c55f186e3399 c5e541b7bf362c5ca0e42935c96b7c4e03a959b3 monsieurBo <boscoho.hy@gmail.com> 1526954346 +0800	commit: working pm
+c5e541b7bf362c5ca0e42935c96b7c4e03a959b3 db2e1e64cc8e7692baecb170655d21f7f25dddcd monsieurBo <boscoho.hy@gmail.com> 1526954371 +0800	checkout: moving from feature/pm to master
+db2e1e64cc8e7692baecb170655d21f7f25dddcd c63dba5d6a97d944b7ca802c9a4cab8527018031 monsieurBo <boscoho.hy@gmail.com> 1526954476 +0800	pull origin master: Fast-forward
+c63dba5d6a97d944b7ca802c9a4cab8527018031 c63dba5d6a97d944b7ca802c9a4cab8527018031 monsieurBo <boscoho.hy@gmail.com> 1526954488 +0800	rebase: checkout master
+c63dba5d6a97d944b7ca802c9a4cab8527018031 c63dba5d6a97d944b7ca802c9a4cab8527018031 monsieurBo <boscoho.hy@gmail.com> 1526954488 +0800	rebase finished: returning to refs/heads/feature/pm
+c63dba5d6a97d944b7ca802c9a4cab8527018031 c63dba5d6a97d944b7ca802c9a4cab8527018031 monsieurBo <boscoho.hy@gmail.com> 1526954494 +0800	rebase: checkout master
+c63dba5d6a97d944b7ca802c9a4cab8527018031 df85b514cbe8d8c067cc2149a7e276aa97d58a6e monsieurBo <boscoho.hy@gmail.com> 1526954644 +0800	rebase: first change
+df85b514cbe8d8c067cc2149a7e276aa97d58a6e df85b514cbe8d8c067cc2149a7e276aa97d58a6e monsieurBo <boscoho.hy@gmail.com> 1526954644 +0800	rebase finished: returning to refs/heads/feature/ux
+df85b514cbe8d8c067cc2149a7e276aa97d58a6e df85b514cbe8d8c067cc2149a7e276aa97d58a6e monsieurBo <boscoho.hy@gmail.com> 1526954654 +0800	rebase: checkout feature/ux
+df85b514cbe8d8c067cc2149a7e276aa97d58a6e 4c89b9cf6879cff00976fbd6d6798befc75e5beb monsieurBo <boscoho.hy@gmail.com> 1526956071 +0800	commit: push to share
+4c89b9cf6879cff00976fbd6d6798befc75e5beb 2e05955b769f03b1efc4f645830d51fe7cfe0d92 monsieurBo <boscoho.hy@gmail.com> 1526958926 +0800	commit: update
+2e05955b769f03b1efc4f645830d51fe7cfe0d92 a1c0a460cf60bf59bf14cec34c3fc54298f1d796 monsieurBo <boscoho.hy@gmail.com> 1526963114 +0800	commit: push update
+a1c0a460cf60bf59bf14cec34c3fc54298f1d796 e5b8eaa05cbd4dc389bc5e6c18972e05d90caad7 monsieurBo <boscoho.hy@gmail.com> 1526982393 +0800	commit: another update
+e5b8eaa05cbd4dc389bc5e6c18972e05d90caad7 c526c07736cfa1b0e8850590c7a97e580ae66e5f monsieurBo <boscoho.hy@gmail.com> 1527000347 +0800	commit: update
+c526c07736cfa1b0e8850590c7a97e580ae66e5f c63dba5d6a97d944b7ca802c9a4cab8527018031 monsieurBo <boscoho.hy@gmail.com> 1527000361 +0800	checkout: moving from feature/ux to master
+c63dba5d6a97d944b7ca802c9a4cab8527018031 c526c07736cfa1b0e8850590c7a97e580ae66e5f monsieurBo <boscoho.hy@gmail.com> 1527000433 +0800	checkout: moving from master to feature/ux
+                                                                                                                                                            
