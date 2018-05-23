@@ -1,0 +1,26 @@
+<div class="row">
+  <h2 class="col">Questions To Answer</h2>
+</div>
+<hr/>
+
+<% qs = Question.all %>
+<% id = qs.joins(:answers).group(:id) %>
+<% q = Question.where("id NOT IN (?)", id.ids) %>
+
+  <% q.each do |q| %>
+    <div class="row">
+    <div class="col">
+    <div class="container">
+    <%= Vote.where(question_id: q.id, vote: true).count %> votes<br/>
+    <%= q.answers.count %> answers
+      </div>
+    </div>
+    <div class="col-10">
+      <h5><%= link_to "#{q.title}", question_path(q) %></h5>
+      <p><%= q.description %></p>
+      <p>tags</p>
+    </div>
+  </div>
+<hr/>
+  <% end %>
+          

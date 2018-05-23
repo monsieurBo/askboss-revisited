@@ -1,74 +1,243 @@
-<% if signed_in? %>
-	<html>
-		<head>
-			<title>Profile - <%= @user.first_name %> <%= @user.last_name %></title>
-			<style type="text/css">
-				#avatar {
-					border-radius: 50%;
-					width: 350px;
-					height: 350px;
-					background-image: url("https://www.presstelegram.com/wp-content/uploads/2017/11/1118_spo_idb-l-fb-rancho-bosco-6-jv_24895875.jpg?w=620");
-					background-size: cover; 
-				}
-			</style>
-		</head>
-	<br>
-		<body>
-
-		<br>
-			
-		<div class="container">
-			<div class="row">
-			  			<div class="col-sm-4">
-		  					<div id="avatar"></div> 
-			  				<hr>
-			  				<h4>Name: </h4>
-			  				<p><%= @user.first_name %> <%= @user.last_name %></p>
-			  				<h4>Email: </h4> 
-			  				<p><%= @user.email %></p>
-			  				<h4>Job: </h4>
-			  				<p><%= @user.role %></p>
-			  				<% if current_user_is_following(current_user.id, @user.id) %>
-								<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
-							<% else %>
-								<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
-							<% end %>
-			  			</div>
-	  			<div class="col-sm-8">
-	  				<h2> Hey, <%= @user.first_name %>!</h2>
-	  				<h5>Joined in <%=@user.created_at%></h5>
-	  				<br>
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-					  <li class="nav-item">
-					    <a class="nav-link active" id="qualifications-tab" data-toggle="tab" href="#qualifications" role="tab" aria-controls="qualifications" aria-selected="true">Qualifications</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" id="quizzes-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="quizzes" aria-selected="false">Quizzes</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">Notes</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="contact" aria-selected="false">Flash Cards</a>
-					  </li>					  
-					</ul>
-					<div class="tab-content" id="myTabContent">
-					  <div class="tab-pane fade show active" id="qualifications" role="tabpanel" aria-labelledby="qualifications-tab"><%= @user.qualification %></div>
-					  <div class="tab-pane fade" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab"></div>
-					  <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">This is where the content will go.
-					  </div>
-					  <div class="tab-pane fade" id="flash_cards" role="tabpanel" aria-labelledby="flash_card-tab">Flash
-					  </div>					  
-						</div>
-					  </div>
-					</div>
-	  			</div>
-			</div>
+<div class="container bg-light">
+	<div class="row">
+		<div class="col-sm-3">
+      <br/>
+			<div>
+      <% if @user.student? %>
+        <%= image_tag('boy (1).png', id: 'avatar') %>
+        <% else %>
+        <%= image_tag('superhero.png', id: 'avatar') %>
+        <% end %>
+      </div> 
+      <br/>
+      <% if @user.id != current_user.id %>
+  			<% if current_user_is_following(current_user.id, @user.id) %>
+  				<%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn btn-sm unfollow-button', id: 'unfollow-button', method: :post %>
+  			<% else %>
+  				<%= link_to 'Follow', follow_user_path, remote: true, class: 'btn btn-sm follow-button', id: 'follow-button', method: :post %>
+  			<% end %>
+        <%= link_to "Message #{@user.first_name}", new_personal_message_path(receiver_id: @user), class: 'btn btn-sm follow-button' %>
+      <% end %>
+      <div id="message-box"></div>
+      <hr> 
+      <div class="container">
+        <h5>Name: </h5>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
+        <h5>Email: </h5> 
+        <p><%= @user.email %></p>
+        <h5>Job: </h5>
+        <p><%= @user.role %></p>
+        <h5>Qualification: </h5>
+        <p><%= @user.qualification %></p>
+      </div>
+      <hr/>
+      <div class="container">
+        <h5>Following</h5>
+        <div class="mini-thumbnails">
+          <%= image_tag('man.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man (1).png') %>
+          <br/>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (1).png') %>
+          <%= image_tag('man.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man.png') %>
+        </div>
+      </div>
+      <hr/>
+      <div class="container">
+        <h5>Follower</h5>
+        <div class="mini-thumbnails">
+          <%= image_tag('man.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('man (1).png') %>
+          <br/>
+          <%= image_tag('man (2).png') %>
+          <%= image_tag('girl.png') %>
+          <%= image_tag('man (1).png') %>
+          <%= image_tag('man.png') %>
+          <%= image_tag('man.png') %>
+        </div>
+      </div>
+      <br/><br/>
 		</div>
-		</body>
-	</html>
-<% else %>
-    <script language="javascript">
-          window.location.href = "/"
-      </script>
-<% end %>
+
+		<div class="col-sm-9">
+      <br/>
+  			<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  			<h5>Joined in <%= @user.created_at.strftime("%b %d, %Y") %></h5>
+  			<hr>
+  		<ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions" aria-selected="false">Questions</a>
+        </li>   
+        <li class="nav-item">
+          <a class="nav-link" id="answers-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="answers" aria-selected="false">Answers</a>
+        </li>   
+  		  <li class="nav-item">
+  		    <a class="nav-link" id="quizzes-tab" data-toggle="tab" href="#quizzes" role="tab" aria-controls="quizzes" aria-selected="false">Quizzes</a>
+  		  </li>
+  		  <li class="nav-item">
+  		    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="notes" aria-selected="false">Notes</a>
+  		  </li>
+  		  <li class="nav-item">
+  		    <a class="nav-link" id="flash_cards-tab" data-toggle="tab" href="#flash_cards" role="tab" aria-controls="flashcards" aria-selected="false">Flash Cards</a>
+  		  </li>					  
+  		</ul>
+  		<div class="tab-content" id="myTabContent">
+        <!-- QUESTIONS -->
+  		  <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
+        <br>
+          <% if @questions.empty? %>
+            <p><%= @user.first_name %> has not posted any question.</p>
+          <% else %>
+            <% @questions.each do |q| %>
+              <div class="row">
+                <div class="col">
+                <div class="container">
+                <%= Vote.where(question_id: q.id, vote: true).count %> votes<br/>
+                <%= q.answers.count %> answers
+                  </div>
+                </div>
+                <div class="col-10">
+                  <h5><%= link_to "#{q.title}", question_path(q) %></h5>
+                  <p><%= q.description %></p>
+                  <p>tags</p>
+                </div>
+              </div>
+            <hr/>
+            <% end %>
+          <% end %>
+        </div>
+        <!-- ANSWERS -->
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="answers-tab">
+          <% if @answers.empty? %>
+            <p><%= @user.first_name %> has not posted any answer.</p>
+          <% else %>
+            <% @answers.each do |a| %>
+              <% a.question do |q| %>
+                <div class="row">
+                  <div class="col">
+                    <div class="container">
+                      <%= Vote.where(question_id: q.id, vote: true).count %> votes<br/>
+                      <%= q.answers.count %> answers
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <h5><%= link_to "#{q.title}", question_path(q) %></h5>
+                    <p><%= q.description %></p>
+                    <p>tags</p>
+                  </div>
+                </div>
+                <hr/>
+              <% end %>
+            <% end %>
+          <% end %>asd
+        </div>
+        <!-- QUIZZES -->
+  		  <div class="tab-pane fade" id="quizzes" role="tabpanel" aria-labelledby="quizzes-tab">
+          <% if @quizzes.empty? %>
+            <p><%= @user.first_name %> has not posted any quiz.</p>
+          <% else %>
+            <table class="table table-hover">
+              <thead>
+                <tr colspan="3">
+                  <th>Title</th>
+                  <th>Created by</th>
+                  <th>Tags</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @quizzes.each do |quiz| %>
+                  <tr>
+                    <td style="white-space: nowrap;"><%= quiz.name %></td>
+                    <td style="white-space: nowrap;"><%= quiz.user.first_name %> <%= quiz.user.last_name %></td>
+                    <td></td>
+                      <td class="text-right">
+                      <% if !current_user.student? %>
+                        <%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25), quiz%> |
+                        <%= link_to image_tag("https://image.flaticon.com/icons/svg/53/53694.svg", width: 25,), edit_quiz_path(quiz) %> |
+                        <%= link_to image_tag("https://image.flaticon.com/icons/png/128/121/121113.png", width: 25), quiz, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% else %>
+                        <%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25), quiz%>
+                      <% end %>
+                      </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>  
+        </div>
+        <!-- NOTES -->
+  		  <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+          <% if @notes.empty? %>
+            <p><%= @user.first_name %> has not posted any notes.</p>
+          <% else %>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Created by</th>
+                  <th scope="col">Tags</th>
+                  <th></th>
+                </tr>
+              </thead>
+                <tbody>
+                  <% for i in @notes do%>
+                    <tr>
+                      <td><%= i.name %></td>
+                      <td><%= i.user.first_name %> <%= i.user.last_name %></td>
+                     <td></td>
+                      <td class="text-right">
+                      <% if !current_user.student? %>
+                      <%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25),note_path(i.id) %> | 
+                      <%= link_to image_tag("https://image.flaticon.com/icons/svg/53/53694.svg", width: 25,), edit_note_path(i.id) %> | 
+                      <%= link_to image_tag("https://image.flaticon.com/icons/png/128/121/121113.png", width: 25), note_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <% else %>
+                        <%= link_to image_tag("https://image.flaticon.com/icons/svg/159/159604.svg", width: 25),note_path(i.id) %>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <%end%>
+                </tbody>
+            </table>
+          <% end %>
+  		  </div>
+        <!-- FLASHCARDS -->
+  		  <div class="tab-pane fade" id="flash_cards" role="tabpanel" aria-labelledby="flash_card-tab">
+          <% if @flashcards.empty? %>
+            <p><%= @user.first_name %> has not posted any flashcard.</p>
+          <% else %>
+            <div class="row">
+              <% for i in @flashcards do %>
+                <div class="col-sm">
+                <a href="/flash_cards/<%= i.id %>" class="custom-card">
+                <div class="card shadow-sm" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= i.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">By <%= i.user.first_name %> <%= i.user.last_name %></h6>
+                    <p class="card-text">tags</p>
+                  </div>
+                </div></a>
+                <br/>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+  		  </div>					  
+			</div>
+      <br/><br/>
+	  </div>
+	</div>
+</div>

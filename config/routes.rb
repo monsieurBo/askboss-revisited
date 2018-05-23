@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :questions do
+  resources :questions  do
     resources :answers, only: [:new,:create]
     resource :votes, only: [:vote] do
       member do
@@ -61,5 +61,11 @@ Rails.application.routes.draw do
 
   post ':id/follow_user', to: 'relationships#follow_user', as: :follow_user
   post ':id/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
+
+  get '/list_questions', to: 'questions#list', as: :list_questions
+  get '/list_quizzes', to: 'quizzes#list', as: :list_quizzes
+  get '/list_notes', to: 'notes#list', as: :list_notes
+  get '/list_flash_cards', to: 'flash_cards#list', as: :list_flash_cards
+  get '/questions_answer', to: 'questions#answer', as: :questions_answer
 
 end

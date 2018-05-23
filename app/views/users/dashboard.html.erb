@@ -1,4 +1,4 @@
-<% if signed_in? %>
+<% if @user.id == current_user.id %>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -18,56 +18,102 @@
 
         <body class="fixed-nav sticky-footer bg-dark" id="page-top">
           <!-- Navigation-->
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <a class="navbar-brand" href="/">AskBoss</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
+              <!-- MAIN SIDEBAR -->
               <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <!-- SIDEBAR USER -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="user">
+                  <a class="nav-link" href="/users/<%= current_user.id %>">
+                    <span class="nav-link-text"><%= @user.first_name %> <%= @user.last_name %></span>
+                  </a>
+                </li>
+                <!-- SIDEBAR HOME -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/">
+                  <a class="nav-link" href="/user/<%= current_user.id %>/dashboard">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <!-- SIDEBAR MESSAGES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
                   <a class="nav-link" href="/conversations">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Messages</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <!-- SIDEBAR QUESTIONS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#questions" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Questions</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="questions">
+                    <li>
+                      <%= link_to "Questions", list_questions_path , remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Answer", questions_answer_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <!-- SIDEBAR QUIZZES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#quizzes" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Quizzes</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="quizzes">
+                    <li>
+                      <%= link_to "Quizzes", list_quizzes_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Quiz", new_quiz_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <!-- SIDEBAR NOTES -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#notes" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Notes</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="notes">
+                    <li>
+                      <%= link_to "Notes", list_notes_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Notes", new_flash_card_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                  <a class="nav-link" href="/conversations">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                <!-- SIDEBAR FLASHCARDS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#flashcards" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Flash Cards</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="flashcards">
+                    <li>
+                      <%= link_to "Flash Cards", list_flash_cards_path, remote: true %>
+                    </li>
+                    <li>
+                      <%= link_to "Create New Flash Cards", new_flash_card_path, remote:true %>
+                    </li>
+                  </ul>
                 </li>
+                <!-- SIDEBAR ACCOUNT -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#account" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Account Details</span>
                   </a>
-                  <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                  <ul class="sidenav-second-level collapse" id="account">
                     <li>
                       <%= link_to "Profile", user_path(current_user) %>
                     </li>
@@ -76,13 +122,26 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                  <a class="nav-link" href="#">
+                <!-- SIDEBAR LINKS -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#links" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Link</span>
+                    <span class="nav-link-text">Links</span>
                   </a>
+                  <ul class="sidenav-second-level collapse" id="links">
+                    <li>
+                      <%= link_to "Quizzes", user_path(current_user) %>
+                    </li>
+                    <li>
+                      <%= link_to "Notes", user_path(current_user) %>
+                    </li>
+                    <li>
+                      <%= link_to "Flash Cards", user_path(current_user) %>
+                    </li>
+                  </ul>
                 </li>
               </ul>
+              <!-- TOGGLER-NOT WORKING -->
               <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
                   <a class="nav-link text-center" id="sidenavToggler">
@@ -90,7 +149,9 @@
                   </a>
                 </li>
               </ul>
+              <!-- TOP NAVBAR -->
               <ul class="navbar-nav ml-auto">
+                <!-- NOTIFY MESSAGES -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-envelope"></i>
@@ -106,15 +167,16 @@
                     <% @conversations.each do |c| %>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/conversations/<%= c.id %>">
-                      <strong><%= c.receiver.first_name %> <%= c.receiver.last_name %></strong>
-                      <span class="small float-right text-muted">11:21 AM</span>
-                      <div class="dropdown-message small"><%= c.personal_messages.first.body %></div>
+                        <strong><%= c.receiver.first_name %> <%= c.receiver.last_name %></strong>
+                        <span class="small float-right text-muted">11:21 AM</span>
+                        <div class="dropdown-message small"><%= c.personal_messages.last.body %></div>
                     </a>
                   <% end %>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item small" href="#">View all messages</a>
                   </div>
                 </li>
+                <!-- NOTIFY NOTIFY? -->
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-fw fa-bell"></i>
@@ -158,6 +220,7 @@
                     <a class="dropdown-item small" href="#">View all alerts</a>
                   </div>
                 </li>
+                <!-- SEARCH BAR -->
                 <li class="nav-item">
                   <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
@@ -170,15 +233,16 @@
                     </div>
                   </form>
                 </li>
+                <!-- LOGOUT -->
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                  <a class="nav-link" data-toggle="modal" data-target="#logoutModal">
                     <i class="fa fa-fw fa-sign-out"></i>Logout</a>
                 </li>
               </ul>
             </div>
           </nav>
           <!-- BODY -->
-          <div class="content-wrapper">
+          <div id="content" class="content-wrapper">
            <%= render 'dashboard' %>
           </div>
             <!-- /.container-fluid-->
@@ -195,7 +259,7 @@
               <i class="fa fa-angle-up"></i>
             </a>
             <!-- Logout Modal-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">

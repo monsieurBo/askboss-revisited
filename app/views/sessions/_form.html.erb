@@ -35,13 +35,13 @@
     <hr>
     
     <p>
-      <%= link_to sign_up_path, class: "btn btn-block btn-outline-info" do%>
+      <%= link_to sign_up_path, class: "btn btn-block btn-outline-info disabled" do%>
       <%= fa_icon "twitter", text: " Login via Twitter" %>
       <% end %>
-      <%= link_to sign_up_path, class: "btn btn-block btn-outline-primary" do%>
+      <%= link_to sign_up_path, class: "btn btn-block btn-outline-primary disabled" do%>
       <%= fa_icon "facebook-f", text: " Login via Facebook" %>
       <% end %>
-      <%= link_to "/auth/google_oauth2", class: "btn btn-block btn-outline-danger" do%>
+      <%= link_to "/auth/google_oauth2", class: "btn btn-block btn-outline-danger disabled" do%>
       <%= fa_icon "google", text: " Login via Google" %>
       <% end %>
     </p>

@@ -10,6 +10,18 @@ class FlashCardsController < ApplicationController
 		else
 			@flashcards = FlashCard.all
 		end
+		respond_to do |format|
+		  format.js
+		  format.html { render :index }
+		end
+	end
+
+	def list
+	  @questions = Question.where(user_id: current_user.id)
+	  @answers = Answer.where(user_id: current_user.id)
+	  @notes = Note.where(user_id: current_user.id)
+	  @flashcards = FlashCard.where(user_id: current_user.id)
+	  @quizzes = Quiz.where(user_id: current_user.id)
 	end
 
 	def create

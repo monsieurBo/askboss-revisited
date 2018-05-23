@@ -1,6 +1,6 @@
 <% if signed_in? && params[:action] != "dashboard" %>
 	<% if current_user.first_name? %>
-		<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-trans sticky-top dark">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <!-- <div class="navbar-header"> -->
 		    
@@ -13,8 +13,19 @@
 		  <!-- Collect the nav links, forms, and other content for toggling -->
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-		      <li class="nav-item active">
-		      <%= link_to "Home", root_path, class: "nav-link" %></li>
+		      <%= link_to "Home", root_path, class: "nav-link text-light nav-item active" %>
+		      <% if current_user.student? %>
+		      <li class="nav-item">
+		      <a class="nav-link btn btn-outline-danger btn-sm add_question text-white" href="/questions/new"  data-target="#exampleModalCenter">Ask A Question</a></li>
+		      <% elsif current_user.teacher? %>
+		      <%= link_to "Dashboard", dashboard_path(current_user), class: "nav-link  text-light" %>
+		      <li class="nav-item">
+		      <a class="nav-link btn btn-outline-danger btn-sm add_question text-white" href="/questions/new"  data-target="#exampleModalCenter">Answer A Question</a></li>
+		      <% end %>
+		    </ul>
+
+
+		    <ul class="nav navbar-nav navbar-right">
 		      <!-- search bar -->
 		      <%= form_tag('/search', method: :get, class: 'form-inline' ) do %>
 		      <%= text_field_tag :search, params[:search], list: "search-result-list", placeholder: 'Search', class: 'form-control mr-sm-2', id: "city-search" %>
@@ -22,29 +33,17 @@
 		      <%= button_tag('Search', class: 'btn btn-outline-success my-2 my-sm-0', type: 'submit',value: 'Search') %>
 		      <% end %>
 		      
-		    </ul>
-
-
-		    <ul class="nav navbar-nav navbar-right">
 		      <li class="nav-item dropdown">
 
-		      	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Features</a>
-					<div class="dropdown-menu dropdown-menu-right" 	aria-labelledby="navbarDropdownMenuLink">
-		          	<a class="dropdown-item" href="/notes">Notes</a>
-		          	<a class="dropdown-item" href="/questions">Questions</a>
-		          	<a class="dropdown-item" href="/quizzes">Quizzes</a>
-		          	<a class="dropdown-item" href="/flash_cards">Flashcards</a>
-		      </li>
-		      
-		      <li class="nav-item dropdown">
-
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          <%= current_user.first_name %> <%= current_user.last_name %>
 		        </a>
 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 		          <%= link_to "Dashboard", dashboard_path(current_user), class: "dropdown-item" %>
-		          <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-		          <%= link_to "Edit Account", edit_user_path(current_user.id), class: "dropdown-item" %>
+		          	<a class="dropdown-item" href="/notes">Notes</a>
+		          	<a class="dropdown-item" href="/questions">Questions</a>
+		          	<a class="dropdown-item" href="/quizzes">Quizzes</a>
+		          	<a class="dropdown-item" href="/flash_cards">Flashcards</a>
 		          <div class="dropdown-divider"></div>
 		          <%= link_to "Sign Out", sign_out_path, method: :delete, class: "dropdown-item" %>
 		        </div>
@@ -101,10 +100,9 @@
 	<% end %>
 
 <% elsif params[:action] != "dashboard" %>
-	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-trans">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <!-- <div class="navbar-header"> -->
-		    
 		    <a class="navbar-brand text-danger font-weight-bold" href="/">AskBoss</a>
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
@@ -115,12 +113,6 @@
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		      <li class="nav-item active">
-		      <%= link_to "Home", root_path, class: "nav-link" %></li>
-		      <%= form_tag('/search', local: true, method: :get, class: 'form-inline' ) do %>
-		      <%= text_field_tag(:q, nil, data: { behavior: 'autocomplete' }, placeholder: 'Search', class: 'form-co
-		      ntrol mr-sm-2') %>
-		      <%= button_tag('Search', class: 'btn btn-outline-success my-2 my-sm-0', type: 'submit') %>
-		      <% end %>
 		      
 		    </ul>
 
@@ -131,3 +123,33 @@
 		  </div><!-- /.navbar-collapse -->
 		</nav>
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Ask A Question</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/questions" method="POST">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Title</label>
+            <input name="title" class="form-control" id="exampleFormControlInput1" placeholder="your title here">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="your description here"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Ask Away!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

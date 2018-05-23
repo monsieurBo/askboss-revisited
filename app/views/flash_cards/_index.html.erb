@@ -1,0 +1,35 @@
+<div class="container">
+<br/>
+<div class="row">
+	<h1 class="col">Flash Cards</h1>
+	<% if !current_user.student? %>
+		<%= link_to "Create Flash Card", new_flash_card_path, class: "col-md-auto align-middle text-center btn btn-outline-light" %>
+	<% end %>
+	<div class="col col-lg-1"></div>
+</div>
+	<hr/>
+	<div class="row">
+		<% for i in @flashcards do %>
+			<div class="col-sm">
+			<a href="/flash_cards/<%= i.id %>" class="custom-card">
+			<div class="card shadow-sm" style="width: 18rem;">
+			  <div class="card-body">
+			    <h5 class="card-title"><%= i.name %></h5>
+			    <h6 class="card-subtitle mb-2 text-muted">By <%= i.user.first_name %> <%= i.user.last_name %></h6>
+			    <p class="card-text">tags</p>
+			  </div>
+			</div></a>
+			<br/>
+			</div>
+		<% end %>
+	</div>
+<!-- 
+<hr>
+
+<div class="text-center">
+		<a href="/flash_cards/new" class="btn btn-primary">Create New Flash Card</a>
+</div> -->
+
+<br/>
+<br/>
+</div>

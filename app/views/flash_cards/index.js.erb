@@ -1,0 +1,6 @@
+console.log("flashcards idndex")
+
+$('.active').removeClass('active');
+$('#flashcards').addClass('active');
+$('#content').html("");
+$('#content').append("<%= j(render(:partial => 'flash_cards/index')) %>");

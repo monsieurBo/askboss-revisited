@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tag %>
@@ -17,5 +19,23 @@
   </div>
 
   <%= yield %>
+
+ <!-- footer -->
+  <footer>
+    <div class="copyright">
+      <div class="container">
+        <ul class="social-icons3">
+          <li><p>© 2018 AskBoss. All Rights Reserved</p></li>
+          <li><a href="#" class="fa fa-facebook icon-border facebook"> </a></li>
+          <li><a href="#" class="fa fa-twitter icon-border twitter"> </a></li>
+          <li><a href="#" class="fa fa-google-plus icon-border googleplus"> </a></li>
+          <li><a href="#" class="fa fa-rss icon-border rss"> </a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="container align-middle">
+      <p class="m-0 text-center text-white align-middle text-small">Copyright &copy; askBoss 2018</p>
+    </div> -->
+  </footer>
 </body>
 </html>

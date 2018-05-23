@@ -5,6 +5,11 @@ class PersonalMessagesController < ApplicationController
 	    @conversation ||= Conversation.create(author_id: current_user.id,receiver_id: params[:receiver_id])
 		  @receiver = @conversation.receiver
 		  @personal_message = current_user.personal_messages.build
+
+		  respond_to do |format|
+		    format.js
+		    format.html { render :new }
+		  end
 		end
 
 	  def create                   

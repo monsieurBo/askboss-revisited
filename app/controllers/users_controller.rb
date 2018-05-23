@@ -9,11 +9,21 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = User.find(params[:id])
+    @questions = Question.where(user_id: @user.id)
+    @answers = Answer.where(user_id: @user.id)
+    @notes = Note.where(user_id: @user.id)
+    @flashcards = FlashCard.where(user_id: @user.id)
+    @quizzes = Quiz.where(user_id: @user.id)
   end
 
   def dashboard
     @user = current_user
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
+    @questions = Question.where(user_id: current_user.id)
+    @answers = Answer.where(user_id: current_user.id)
+    @notes = Note.where(user_id: current_user.id)
+    @flashcards = FlashCard.where(user_id: current_user.id)
+    @quizzes = Quiz.where(user_id: current_user.id)
   end
 
   def edit

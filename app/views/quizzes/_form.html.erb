@@ -27,7 +27,9 @@
       <% end %>
     <%= link_to_add_fields("Add Question", f, :problems) %>
     </div>
+    <br/>
     <div class="text-center">
+      <%= link_to 'Back', dashboard_path(current_user), class: 'btn btn-light' %>
       <%= f.submit class: 'btn btn-light' %>
     </div>
   <% end %>

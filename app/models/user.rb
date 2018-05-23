@@ -18,6 +18,8 @@ class User < ApplicationRecord
 
   has_many :personal_messages, dependent: :destroy
 
+  enum role: [ :superadmin, :teacher, :student, :moderator]
+
   def follow(user_id)
     following_relationships.create(following_id: user_id)
   end

@@ -1,0 +1,36 @@
+<div class="container">
+<br/>
+<div class="row">
+  <h1 class="col">Quizzes</h1>
+  <% if !current_user.student? %>
+    <%= link_to "Create Quiz", new_quiz_path, class: "col-md-auto align-middle text-center btn btn-outline-light" %>
+  <% end %>
+  <div class="col col-lg-1"></div>
+</div>
+<hr/>
+<div class="row">
+    <% @quizzes.each do |quiz| %>
+      <div class="col-sm">
+        <a href="/quizzes/<%= quiz.id %>">
+        <div class="card text-center shadow-sm"  style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= quiz.name %></h5>
+            <p class="card-subtitle text-muted"><%= quiz.user.first_name %> <%= quiz.user.last_name %></p>
+          </div>
+          <div class="card-footer text-muted">
+            tags
+          </div>
+        </div></a>
+        <br/>
+        </div>
+
+    <% end %>
+    </div>
+<!-- 
+<br>
+<div class="text-center">
+  <%= link_to 'New Quiz', new_quiz_path, class: 'btn btn-light' %>
+</div> -->
+<br/>
+<br/>
+</div>
