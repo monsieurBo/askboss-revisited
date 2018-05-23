@@ -30,6 +30,7 @@
                 <!-- SIDEBAR USER -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="user">
                   <a class="nav-link" href="/users/<%= current_user.id %>">
+                    <i class="fa fa-fw fa-user-circle"></i>
                     <span class="nav-link-text"><%= @user.first_name %> <%= @user.last_name %></span>
                   </a>
                 </li>
@@ -43,14 +44,14 @@
                 <!-- SIDEBAR MESSAGES -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
                   <a class="nav-link" href="/conversations">
-                    <i class="fa fa-fw fa-dashboard"></i>
+                    <i class="fa fa-fw fa-envelope"></i>
                     <span class="nav-link-text">Messages</span>
                   </a>
                 </li>
                 <!-- SIDEBAR QUESTIONS -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                   <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#questions" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-fw fa-question"></i>
                     <span class="nav-link-text">Questions</span>
                   </a>
                   <ul class="sidenav-second-level collapse" id="questions">
@@ -65,7 +66,7 @@
                 <!-- SIDEBAR QUIZZES -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                   <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#quizzes" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-fw fa-check"></i>
                     <span class="nav-link-text">Quizzes</span>
                   </a>
                   <ul class="sidenav-second-level collapse" id="quizzes">
@@ -80,7 +81,7 @@
                 <!-- SIDEBAR NOTES -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                   <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#notes" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-fw fa-align-justify"></i>
                     <span class="nav-link-text">Notes</span>
                   </a>
                   <ul class="sidenav-second-level collapse" id="notes">
@@ -95,7 +96,7 @@
                 <!-- SIDEBAR FLASHCARDS -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                   <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#flashcards" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
+                    <i class="fa fa-fw fa-credit-card-blank"></i>
                     <span class="nav-link-text">Flash Cards</span>
                   </a>
                   <ul class="sidenav-second-level collapse" id="flashcards">

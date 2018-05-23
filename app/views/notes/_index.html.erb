@@ -2,8 +2,8 @@
 <br/>
 <div class="row">
   <h1 class="col">Notes</h1>
-  <% if !current_user.student? %>
-    <%= link_to "Create Notes", new_note_path, class: "col-md-auto align-middle text-center btn btn-outline-light" %>
+  <div class="ol-md-auto align-middle">
+  <% if !current_user.student? %></div>
   <% end %>
   <div class="col col-lg-1"></div>
 </div>
@@ -14,6 +14,7 @@
       <th scope="col">Title</th>
       <th scope="col">Created by</th>
       <th scope="col">Tags</th>
+      <th scope="col">Transcribe</th>
     </tr>
   </thead>
   	<tbody>
@@ -21,7 +22,9 @@
 		    <tr>
 		    	<td><%= i.name %></td>
 		    	<td><%= i.user.first_name %> <%= i.user.last_name %></td>  
-          
+          <td class="text-right">
+            <%= link_to image_tag("https://image.flaticon.com/icons/svg/684/684872.svg", width: 25),'Transcribe', note_path(i.id) %>
+          </td>
 		    </tr>
 			<%end%>
   	</tbody>

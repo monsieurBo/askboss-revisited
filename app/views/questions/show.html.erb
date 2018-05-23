@@ -7,7 +7,7 @@
 
 
 <p><%=@question.description%></p><br><br/>
-<p>posted by <%=User.find(@question.user_id).first_name%> <%=User.find(@question.user_id).last_name%> at <%=@question.created_at%><br/>
+<p>posted by <a href="/users/<%= @question.user_id %>"><%=User.find(@question.user_id).first_name%> <%=User.find(@question.user_id).last_name%></a> at <%= @question.created_at.strftime("%b %d, %Y") %><br/>
 <% if !@question.tag_list.empty? %>
 <p>Tags: <%= raw(@question.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
 <% end %>
@@ -28,7 +28,6 @@
 
 <!-- EDIT & DELETE buttons -->
 <% if current_user.id == @question.user_id %>
-<%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-default' %>
 	<a href="/questions/<%=@question.id%>/edit" class="btn btn-default">Edit</a>	
 	<a href="/questions/<%=@question.id%>/delete" class="btn btn-default">Delete</a>	
 <% else %>
@@ -53,7 +52,7 @@
 				<% if a.anonymous? %>
 			  	Anonymous answered <%= a.created_at %>
 			  <% else %>
-			  	<%= a.user.first_name %> answered <%= a.created_at %>
+			  	<a href="/users/<%= a.user.id %>"><%= a.user.first_name %> answered <%= a.created_at %></a>
 		  	<% end %>
 		  </div>
 		  <div class="card-body">

@@ -6,7 +6,7 @@ html, body{
 /*-- //services --*/
 /* About */
 .about-3 {
-    padding: 5em 0;
+    padding: 2em 0 2em 2em;
 }
 
 h3.center {
@@ -51,7 +51,7 @@ h3.center:after {
     color: #08f3d4;
 }
 .about1 p {
-    color: #999;
+    color: #fff;
     font-size: 15px;
 }
 ul.about-list li {
@@ -111,7 +111,7 @@ ul.about-list li span.fa {
     width: 31.2%;
 }
 .wthree_stat_right {
-    padding: 5em 0;
+    padding: 15em 0 10em 0;
 }
 .wthree_stat_right ul li:nth-child(2){
     margin:0 2em;

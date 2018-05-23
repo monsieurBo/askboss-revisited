@@ -1,7 +1,9 @@
 <div class="row">
 	<h1 class="col">Flash Cards</h1>
 	<% if !current_user.student? %>
+  <div class="ol-md-auto align-middle">
 		<%= link_to "Create Flash Card", new_flash_card_path, class: "col-md-auto align-middle text-center btn btn-outline-secondary btn-sm" %>
+		</div>
 	<% end %>
 	<div class="col col-lg-1"></div>
 </div>

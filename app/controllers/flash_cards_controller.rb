@@ -2,6 +2,7 @@ class FlashCardsController < ApplicationController
 
 	def new
 		@flashcard = FlashCard.new
+    @flashcard.cards.build
 	end
 
 	def index
