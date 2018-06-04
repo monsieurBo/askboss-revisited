@@ -2,7 +2,7 @@ class FlashCardsController < ApplicationController
 
 	def new
 		@flashcard = FlashCard.new
-    @flashcard.cards.build
+    	@flashcard.cards.build
 	end
 
 	def index
@@ -30,6 +30,7 @@ class FlashCardsController < ApplicationController
 		@flashcard = FlashCard.new
 		@flashcard.user_id = current_user.id
 		@flashcard.name = params[:flash_card][:name]
+		@flashcard.tag_list.add(params[:flash_card][:tag_list], parse: true)
 
 		respond_to do |format|
 	      if @flashcard.save

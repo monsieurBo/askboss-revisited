@@ -4,6 +4,7 @@
 		<h1 class="col"><%= @flashcard.name %></h1>
 		<div class="col col-lg-1"></div>
 	</div>
+	<p><%= raw(@flashcard.tag_list.map { |t| link_to t, tag_path(t), class: 'btn btn-small btn-secondary' }.join(' ')) %></p>
 	<hr/>
 	<div class="row">
 		<% x = Card.where(flash_card_id: @flashcard.id) %>

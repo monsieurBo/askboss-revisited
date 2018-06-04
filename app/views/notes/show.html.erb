@@ -1,21 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>AskBoss - <%= @note.name %></title>
-</head>
-<body>
-
-</body>
-</html>
 <!-- Design this if time is avaliable -->
-<%= @note.name %><br>
-<% count=0%>
-<% @note.libraries.each do|f|%>
-<a href ="<%= f %>"><%= @note['libraries'][count]%></a><==
-<%= link_to "Delete File", libdel_path(@note.id,count), method: :delete%><br>
-<%count+=1%>
-<% end%>
-<br>
 
-<%=link_to "Edit", edit_note_path%><br>
-<%=link_to "All notes", notes_path%>
+
+<div class="container fill">
+	<br/>
+	<div class="row">
+	  <h1 class="col">Notes</h1>
+	  <div class="ol-md-auto align-middle">
+	  <% if !current_user.student? %></div>
+	  <% end %>
+	  <div class="col col-lg-1"></div>
+	</div>
+	<div class="row">
+	<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th scope="col">Title</th>
+	      <th scope="col">Created by</th>
+	      <th scope="col">Tags</th>	
+	      <th></th>
+	    </tr>
+	  </thead>
+	  	<tbody>
+		    <tr>
+		    	<td><%= @note.name %></td>
+		    	<% @note.libraries.each_with_index do|f,index|%>
+		    		<td><a href ="<%= f %>"><%= @note['libraries'][index]%></a></td>
+	         		<td><%= raw(@note.tag_list.map { |t| link_to t, tag_path(t), class: 'btn btn-small btn-secondary' }.join(' ')) %></td>  
+	         		<td class="text-right">
+	            		<%= link_to image_tag("https://image.flaticon.com/icons/svg/684/684872.svg", width: 25), note_path(@note.id) %> | 
+		    			<%= link_to image_tag("https://image.flaticon.com/icons/png/128/121/121113.png", width: 25), libdel_path(@note.id,index), method: :delete%>
+	         		</td>
+		    		<br>
+				<%end%>
+		    </tr>
+	  	</tbody>
+	</table>
+	</div>
+	<%= link_to 'Back', notes_path, class: 'btn btn-light' %>
+</div>

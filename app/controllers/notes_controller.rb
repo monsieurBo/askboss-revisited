@@ -26,6 +26,7 @@ class NotesController < ApplicationController
 		@note.name = params[:note][:name]
 		@note.user_id = current_user.id
 		@note.libraries=params[:note][:libraries]
+		@note.tag_list.add(params[:note][:tag_list], parse: true)
 		@note.save
 		redirect_to note_path(@note)
 	end

@@ -5,6 +5,11 @@
 		    <label for="exampleInputEmail1">Flashcard name</label>
 		    <%= f.text_field :name,  placeholder: "Enter Name of Flashcard", class: 'form-control' , type: 'text' %>
 	    </div>
+	  	<br>
+	  	<div class='field'>
+	  	  <%= f.label :tag_list, 'Tags (separated by commas)' %><br/>
+	  	  <%= f.text_field :tag_list, value: f.object.tag_list.to_s %>
+	  	</div>
 	</div>
 	<br>
 		<div class="text-center">

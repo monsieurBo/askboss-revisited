@@ -65,7 +65,7 @@
               <div class="col-10">
                 <h5><%= link_to "#{q.title}", question_path(q) %></h5>
                 <p><%= q.description %></p>
-                <p>tags</p>
+                <p><%= raw(q.tag_list.map { |t| link_to t, tag_path(t), class: 'btn btn-sm btn-secondary' }.join(' ')) %></p>
               </div>
             </div>
           <hr/>
